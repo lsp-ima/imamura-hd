@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今村HD 事業案内 — AIを育てる会社</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-snap-type: y mandatory; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+         color:#1e2430; background:#0f172a; }
+  .slide { min-height:100vh; scroll-snap-align:start; display:flex; flex-direction:column;
+           justify-content:center; padding:56px 72px; position:relative; background:#fff; }
+  .slide.dark { background:#0f172a; color:#fff; }
+  .pageno { position:absolute; bottom:20px; right:28px; font-size:12px; color:#94a3b8; }
+  .kicker { font-size:15px; font-weight:700; letter-spacing:.18em; color:#2563eb; margin-bottom:14px; }
+  .dark .kicker { color:#60a5fa; }
+  h1 { font-size:52px; line-height:1.25; margin-bottom:20px; }
+  h2 { font-size:38px; margin-bottom:28px; line-height:1.3; }
+  .lead { font-size:19px; color:#475569; line-height:1.9; max-width:840px; }
+  .dark .lead { color:#cbd5e1; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin-top:8px; }
+  .card { border:2px solid #e2e8f0; border-radius:14px; padding:22px 24px; background:#f8fafc; }
+  .card h3 { font-size:18px; margin-bottom:10px; }
+  .card p { font-size:14px; color:#475569; line-height:1.8; }
+  .card .em { font-size:12px; font-weight:700; color:#2563eb; letter-spacing:.08em; display:block; margin-bottom:6px; }
+  .ok   .card { border-color:#bbf7d0; background:#f0fdf4; }
+  .ok   .card h3 { color:#166534; }
+  .ok   .card.main { border-color:#16a34a; border-width:3px; }
+  .ng   .card { border-color:#fecaca; background:#fef2f2; }
+  .ng   .card h3 { color:#991b1b; }
+  .ng   .card .why { color:#b91c1c; font-size:12.5px; font-weight:600; margin-top:8px; }
+  table { width:100%; border-collapse:collapse; font-size:16px; margin-top:6px; max-width:840px; }
+  th { background:#eef2ff; text-align:left; padding:12px 16px; border:1px solid #dbe2ef; }
+  td { padding:12px 16px; border:1px solid #e5e9f0; color:#334155; }
+  .flow { display:flex; align-items:stretch; gap:0; margin-top:26px; flex-wrap:wrap; }
+  .step { flex:1; min-width:150px; background:#eff6ff; border:2px solid #93c5fd; border-radius:12px;
+          padding:16px 14px; text-align:center; position:relative; margin-right:34px; }
+  .step:last-child { margin-right:0; background:#1d4ed8; border-color:#1d4ed8; }
+  .step:last-child b, .step:last-child span { color:#fff; }
+  .step b { display:block; font-size:15px; color:#1e40af; margin-bottom:6px; }
+  .step span { font-size:12px; color:#3b82f6; line-height:1.6; display:block; }
+  .step:not(:last-child)::after { content:"▶"; position:absolute; right:-26px; top:50%;
+          transform:translateY(-50%); color:#94a3b8; font-size:16px; }
+  .big3 { display:flex; gap:22px; margin:30px 0; flex-wrap:wrap; }
+  .big3 div { flex:1; min-width:180px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25);
+              border-radius:14px; padding:20px; text-align:center; }
+  .big3 b { display:block; font-size:22px; margin-bottom:6px; }
+  .big3 span { font-size:13px; color:#cbd5e1; }
+  .foot { font-size:13px; color:#64748b; margin-top:34px; }
+  .meeting { display:inline-block; background:#fef2f2; border:2px solid #f87171; color:#b91c1c;
+             font-size:13px; font-weight:700; padding:4px 14px; border-radius:20px; margin-bottom:16px; }
+  .dark .meeting { background:rgba(248,113,113,.15); }
+  .agenda { background:#fff7ed; border:2px dashed #fb923c; border-radius:14px; padding:20px 24px; margin-top:26px; max-width:840px; }
+  .agenda h3 { font-size:15px; color:#9a3412; margin-bottom:10px; }
+  .agenda li { font-size:14px; color:#7c2d12; margin-left:20px; line-height:2; }
+  @media print {
+    html { scroll-snap-type:none; }
+    .slide { min-height:auto; height:100vh; page-break-after:always; }
+  }
+  @media (max-width:700px){ .slide{padding:40px 24px;} h1{font-size:34px;} h2{font-size:26px;} }
+</style>
+</head>
+<body>
+
+<!-- 1. 表紙 -->
+<section class="slide dark">
+  <p class="kicker">COMPANY DECK|2026.07</p>
+  <h1>AIは、買うものじゃない。<br>育てるものです。</h1>
+  <p class="lead">「AIって結局、何に使えばいいの?」— その状態から、あなたの仕事で毎日働く戦力になるまで。<br>現場24年のコーチが、AIの育て方ごとお渡しします。</p>
+  <div class="big3">
+    <div><b>指導歴24年</b><span>パーソナルトレーナーとして現場一筋</span></div>
+    <div><b>現役コーチ</b><span>中学バスケットボール部を指導中</span></div>
+    <div><b>Kindle著者</b><span>『ゴリラはなぜ植物だけでムキムキなのか』ほか</span></div>
+  </div>
+  <p class="pageno">1 / 7</p>
+</section>
+
+<!-- 2. 私たちについて -->
+<section class="slide">
+  <p class="kicker">ABOUT</p>
+  <h2>AIの育て方を、体で知っている。</h2>
+  <p class="lead">
+    代表の今村は銀座のパーソナルトレーナーであり、中学バスケットボール部のコーチ。<br>
+    24年間やってきたのは<b>「相手を評価し、仮説を立て、実行し、ズレを直す」</b>こと。<br>
+    相手が人の体からAIに変わっても、育て方の骨格はまったく同じでした。<br><br>
+    プログラミングの専門家ではありません。<b>育てる専門家</b>としてAIと向き合い、
+    自分の事業すべてをAIと二人三脚で回しています。
+  </p>
+  <div class="cards" style="margin-top:30px;">
+    <div class="card"><span class="em">現場</span><h3>育成のプロ</h3><p>評価→仮説→実行→修正のループを、24年間人の体で回してきた経験。</p></div>
+    <div class="card"><span class="em">AI</span><h3>同じループでAIを育てる</h3><p>役割・ルール・記憶を設計し、失敗のたびに掟を足して強くする。AIも選手と同じで、育て方次第。</p></div>
+    <div class="card"><span class="em">実証</span><h3>まず自分で実証</h3><p>一人で7つ以上の事業・アプリをAIと並行運営。提供するのは、この体で試した育て方です。</p></div>
+  </div>
+  <p class="pageno">2 / 7</p>
+</section>
+
+<!-- 3. できること -->
+<section class="slide ok">
+  <p class="kicker">WHAT WE CAN DO</p>
+  <h2>弊社が「できること」</h2>
+  <div class="cards">
+    <div class="card main"><h3>① AIを育てる</h3>
+      <p><b>ここが本業です。</b>ChatGPTやClaudeを「たまに聞く道具」から「毎日働く戦力」へ。あなたの仕事に合わせて役割・ルール・記憶を設計し、育て方ごとお渡しします。</p></div>
+    <div class="card main"><h3>② 実装できるレベルに落とし込む</h3>
+      <p>「AIで何かできそう」で止まっている構想を、<b>現場で毎日回る仕組み</b>(手順・自動化・必要ならアプリ)まで落とし込みます。開発はできますが、それは手段です。</p></div>
+    <div class="card main"><h3>③ あなたの発信を、AIで作れるように育てる</h3>
+      <p>note・YouTubeなどの発信コンテンツを、ネタ出しから下書きまで動くAIを設計します。ゼロから自分で書き続けなくていい状態まで。</p></div>
+  </div>
+  <p class="kicker" style="margin-top:34px;">PROOF — 実例</p>
+  <div class="cards">
+    <div class="card"><h3>チーム運営アプリ TEAM BOARD</h3>
+      <p>作戦盤・予定/出欠・スコア・連絡を1つに。アカウント登録不要(合言葉方式)で導入当日から使えます。</p></div>
+    <div class="card"><h3>AI動画分析・スタッツまとめ</h3>
+      <p>試合動画から得点などのプレー候補をAIが検出。選手ごとの記録を1試合分のスタッツシートにまとめられます。動画は端末の外に送りません。</p></div>
+    <div class="card"><h3>発信コンテンツ(Kindle・note・YouTube・ロジトレ！)</h3>
+      <p>Kindle著者としての執筆、note・YouTubeでの発信、トレーナー向け会員コンテンツ「ロジトレ！」の運営。③の育て方が実際に回っている例です。</p></div>
+    <div class="card"><h3>一人でAIと事業を回す仕組み</h3>
+      <p>AI秘書・進捗の自動管理など、弊社自身が毎日使っている運営の仕組みそのものをテンプレートとして提供できます。</p></div>
+  </div>
+  <p class="pageno">3 / 7</p>
+</section>
+
+<!-- 4. やらないこと -->
+<section class="slide ng">
+  <p class="kicker">WHAT WE DON'T DO</p>
+  <h2>弊社が「やらないこと」— 正直にお伝えします</h2>
+  <div class="cards">
+    <div class="card"><h3>個人情報を集める設計</h3>
+      <p>氏名・連絡先などの個人情報を預かるサービス設計はしません。合言葉方式を採用しているのはこのためです。</p>
+      <p class="why">→ 学校・部活動で一番の導入障壁は個人情報。持たないことが安全。</p></div>
+    <div class="card"><h3>大規模受託・常駐開発</h3>
+      <p>大人数での受託開発、24時間サポート、常駐対応はできません。少数運営だからこその速さを優先します。</p>
+      <p class="why">→ その代わり、要望が「育てた本人」に直接届きます。</p></div>
+    <div class="card"><h3>育成を伴わない単発の作業代行</h3>
+      <p>「とりあえず作って」だけの受託はしません。AIを育てて渡すところまでが仕事です。</p>
+      <p class="why">→ 作って終わりでは、翌月から使われなくなるからです。</p></div>
+  </div>
+  <p class="foot">※ 実績の誇張(「延べ◯千人」等)や医療行為にあたる診断・助言もしません。指導歴24年とKindle著者。事実だけで勝負します。</p>
+  <p class="pageno">4 / 7</p>
+</section>
+
+<!-- 5. 今やっていること -->
+<section class="slide">
+  <p class="kicker">NOW IN PROGRESS</p>
+  <h2>今、やっていること(2026年7月時点)</h2>
+  <table>
+    <tr><th>取り組み</th></tr>
+    <tr><td>TEAM BOARD(バスケ版)の販売開始準備</td></tr>
+    <tr><td>AI動画分析・スタッツ自動化の精度向上</td></tr>
+    <tr><td>多競技版 TEAM BOARD の構築(野球など他競技への展開)</td></tr>
+    <tr><td>パーソナルジムの顧客管理アプリ開発(評価の見える化)</td></tr>
+    <tr><td>トレーナー教育・発信(ロジトレ！/note/YouTube)</td></tr>
+    <tr><td>書籍次作(Kindle)の出版準備</td></tr>
+    <tr><td>「AIを育てる仕組み」そのもののテンプレート化</td></tr>
+  </table>
+  <p class="foot">※ すべて、自分のチーム・自分の店舗で毎週使いながら改善を続けています。</p>
+  <p class="pageno">5 / 7</p>
+</section>
+
+<!-- 6. どうやって提供するか -->
+<section class="slide">
+  <p class="kicker">HOW WE DELIVER</p>
+  <h2>どうやって提供するか</h2>
+  <p class="lead">入口は無料。深くやりたい方だけ、3段階で伴走します。</p>
+  <div class="flow">
+    <div class="step"><b>1. 無料教材</b><span>「AIの育て方」テンプレートを専用ページ(ai-guide.html)で無料公開</span></div>
+    <div class="step"><b>2. ご相談</b><span>note / X のDMから。現状と困りごとを伺う</span></div>
+    <div class="step"><b>3. セットアップ</b><span>AIの役割設計と育成を初回にみっちり作り込む</span></div>
+    <div class="step"><b>4. 伴走(3ヶ月)</b><span>チャットで随時サポート。必要なら面談</span></div>
+    <div class="step"><b>5. 保守</b><span>卒業後も希望者のみ、微調整と質問対応</span></div>
+  </div>
+  <table style="margin-top:28px;">
+    <tr><th>段階</th><th>内容</th><th>料金</th></tr>
+    <tr><td>教材</td><td>AIの育て方テンプレート(専用ページで公開)</td><td><b>無料</b></td></tr>
+    <tr><td>セットアップ</td><td>ヒアリング→役割設計→育成の作り込み→実装</td><td><b>初期 50,000円</b></td></tr>
+    <tr><td>伴走(3ヶ月)</td><td>チャット随時+必要に応じて面談</td><td><b>月 10,000円</b></td></tr>
+    <tr><td>保守(卒業後・任意)</td><td>微調整・質問対応</td><td><b>月 5,000円</b></td></tr>
+  </table>
+  <p class="foot">※ 出来上がった道具(TEAM BOARD等のアプリ)はチーム単位の少額月額で別途提供します。</p>
+  <p class="pageno">6 / 7</p>
+</section>
+
+<!-- 7. まとめ(たたき台) -->
+<section class="slide dark">
+  <p class="kicker">SUMMARY</p>
+  <h2>AIは、育て方で決まる。</h2>
+  <p class="lead">
+    ・現場24年のコーチが、人を育ててきたやり方でAIを育てます<br>
+    ・アプリはあくまで手段。目的は、あなたの仕事が毎日回ること<br>
+    ・個人情報を集めない、誇張しない。事実だけで勝負します
+  </p>
+  <div class="big3">
+    <div><b>実例</b><span>TEAM BOARD<br>
+      <a href="../../忠生中バスケ部/販売用/LP/index.html" target="_blank" style="color:#60a5fa;">LPを見る</a> ・
+      <a href="https://lsp-ima.github.io/team-board/demo/" target="_blank" style="color:#60a5fa;">デモを開く</a>
+    </span></div>
+    <div><b>X</b><span>@lsp_ima<br>ご相談はDMで</span></div>
+    <div><b>料金</b><span>初期5万円+伴走3ヶ月 月1万円<br>卒業後の保守は月5,000円(任意)</span></div>
+  </div>
+  <p class="foot" style="color:#94a3b8;">今村HD(今村雅史)|本資料は社外提示用ドラフトです。公開前に代表の承認を得てください。</p>
+  <p class="pageno">7 / 7</p>
+</section>
+
+</body>
+</html>
