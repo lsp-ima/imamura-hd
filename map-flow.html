@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI育成支援 商品と工程(2026-07-22)</title>
+<style>
+  body { font-family:"Hiragino Sans","Yu Gothic",sans-serif; background:#faf9f5; color:#1a1a18; margin:0; padding:32px 24px; line-height:1.6; }
+  .wrap { max-width:960px; margin:0 auto; }
+  h1 { font-size:22px; font-weight:600; margin:0 0 4px; }
+  .date { font-size:12px; color:#8a887f; margin-bottom:26px; }
+  .sec { font-size:13px; color:#8a887f; margin:28px 0 10px; font-weight:600; }
+  .cols { display:flex; gap:14px; flex-wrap:wrap; }
+  .box { flex:1; min-width:270px; background:#fff; border:1px solid #e3e1d9; border-radius:12px; padding:16px 18px; }
+  .box h3 { font-size:15px; margin:0 0 10px; }
+  .box ul { margin:0; padding-left:0; list-style:none; }
+  .box li { font-size:13px; padding:5px 0; border-top:1px dashed #eceae2; }
+  .box li:first-child { border-top:none; }
+  .box li b { color:#26215C; }
+  .teal-box { background:#E1F5EE; border-color:#1D9E75; } .teal-box h3{color:#085041;} .teal-box li{color:#0F6E56; border-color:#bfe8d8;}
+  .purple-box { background:#EEEDFE; border-color:#534AB7; } .purple-box h3{color:#26215C;} .purple-box li{color:#3C3489; border-color:#dcd9f7;}
+  .check { background:#EAF3DE; border:1px solid #639922; border-radius:12px; padding:12px 16px; margin-top:14px; }
+  .check b { font-size:14px; color:#27500A; display:block; margin-bottom:6px; }
+  .check span { display:inline-block; font-size:12.5px; color:#3B6D11; background:#fff; border:1px solid #C0DD97; border-radius:999px; padding:5px 12px; margin:3px 6px 3px 0; }
+  .flowrow { display:flex; align-items:stretch; gap:6px; flex-wrap:wrap; }
+  .fstep { flex:1; min-width:200px; background:#fff; border:1px solid #e3e1d9; border-radius:12px; padding:14px 16px; }
+  .fstep .tag { font-size:11px; font-weight:700; color:#534AB7; letter-spacing:.08em; }
+  .fstep b { display:block; font-size:14.5px; margin:2px 0 8px; }
+  .fstep .t { font-size:12.5px; color:#5F5E5A; padding:3px 0; border-top:1px dashed #eceae2; display:flex; justify-content:space-between; gap:8px; }
+  .fstep .t:first-of-type { border-top:none; }
+  .fstep .t em { font-style:normal; color:#8a887f; white-space:nowrap; }
+  .arr { display:flex; align-items:center; color:#8a887f; }
+  .hot { border-color:#1D9E75; background:#F4FBF8; }
+  .case { flex:1; min-width:270px; background:#fff; border:1px solid #e3e1d9; border-radius:12px; padding:16px 18px; }
+  .case .who { font-size:11px; font-weight:700; color:#993C1D; background:#FAECE7; border-radius:999px; padding:3px 10px; display:inline-block; }
+  .case b { display:block; font-size:14.5px; margin:8px 0 4px; }
+  .case .kit { font-size:12px; color:#534AB7; margin-bottom:8px; }
+  .case p { font-size:13px; color:#444441; margin:0; }
+  @media print { body{padding:10px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>AI育成支援 — 何が届いて、どう作るか</h1>
+<div class="date">2026-07-22|配布パッケージv1準拠</div>
+
+<div class="sec">1|セットアップ(5万円)で届くもの</div>
+<div class="cols">
+  <div class="box teal-box">
+    <h3>あなた専用の設定ファイル5点(動く状態で設置)</h3>
+    <ul>
+      <li><b>①人物設定書</b> — 事業・言葉づかい・3ヶ月後のゴール</li>
+      <li><b>②掟</b> — やってはいけないことのルール集(送信は人間だけ 等)</li>
+      <li><b>③ルーティン表</b> — 秘書の担当業務一覧(毎朝・毎週)</li>
+      <li><b>④呼び出しカード</b> — 頼み方の例文集(PCの横に貼る)</li>
+      <li><b>⑤育成日誌</b> — 失敗と成長の記録(面談で一緒に見る)</li>
+    </ul>
+  </div>
+  <div class="box purple-box">
+    <h3>業務レシピ1〜2本(コード込み・設置まで一緒に)</h3>
+    <ul>
+      <li>01 経理 — 領収書を放り込むだけ(GAS)</li>
+      <li>02 コンテンツ制作 — 発信の下書きが毎週出てくる</li>
+      <li>03 秘書の定時実行 — 毎朝勝手に動く</li>
+      <li>04 営業サポート — 顧客カルテ+フォロー下書き</li>
+      <li>05 請求・月謝の見張り — 出し忘れゼロ(GAS)</li>
+    </ul>
+  </div>
+</div>
+<div class="check">
+  <b>納品完了の4条件(全部YESになるまでが納品。自己申告不可)</b>
+  <span>✔ 呼んだらあなた仕様の返事が返る</span>
+  <span>✔ 自動化があなたの環境でテスト成功</span>
+  <span>✔ 未記入の箇所ゼロ</span>
+  <span>✔ あなた自身が1回頼めた</span>
+</div>
+
+<div class="sec">2|作業工程(1件あたり実働 約3時間)</div>
+<div class="flowrow">
+  <div class="fstep">
+    <span class="tag">事前|前週まで</span>
+    <b>準備(85分)</b>
+    <div class="t">チェックリスト送付・確認<em>5分</em></div>
+    <div class="t">ヒアリングシート記入(顧客)<em>—</em></div>
+    <div class="t">雛形5点を個別化<em>60分</em></div>
+    <div class="t">レシピ選定・書き換え<em>20分</em></div>
+  </div>
+  <div class="arr">→</div>
+  <div class="fstep hot">
+    <span class="tag">当日|Zoom 90分</span>
+    <b>設置(顧客が操作・今村がナビ)</b>
+    <div class="t">環境確認<em>10分</em></div>
+    <div class="t">5ファイル設置・読み込み<em>20分</em></div>
+    <div class="t">起動テスト(役割を1分で説明)<em>15分</em></div>
+    <div class="t">レシピ設置→テスト実行<em>30分</em></div>
+    <div class="t">呼び方練習+宿題説明<em>15分</em></div>
+  </div>
+  <div class="arr">→</div>
+  <div class="fstep">
+    <span class="tag">フォロー</span>
+    <b>定着させて伴走へ</b>
+    <div class="t">翌日: 一言フォロー(つまずきの9割はここ)</div>
+    <div class="t">3日後: 様子聞き</div>
+    <div class="t">1週間後: 伴走W2へ接続</div>
+    <div class="t">以後: 定着→自動化→引き継ぎ(3ヶ月)</div>
+  </div>
+</div>
+
+<div class="sec">3|モデルケース(最優先ターゲット=フィットネス・スポーツ指導者。人物は架空)</div>
+<div class="cols">
+  <div class="case">
+    <span class="who">パーソナルトレーナー・独立1年目</span>
+    <b>山本さん</b>
+    <div class="kit">秘書+予約対応+発信レシピ</div>
+    <p>「明日空いてる?」に空き枠3候補の返信文で即答。栄養相談は「一般論+専門家へ」の型で安心。SNSは直して投稿だけ。</p>
+  </div>
+  <div class="case">
+    <span class="who">フィットネスジムオーナー・指導者3名</span>
+    <b>高橋さん</b>
+    <div class="kit">秘書+シフト集計+月謝見張りレシピ</div>
+    <p>月末2〜3時間の月謝チェックが「今月どう?」で5分に。体験申込への一次返信も即日でき機会損失が減る。</p>
+  </div>
+  <div class="case">
+    <span class="who">少年スポーツクラブ・外部コーチ</span>
+    <b>中村さん</b>
+    <div class="kit">秘書+保護者連絡+締切見張りレシピ</div>
+    <p>雨天中止・大会締切の連絡が決定と同時に下書き。個人の上手下手が見える演出はしない方針をAIも徹底。</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

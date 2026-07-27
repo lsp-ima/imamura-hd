@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI育成支援 全体像(2026-07-22)</title>
+<style>
+  body { font-family:"Hiragino Sans","Yu Gothic",sans-serif; background:#faf9f5; color:#1a1a18; margin:0; padding:32px 24px; line-height:1.6; }
+  .wrap { max-width:920px; margin:0 auto; }
+  h1 { font-size:22px; font-weight:600; margin:0 0 4px; }
+  .date { font-size:12px; color:#8a887f; margin-bottom:28px; }
+  .sec { font-size:13px; color:#8a887f; margin:26px 0 8px; }
+  .flow { display:flex; align-items:stretch; gap:6px; flex-wrap:wrap; }
+  .step { flex:1; min-width:150px; border-radius:12px; padding:12px 14px; }
+  .step b { display:block; font-size:14px; }
+  .step span { font-size:12px; }
+  .gray { background:#F1EFE8; border:1px solid #B4B2A9; } .gray b{color:#2C2C2A;} .gray span{color:#5F5E5A;}
+  .teal { background:#E1F5EE; border:1px solid #1D9E75; } .teal b{color:#085041;} .teal span{color:#0F6E56;}
+  .arrow { display:flex; align-items:center; color:#8a887f; font-size:16px; }
+  .frow { display:flex; align-items:center; gap:10px; margin-bottom:5px; }
+  .flabel { width:140px; font-size:12px; color:#5F5E5A; text-align:right; flex-shrink:0; }
+  .fbarwrap { flex:1; }
+  .fbar { height:20px; border-radius:4px; min-width:8px; }
+  .fnum { width:64px; font-size:12px; }
+  .callout { background:#EAF3DE; border:1px solid #639922; border-radius:12px; padding:10px 14px; font-size:13px; color:#27500A; margin-top:10px; }
+  .cols { display:flex; gap:16px; flex-wrap:wrap; }
+  .col { flex:1; min-width:300px; }
+  .item { display:flex; align-items:center; gap:8px; padding:8px 12px; background:#fff; border:1px solid #e3e1d9; border-radius:8px; font-size:13px; margin-bottom:6px; }
+  .item.warn { background:#FAEEDA; border-color:#EF9F27; color:#633806; }
+  .ok { color:#0F6E56; font-weight:700; }
+  .wc { color:#BA7517; font-weight:700; }
+  .chip { display:inline-block; padding:6px 12px; border-radius:999px; font-size:12px; margin:0 6px 6px 0; }
+  .chip.done { background:#E1F5EE; color:#085041; }
+  .chip.todo { background:#FAEEDA; color:#633806; }
+  .purple { background:#EEEDFE; border:1px solid #534AB7; color:#26215C; }
+  .purple .tag { font-size:12px; color:#534AB7; }
+  .plain .tag { font-size:12px; color:#8a887f; }
+  @media print { body{padding:10px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>AI育成支援 — 全体像・課題・集客</h1>
+<div class="date">2026-07-22|1万人シミュレーション(推定値)に基づく</div>
+
+<div class="sec">商品の流れ(入口は無料、深い人だけ先へ)</div>
+<div class="flow">
+  <div class="step gray"><b>無料教材</b><span>専用ページ・登録不要</span></div>
+  <div class="arrow">→</div>
+  <div class="step teal"><b>セットアップ 5万円</b><span>ヒアリング→個別化キット納品</span></div>
+  <div class="arrow">→</div>
+  <div class="step teal"><b>伴走3ヶ月 月1万円</b><span>定着→自動化→引き継ぎ</span></div>
+  <div class="arrow">→</div>
+  <div class="step gray"><b>保守 月5千円</b><span>任意継続の保険</span></div>
+</div>
+
+<div class="sec">1万人シミュレーション — どこで人が減るか</div>
+<div class="frow"><div class="flabel">教材を見た</div><div class="fbarwrap"><div class="fbar" style="width:100%; background:#B5D4F4;"></div></div><div class="fnum"><b>10,000</b></div></div>
+<div class="frow"><div class="flabel">読了</div><div class="fbarwrap"><div class="fbar" style="width:62%; background:#B5D4F4;"></div></div><div class="fnum">6,200</div></div>
+<div class="frow"><div class="flabel">PC・課金OK</div><div class="fbarwrap"><div class="fbar" style="width:26%; background:#85B7EB;"></div></div><div class="fnum">2,600</div></div>
+<div class="frow"><div class="flabel">秘書を起動した</div><div class="fbarwrap"><div class="fbar" style="width:17.5%; background:#85B7EB;"></div></div><div class="fnum">1,750</div></div>
+<div class="frow"><div class="flabel">1週間続いた</div><div class="fbarwrap"><div class="fbar" style="width:6.1%; background:#378ADD;"></div></div><div class="fnum">610</div></div>
+<div class="frow"><div class="flabel">1ヶ月定着</div><div class="fbarwrap"><div class="fbar" style="width:2.6%; background:#378ADD;"></div></div><div class="fnum">260</div></div>
+<div class="frow"><div class="flabel">有料相談</div><div class="fbarwrap"><div class="fbar" style="width:0.7%; background:#185FA5;"></div></div><div class="fnum">70</div></div>
+<div class="frow"><div class="flabel" style="color:#085041; font-weight:600;">成約</div><div class="fbarwrap"><div class="fbar" style="width:0.35%; background:#0F6E56;"></div></div><div class="fnum" style="color:#085041; font-weight:600;">25〜35</div></div>
+<div class="callout">成約見込み25〜35件 > 受注上限 年24件 — <b>商品は足りている。勝負は「読了率とリーチ」</b></div>
+
+<div class="cols" style="margin-top:26px;">
+  <div class="col">
+    <div class="sec" style="margin-top:0;">課題と対応状況</div>
+    <div class="item"><span class="ok">✔</span>ターミナルの壁 → Cowork前提に統一</div>
+    <div class="item"><span class="ok">✔</span>AI課金の後出し → チェックリストで事前明示</div>
+    <div class="item"><span class="ok">✔</span>GAS承認画面が怖い → 安心説明を明記</div>
+    <div class="item"><span class="ok">✔</span>3日坊主 → 呼び出しカード+伴走W1課題</div>
+    <div class="item warn"><span class="wc">◻</span>無料教材の冒頭が重い(読了率38%止まり)</div>
+    <div class="item warn"><span class="wc">◻</span>Windows実機での手順確認(今村の宿題)</div>
+    <div class="item warn"><span class="wc">◻</span>GASコードの実機テスト(納品前に必須)</div>
+  </div>
+  <div class="col">
+    <div class="sec" style="margin-top:0;">集客 — 今ある導線と次の一手</div>
+    <div class="item plain"><span class="tag">今ある</span>X(@lsp_ima)DM+無料教材ページ</div>
+    <div class="item plain"><span class="tag">今ある</span>note導線記事(下書き済み・公開待ち)</div>
+    <div class="item purple"><span class="tag">次の一手1</span>教材冒頭を軽く(30秒で価値が伝わる導入)</div>
+    <div class="item purple"><span class="tag">次の一手2</span>note公開でリーチ(AI引用2位の実績を活用)</div>
+    <div class="item purple"><span class="tag">次の一手3</span>実例の見せ物化(TEAM BOARDデモを教材に埋め込み)</div>
+  </div>
+</div>
+
+<div class="sec">準備できているもの</div>
+<div>
+  <span class="chip done">配布パッケージ13ファイル</span>
+  <span class="chip done">伴走カリキュラム12週分</span>
+  <span class="chip done">LP・プレゼン(整理済み)</span>
+  <span class="chip done">無料教材ページ</span>
+  <span class="chip done">決済はSquare(2026-07-22決定)</span>
+</div>
+
+</div>
+</body>
+</html>
