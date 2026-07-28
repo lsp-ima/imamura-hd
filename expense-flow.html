@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>経費のしくみ — レシートを撮るだけで、記帳が終わる</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0b1020;--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.13);
+        --txt:#f1f5f9;--sub:#94a3b8;--cy:#22d3ee;--in:#818cf8;--pk:#e879f9}
+  html,body{background:var(--bg);color:var(--txt)}
+  body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+       line-height:1.85;padding:56px 22px 72px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto}
+  .kicker{font-size:11.5px;letter-spacing:.24em;color:var(--cy);font-weight:800;margin-bottom:12px}
+  h1{font-size:clamp(24px,4.6vw,38px);font-weight:900;line-height:1.35}
+  .grad{background:linear-gradient(100deg,var(--cy),var(--in) 55%,var(--pk));
+        -webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--sub);font-size:14.5px;margin-top:16px;max-width:640px}
+
+  .before{margin-top:40px;border:1px dashed rgba(248,113,113,.45);background:rgba(248,113,113,.06);
+          border-radius:14px;padding:18px 22px}
+  .before b{color:#fca5a5}
+  .before p{font-size:13.5px;color:#e2b8b8;margin-top:4px}
+
+  .flow{display:grid;gap:14px;margin-top:34px}
+  @media(min-width:760px){.flow{grid-template-columns:repeat(3,1fr)}}
+  .step{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:22px;position:relative}
+  .step .n{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--cy)}
+  .step .ico{font-size:30px;display:block;margin:8px 0 10px}
+  .step h3{font-size:17px;font-weight:800;margin-bottom:8px}
+  .step p{font-size:13.5px;color:var(--sub)}
+  .step .who{display:inline-block;margin-top:14px;font-size:11px;font-weight:800;padding:3px 10px;
+             border-radius:99px;letter-spacing:.06em}
+  .who.human{background:rgba(34,211,238,.14);color:var(--cy);border:1px solid rgba(34,211,238,.34)}
+  .who.ai{background:rgba(232,121,249,.14);color:#f0abfc;border:1px solid rgba(232,121,249,.32)}
+  @media(min-width:760px){
+    .step:not(:last-child)::after{content:"▶";position:absolute;right:-13px;top:50%;
+      transform:translateY(-50%);color:#475569;font-size:15px;z-index:2}
+  }
+
+  .after{margin-top:34px;border:1px solid rgba(34,211,238,.4);background:rgba(34,211,238,.07);
+         border-radius:16px;padding:24px}
+  .after b{font-size:17px}
+  .after p{font-size:13.5px;color:#a5c9d6;margin-top:6px}
+
+  .note{margin-top:34px;border-left:3px solid var(--pk);padding-left:18px;color:var(--sub);font-size:13.5px}
+  .note b{color:#fff}
+  footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:11.5px;color:#64748b}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">RECIPE 01 — 経費</p>
+  <h1>レシートを撮るだけで、<br><span class="grad">記帳が終わっている。</span></h1>
+  <p class="lead">今村が毎日使っている、経理のしくみです。特別なソフトは増やしていません。
+  スマホのカメラと、いつも使っている表計算シートだけで動いています。</p>
+
+  <div class="before">
+    <b>before — 月末にまとめてやっていた頃</b>
+    <p>レシートを財布に溜める → 月末に広げて1枚ずつ入力 → だいたい1時間。
+    しかも「あとでやる」が気持ちの上でずっと残る。</p>
+  </div>
+
+  <div class="flow">
+    <div class="step">
+      <span class="n">STEP 1</span><span class="ico">📷</span>
+      <h3>レシートを撮る</h3>
+      <p>受け取ったその場で1枚撮って、決められた場所に置くだけ。ここでかかる時間は<b>1分</b>。</p>
+      <span class="who human">人がやる</span>
+    </div>
+    <div class="step">
+      <span class="n">STEP 2</span><span class="ico">🤖</span>
+      <h3>AIが読み取る</h3>
+      <p>日付・店名・金額・用途をAIが読み取って、決まった形に書き出す。
+      <b>自信のない数字には「?」を付けて報告する</b>ように育ててあります。</p>
+      <span class="who ai">AIがやる</span>
+    </div>
+    <div class="step">
+      <span class="n">STEP 3</span><span class="ico">🗂️</span>
+      <h3>週1で自動記帳</h3>
+      <p>週に1回、決まった時刻にシートへ自動で記帳。処理の済んだ写真は別の場所へ移動するので、
+      二重計上が起きません。</p>
+      <span class="who ai">AIがやる</span>
+    </div>
+  </div>
+
+  <div class="after">
+    <b>after — 今</b>
+    <p>月末の1時間が消えました。減った時間そのものより、<b>溜めなくなったこと</b>のほうが大きいです。
+    やることは、レシートを撮る1分だけになりました。</p>
+  </div>
+
+  <p class="note"><b>ここは人が残ります。</b>
+  「?」が付いた数字の確認と、最終的に帳簿を確定させる判断は、今も自分でやっています。
+  AIに全部渡してしまうと、間違いに気づけなくなるからです。
+  <b>任せるのは作業、決めるのは人。</b>この線を引いておくことが、育て方の一番大事なところです。</p>
+
+  <footer>今村HD「AIの育て方」 — 配布パッケージ レシピ01（経理・領収書アップ）より</footer>
+</div>
+</body>
+</html>
