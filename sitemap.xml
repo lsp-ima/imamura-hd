@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lsp-ima.github.io/imamura-hd/</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://lsp-ima.github.io/imamura-hd/guide/ai-ga-oboenai/</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://lsp-ima.github.io/imamura-hd/proposal.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://lsp-ima.github.io/imamura-hd/method.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://lsp-ima.github.io/imamura-hd/deck.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://lsp-ima.github.io/imamura-hd/map-overview.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://lsp-ima.github.io/imamura-hd/map-flow.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://aisodatekata.com/</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://aisodatekata.com/guide/ai-ga-oboenai/</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://aisodatekata.com/proposal.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://aisodatekata.com/method.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://aisodatekata.com/deck.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://aisodatekata.com/map-overview.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://aisodatekata.com/map-flow.html</loc><lastmod>2026-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>

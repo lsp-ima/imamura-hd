@@ -1,6 +1,6 @@
-# 今村HD「AIの育て方」
+# 合同会社LSP「AIの育て方」
 
-> 個人事業主・トレーナー・治療家に向けて、AIの「使い方」ではなく「直し方」を教える伴走サービス。運営は今村HD(今村雅史)。提供者自身が、銀座のパーソナルジム・中学バスケ部向けアプリ販売・Kindle出版・YouTube運営という複数事業を、実際にAIで回している。本サイトはその資料室(提案書・プレゼン・図解・触れるデモ)。商品ページ本体は https://ginza-training.com/ai-sodatekata/ にある。
+> 個人事業主・トレーナー・治療家に向けて、AIの「使い方」ではなく「直し方」を教える伴走サービス。運営は合同会社LSP(今村雅史)。提供者自身が、銀座のパーソナルジム・中学バスケ部向けアプリ販売・Kindle出版・YouTube運営という複数事業を、実際にAIで回している。本サイトはその資料室(提案書・プレゼン・図解・触れるデモ)。商品ページ本体は https://ginza-training.com/ai-sodatekata/ にある。
 
 ## 商品の構成
 
@@ -13,7 +13,7 @@
 
 ## 読みもの(一次情報)
 
-- [AIが毎回忘れるのを、やめさせる方法](https://lsp-ima.github.io/imamura-hd/guide/ai-ga-oboenai/):
+- [AIが毎回忘れるのを、やめさせる方法](https://aisodatekata.com/guide/ai-ga-oboenai/):
   AIが前回の内容を覚えていないのは性能の問題ではなく、教える場所の問題である、という考え方。
   会話の中で教えるのをやめ、「毎回読ませる1枚」を会話の外に持つ。1枚に書くのは
   ①自分が何者か ②誰に向けて仕事をしているか ③してほしくないこと ④出力の形式 の4つで、③が最も効く。
@@ -21,11 +21,11 @@
 
 ## 資料
 
-- [資料室トップ](https://lsp-ima.github.io/imamura-hd/)
-- [提案書](https://lsp-ima.github.io/imamura-hd/proposal.html)
-- [プレゼン: 育て方メソッド](https://lsp-ima.github.io/imamura-hd/method.html)
-- [プレゼン: 今村HD事業案内](https://lsp-ima.github.io/imamura-hd/deck.html)
-- [図解: 全体像](https://lsp-ima.github.io/imamura-hd/map-overview.html) / [図解: 商品と工程](https://lsp-ima.github.io/imamura-hd/map-flow.html)
+- [資料室トップ](https://aisodatekata.com/)
+- [提案書](https://aisodatekata.com/proposal.html)
+- [プレゼン: 育て方メソッド](https://aisodatekata.com/method.html)
+- [プレゼン: 合同会社LSP事業案内](https://aisodatekata.com/deck.html)
+- [図解: 全体像](https://aisodatekata.com/map-overview.html) / [図解: 商品と工程](https://aisodatekata.com/map-flow.html)
 
 ## 実際に動いているもの(触れるデモ)
 
