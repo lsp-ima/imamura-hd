@@ -21,7 +21,7 @@
     {
       "@type": "Article",
       "headline": "AIがうまく動かないときの、つまずき集",
-      "description": "AIを仕事で使い始めた人がぶつかる症状を6つに分け、それぞれ何が起きているのかと、どこを直せばいいのかをまとめた実務向けの対処集。",
+      "description": "AIを仕事で使い始めた人がぶつかる症状を6つに分け、それぞれ何が起きているのかと、どこを直せばいいのかをまとめた実務向けの対処集。詰まりが見つかるたびに追記される。",
       "datePublished": "2026-08-04",
       "dateModified": "2026-08-04",
       "inLanguage": "ja",
@@ -59,60 +59,80 @@
 
 <style>
 :root{
-  --bg:#0b1020; --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.12);
-  --txt:#f1f5f9; --sub:#94a3b8; --cy:#22d3ee; --in:#818cf8; --pk:#e879f9;
+  --shell:#0b1020; --line-d:rgba(255,255,255,.12);
+  --paper:#faf9f5; --card:#fff; --line:#e6e3da;
+  --txt:#23262e; --sub:#6f7280;
+  --cy:#0891a6; --in:#4f46e5; --warn:#b45309;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--txt);line-height:1.95;
-  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
-  background-image:radial-gradient(900px 460px at 12% -6%,rgba(34,211,238,.10),transparent 60%),
-                   radial-gradient(760px 420px at 92% 3%,rgba(129,140,248,.10),transparent 58%);
-  background-attachment:fixed}
+body{margin:0;background:var(--paper);color:var(--txt);line-height:1.85;
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;}
 a{color:var(--cy)}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-.topbar{border-bottom:1px solid var(--line);background:rgba(11,16,32,.8);
-  backdrop-filter:blur(10px);position:sticky;top:0;z-index:20}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+
+.topbar{border-bottom:1px solid var(--line-d);background:var(--shell);position:sticky;top:0;z-index:20}
 .topbar .wrap{display:flex;align-items:center;gap:12px;padding-top:13px;padding-bottom:13px}
-.topbar a.home{color:var(--txt);text-decoration:none;font-weight:900;font-size:15px;letter-spacing:.02em}
+.topbar a.home{color:#f1f5f9;text-decoration:none;font-weight:900;font-size:15px}
 .topbar .cta{margin-left:auto;text-decoration:none;font-size:13px;font-weight:800;padding:8px 15px;
   border-radius:999px;background:linear-gradient(135deg,#22d3ee,#818cf8);color:#06121a;white-space:nowrap}
-.crumb{font-size:12px;color:var(--sub);margin:24px 0 4px}
+
+.crumb{font-size:12px;color:var(--sub);margin:26px 0 6px}
 .crumb a{color:var(--sub)}
-h1{font-size:clamp(23px,5.2vw,34px);line-height:1.45;font-weight:900;margin:8px 0 14px}
-.meta{font-size:12.5px;color:var(--sub);border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:28px}
-.lede{background:var(--card);border-left:3px solid var(--cy);padding:18px 20px;border-radius:0 12px 12px 0;
-  margin:0 0 34px;font-size:16.5px}
-h2{font-size:clamp(19px,3.9vw,24px);font-weight:900;line-height:1.5;margin:48px 0 0;
-  padding-top:26px;border-top:1px solid var(--line)}
-.answer{background:rgba(34,211,238,.09);border:1px solid rgba(34,211,238,.26);border-radius:12px;
-  padding:14px 17px;margin:15px 0 22px;font-size:15.5px}
-.answer b{color:var(--cy)}
-h3{font-size:17px;font-weight:800;margin:32px 0 8px}
-p{font-size:16px;margin:0 0 17px}
-ul,ol{padding-left:1.25em;margin:0 0 18px}
-li{font-size:15.5px;margin-bottom:9px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:24px 0}
-.box h3{margin-top:0}
-.fix{background:rgba(129,140,248,.10);border:1px solid rgba(129,140,248,.28);border-radius:12px;
-  padding:15px 18px;margin:14px 0 8px;font-size:15.5px}
+h1{font-size:clamp(25px,5.4vw,36px);line-height:1.4;font-weight:900;margin:6px 0 12px;letter-spacing:-.01em}
+.meta{font-size:13px;color:var(--sub);margin-bottom:26px}
+.lede{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--in);
+  padding:18px 22px;border-radius:0 14px 14px 0;margin:0 0 26px;font-size:16.5px}
+
+.tools{position:sticky;top:53px;z-index:10;background:var(--paper);
+  padding:14px 0 12px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.search{width:100%;font-size:16px;padding:13px 16px;border:1px solid var(--line);border-radius:12px;
+  background:#fff;color:var(--txt);font-family:inherit}
+.search:focus{outline:2px solid var(--in);outline-offset:1px}
+.hint{font-size:12.5px;color:var(--sub);margin:8px 2px 0}
+#count{font-weight:800;color:var(--in)}
+
+details.item{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 12px;
+  overflow:hidden}
+details.item[open]{border-color:#c9c4b6;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;align-items:flex-start;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:#fdfcfa}
+.num{flex:none;width:28px;height:28px;border-radius:8px;background:#eceafe;color:var(--in);
+  font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.sm-body{flex:1;min-width:0}
+.sym{font-size:17.5px;font-weight:800;line-height:1.55;margin:0}
+.tag{display:inline-block;font-size:11.5px;font-weight:800;color:var(--sub);
+  border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-top:8px}
+.chev{flex:none;color:#b9b5a8;font-size:13px;margin-top:6px;transition:transform .15s}
+details[open] .chev{transform:rotate(90deg)}
+
+.inner{padding:0 20px 22px 60px}
+.lbl{font-size:11.5px;font-weight:900;letter-spacing:.08em;color:var(--sub);margin:14px 0 6px}
+.cause{font-size:15.5px;margin:0 0 4px}
+.fix{background:#f4f3ff;border:1px solid #ddd9fb;border-radius:12px;padding:14px 16px;font-size:15.5px;margin:6px 0 0}
 .fix b{color:var(--in)}
-.toc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 40px}
-.toc b{display:block;font-size:14px;margin-bottom:10px;color:var(--sub);font-weight:800}
-.toc ol{margin:0;padding-left:1.3em}
-.toc li{font-size:15px;margin-bottom:7px}
-pre{background:#070b16;border:1px solid var(--line);border-radius:12px;padding:18px 18px;
-  overflow-x:auto;font-size:13.5px;line-height:1.85;color:#dbe4f0;margin:16px 0 22px}
-.cta-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 24px;
-  text-align:center;margin:54px 0 30px}
+.note{font-size:14.5px;color:var(--sub);margin:14px 0 0}
+.inner p{margin:0 0 12px;font-size:15.5px}
+.inner p:last-child{margin-bottom:0}
+
+.empty{display:none;text-align:center;color:var(--sub);font-size:15px;padding:26px 0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:34px 0 0}
+.box h3{font-size:17px;margin:0 0 12px}
+.box ul{padding-left:1.2em;margin:0}
+.box li{font-size:15.5px;margin-bottom:8px}
+
+.cta-box{background:var(--shell);border-radius:18px;padding:30px 24px;text-align:center;margin:44px 0 30px;color:#f1f5f9}
 .cta-box h3{font-size:19px;margin:0 0 10px}
-.cta-box p{font-size:14.5px;color:var(--sub);margin-bottom:20px}
+.cta-box p{font-size:14.5px;color:#a8b0c2;margin-bottom:20px}
 .cta-box a.btn{display:inline-block;text-decoration:none;font-weight:900;font-size:15.5px;padding:14px 30px;
   border-radius:999px;background:linear-gradient(135deg,#22d3ee,#818cf8);color:#06121a}
 .cta-box .sub{display:block;margin-top:14px;font-size:13px}
-footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 20px 44px;text-align:center;
+.cta-box .sub a{color:#a8b0c2}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 20px 46px;text-align:center;
   font-size:12.5px;color:var(--sub)}
 footer a{color:var(--sub);margin:0 9px}
+@media(max-width:520px){ .inner{padding-left:20px} }
 </style>
 </head>
 <body>
@@ -124,159 +144,130 @@ footer a{color:var(--sub);margin:0 9px}
 
 <div class="wrap">
 
-  <div class="crumb"><a href="/">合同会社LSP 資料室</a> ＞ AIがうまく動かないときの、つまずき集</div>
+  <div class="crumb"><a href="/">合同会社LSP 資料室</a> ＞ つまずき集</div>
 
-  <h1>AIがうまく動かないときの、<br>つまずき集</h1>
-
-  <div class="meta">公開: 2026年8月4日 ／ 最終更新: 2026年8月4日 ／ 合同会社LSP「AIの育て方」</div>
+  <h1>AIがうまく動かないときの、つまずき集</h1>
+  <div class="meta">最終更新: 2026年8月4日 ／ 現在 <b>6件</b> ／ 合同会社LSP「AIの育て方」</div>
 
   <p class="lede">
     ここに並んでいるのは、<b>全部わたしが実際に踏んだもの</b>です。
-    症状から探せるようにしてあります。どれも原因は違いますが、共通しているのは
-    <b>直す場所が「指示」ではなく「前提」のほうにある</b>ということです。
+    どれも原因は違いますが、共通しているのは
+    <b>直す場所が「指示」ではなく「前提」のほうにある</b>ということ。
+    <span style="display:block;margin-top:8px;font-size:14.5px;color:var(--sub)">
+      詰まりが見つかるたびに、このページに足していきます。
+    </span>
   </p>
 
-  <div class="toc">
-    <b>症状から探す</b>
-    <ol>
-      <li><a href="#s1">昨日教えたことを、今日は覚えていない</a></li>
-      <li><a href="#s2">最初はよかったのに、途中から一般論に戻った</a></li>
-      <li><a href="#s3">動いているはずのものが、静かに止まっていた</a></li>
-      <li><a href="#s4">書かせた文章が、自分の言葉にならない</a></li>
-      <li><a href="#s5">同じ間違いを、何度言っても繰り返す</a></li>
-      <li><a href="#s6">長すぎる、短すぎる、形が毎回ちがう</a></li>
-    </ol>
+  <div class="tools">
+    <input class="search" id="q" type="search" placeholder="症状を入力して探す（例：覚えない、止まる、長い）" aria-label="症状で絞り込む">
+    <div class="hint"><span id="count">6</span> 件を表示中 ／ 見出しを押すと開きます</div>
   </div>
 
-  <h2 id="s1">1. 昨日教えたことを、今日は覚えていない</h2>
-  <div class="answer">
-    <b>AIは会話をまたいで覚えていません。</b>
-    しゃべるたびに、それまでのやりとりを最初から読み直しています。
-    会話を閉じると、その紙は渡されなくなります。
+  <div id="list">
+
+  <details class="item" id="s1">
+    <summary><span class="num">1</span><span class="sm-body">
+      <p class="sym">昨日教えたことを、今日は覚えていない</p>
+      <span class="tag">記憶</span>
+    </span><span class="chev">▶</span></summary>
+    <div class="inner">
+      <div class="lbl">何が起きているか</div>
+      <p class="cause">AIは会話をまたいで覚えていません。しゃべるたびに、それまでのやりとりを最初から読み直しています。会話を閉じると、その紙は渡されなくなります。</p>
+      <div class="lbl">直すところ</div>
+      <div class="fix"><b>覚えさせようとするのをやめて、前提を書いた1枚を、会話のたびに最初に渡す。</b>
+        書くのは、何の仕事か／誰が相手か／何を売っているか／言ってはいけないこと、の4つで足ります。</div>
+      <p class="note">詳しくは <a href="/guide/ai-ga-oboenai/">AIが毎回忘れるのを、やめさせる方法</a>。</p>
+    </div>
+  </details>
+
+  <details class="item" id="s2">
+    <summary><span class="num">2</span><span class="sm-body">
+      <p class="sym">最初はよかったのに、途中から一般論に戻った</p>
+      <span class="tag">記憶</span>
+    </span><span class="chev">▶</span></summary>
+    <div class="inner">
+      <div class="lbl">何が起きているか</div>
+      <p class="cause">会話が長くなって、最初に渡した前提が押し出されています。一度に渡せる量には上限があり、古いほうから順に抜けていきます。「さっき言ったのに」の正体はこれです。</p>
+      <div class="lbl">直すところ</div>
+      <div class="fix"><b>会話を切って、新しく始め直す。</b>そのとき前提の1枚を貼り直してから続きを話します。
+        長い相談を1本の会話で押し切らないほうが、結果が安定します。</div>
+    </div>
+  </details>
+
+  <details class="item" id="s3">
+    <summary><span class="num">3</span><span class="sm-body">
+      <p class="sym">動いているはずのものが、静かに止まっていた</p>
+      <span class="tag">自動化</span>
+    </span><span class="chev">▶</span></summary>
+    <div class="inner">
+      <div class="lbl">何が起きているか</div>
+      <p class="cause">これがいちばん怖い症状です。失敗すると音が鳴りますが、<b>実行されなかった場合は何も起きません。</b>エラーも通知も出ないまま、ただ何日も止まっています。</p>
+      <p>毎日決まった時刻に情報を集める仕組みが、<b>3日間まったく動いていなかった</b>ことがありました。エラーは1件も出ていません。気づいたのは、集まっているはずの件数が増えていないのを見たときでした。原因は、同じ時間帯に処理を並べすぎたこと。一度に走れる本数には限りがあり、後ろに並んだものが順番待ちのまま流れていました。</p>
+      <div class="lbl">直すところ</div>
+      <div class="fix"><b>任せる仕事には、必ず「動いていることを確かめる線」を1本引く。</b>
+        件数でも、最終更新の日時でも、結果が残る場所ならどこでもかまいません。週に一度そこを見るだけで、静かな停止に気づけます。</div>
+      <p class="note">自動化そのものより、止まったときに気づける形にしておくことのほうが大事です。</p>
+    </div>
+  </details>
+
+  <details class="item" id="s4">
+    <summary><span class="num">4</span><span class="sm-body">
+      <p class="sym">書かせた文章が、自分の言葉にならない</p>
+      <span class="tag">文章</span>
+    </span><span class="chev">▶</span></summary>
+    <div class="inner">
+      <div class="lbl">何が起きているか</div>
+      <p class="cause">自分の文章を見せていないからです。「自然に」「親しみやすく」と形容詞で頼んでも、相手にはどこを目指せばいいのか分かりません。整ってはいるけれど自分では書かない言い回しになります。</p>
+      <div class="lbl">直すところ</div>
+      <div class="fix"><b>過去に自分で書いた文章を、数百字そのまま渡す。</b>
+        「この書き方に合わせてください」と添えるだけで変わります。説明するより、実物を見せるほうが早いです。</div>
+    </div>
+  </details>
+
+  <details class="item" id="s5">
+    <summary><span class="num">5</span><span class="sm-body">
+      <p class="sym">同じ間違いを、何度言っても繰り返す</p>
+      <span class="tag">前提</span>
+    </span><span class="chev">▶</span></summary>
+    <div class="inner">
+      <div class="lbl">何が起きているか</div>
+      <p class="cause">注意した場所が会話の中だからです。その会話が終われば、注意も一緒に消えています。「それは言わないで」と伝えてそのときは直る、翌日また同じことをする、の繰り返しになります。</p>
+      <div class="lbl">直すところ</div>
+      <div class="fix"><b>指示ではなく、前提の1枚に「やってほしくないこと」を1行足す。</b>
+        うまくいかない原因の多くは、やってほしいことの不足ではなく、やってほしくないことを伝えていないことにあります。
+        人を雇うときと同じで、事故は「言わなくても分かるだろう」と思っていたところで起きます。</div>
+    </div>
+  </details>
+
+  <details class="item" id="s6">
+    <summary><span class="num">6</span><span class="sm-body">
+      <p class="sym">長すぎる、短すぎる、形が毎回ちがう</p>
+      <span class="tag">出力</span>
+    </span><span class="chev">▶</span></summary>
+    <div class="inner">
+      <div class="lbl">何が起きているか</div>
+      <p class="cause">出力の形を決めていないからです。字数、箇条書きか文章か、表にするか。決めていなければ毎回変わります。</p>
+      <div class="lbl">直すところ</div>
+      <div class="fix"><b>形を前提のほうに書いておく。</b>毎回の指示に書くのではありません。
+        一度前提に入れておけば、次から言わなくても同じ形で返ってきます。</div>
+    </div>
+  </details>
+
   </div>
 
-  <p>
-    昨日、店のことをひととおり説明して、いい感じの答えが出た。今日また開いたら初対面の顔をしている。
-    これは不具合ではなく、そういう作りです。会話の中で教えたことは、その会話の中だけで生きています。
-  </p>
-
-  <div class="fix">
-    <b>直す場所</b>　覚えさせようとするのをやめて、<b>前提を書いた文章を1枚用意し、会話のたびに最初に渡す</b>。
-    書くのは、何の仕事か／誰が相手か／何を売っているか／言ってはいけないこと、の4つで足ります。
+  <div class="empty" id="empty">
+    その症状は、まだこのページにありません。<br>下の3つを書き出すと、原因が絞れることが多いです。
   </div>
-
-  <p>
-    これだけで、毎回の説明がなくなります。詳しくは
-    <a href="/guide/ai-ga-oboenai/">AIが毎回忘れるのを、やめさせる方法</a>に書きました。
-  </p>
-
-  <h2 id="s2">2. 最初はよかったのに、途中から一般論に戻った</h2>
-  <div class="answer">
-    <b>会話が長くなって、最初に渡した前提が押し出されています。</b>
-    一度に渡せる量には上限があって、古いほうから順に抜けていきます。
-  </div>
-
-  <p>
-    長い相談をしていると、あるところから急に、どこかで読んだような答えが返ってくるようになります。
-    「さっき言ったのに」と思ったら、たいていこれです。AIが忘れたのではなく、こちらが渡せていない状態になっています。
-  </p>
-
-  <div class="fix">
-    <b>直す場所</b>　<b>会話を切って、新しく始め直す</b>。そのとき前提の1枚を貼り直してから続きを話します。
-    長い相談を1本の会話で押し切らないほうが、結果が安定します。
-  </div>
-
-  <h2 id="s3">3. 動いているはずのものが、静かに止まっていた</h2>
-  <div class="answer">
-    <b>これがいちばん怖い症状です。</b>
-    失敗すると音が鳴りますが、<b>実行されなかった場合は何も起きません。</b>
-    エラーも通知も出ないまま、ただ何日も止まっています。
-  </div>
-
-  <p>
-    毎日決まった時刻に情報を集める仕組みを動かしていたのですが、あるとき
-    <b>3日間まったく動いていなかった</b>ことがありました。エラーは1件も出ていません。
-    気づいたのは、集まっているはずの件数が増えていないのを見たときでした。
-  </p>
-
-  <p>
-    原因は、同じ時間帯に処理を並べすぎたことでした。一度に走れる本数には限りがあって、
-    後ろに並んでいたものが順番待ちのまま流れていた。時間をずらしたら元に戻りました。
-  </p>
-
-  <div class="fix">
-    <b>直す場所</b>　任せる仕事には、必ず<b>「動いていることを確かめる線」を1本引く</b>。
-    件数でも、最終更新の日時でも、結果が残る場所ならどこでもかまいません。
-    週に一度そこを見るだけで、静かな停止に気づけます。
-  </div>
-
-  <p>
-    自動化そのものより、<b>止まったときに気づける形にしておくこと</b>のほうが大事です。
-    ここを飛ばすと、動いているつもりの期間がそのまま損になります。
-  </p>
-
-  <h2 id="s4">4. 書かせた文章が、自分の言葉にならない</h2>
-  <div class="answer">
-    <b>自分の文章を見せていないからです。</b>
-    「自然に」「親しみやすく」と形容詞で頼んでも、相手にはどこを目指せばいいのか分かりません。
-  </div>
-
-  <p>
-    整ってはいるけれど自分では書かない言い回しになる、という状態です。
-    これは指示の言葉を工夫しても直りません。目標物が渡っていないからです。
-  </p>
-
-  <div class="fix">
-    <b>直す場所</b>　<b>過去に自分で書いた文章を、数百字そのまま渡す。</b>
-    「この書き方に合わせてください」と添えるだけで変わります。説明するより、実物を見せるほうが早いです。
-  </div>
-
-  <h2 id="s5">5. 同じ間違いを、何度言っても繰り返す</h2>
-  <div class="answer">
-    <b>注意した場所が会話の中だからです。</b>
-    その会話が終われば、注意も一緒に消えています。
-  </div>
-
-  <p>
-    「それは言わないで」と伝えて、そのときは直る。翌日また同じことをする。
-    これを繰り返していると、こちらが疲れていきます。
-  </p>
-
-  <div class="fix">
-    <b>直す場所</b>　指示ではなく、<b>前提の1枚に「やってほしくないこと」を1行足す</b>。
-    うまくいかない原因の多くは、やってほしいことの不足ではなく、
-    <b>やってほしくないことを伝えていないこと</b>にあります。人を雇うときと同じで、
-    事故は「言わなくても分かるだろう」と思っていたところで起きます。
-  </div>
-
-  <h2 id="s6">6. 長すぎる、短すぎる、形が毎回ちがう</h2>
-  <div class="answer">
-    <b>出力の形を決めていないからです。</b>
-    字数、箇条書きか文章か、表にするか。決めていなければ毎回変わります。
-  </div>
-
-  <div class="fix">
-    <b>直す場所</b>　形を<b>前提のほうに書いておく</b>。毎回の指示に書くのではありません。
-    一度前提に入れておけば、次から言わなくても同じ形で返ってきます。
-  </div>
-
-  <h2>ここに無い症状だったとき</h2>
-
-  <p>
-    この6つは、わたしが自分で踏んだものだけです。実際にはもっと細かい症状があります。
-    もし当てはまるものが無かったら、次の3つを書き出してみてください。それだけで原因が絞れることが多いです。
-  </p>
 
   <div class="box">
-    <h3>詰まったときに書き出す3つ</h3>
+    <h3>ここに無い症状だったとき</h3>
     <ul>
       <li><b>どの場面で</b>（どのAIで、何をしようとしていたか）</li>
       <li><b>何をしたら</b>（実際に打った指示。そのままで構いません）</li>
       <li><b>どうなったか</b>（返ってきたもの。エラーの文字があればそのまま）</li>
     </ul>
     <p style="margin:14px 0 0;font-size:15px;color:var(--sub)">
-      この3つが揃うと、たいていは「前提が渡っていない」「形を決めていない」「やってほしくないことを言っていない」の
-      どれかに落ちます。
+      この3つが揃うと、たいていは「前提が渡っていない」「形を決めていない」「やってほしくないことを言っていない」のどれかに落ちます。
     </p>
   </div>
 
@@ -300,6 +291,30 @@ footer a{color:var(--sub);margin:0 9px}
     <a href="https://ginza-training.com/ai-guide/">無料教材</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  var q=document.getElementById('q'), items=[].slice.call(document.querySelectorAll('details.item')),
+      count=document.getElementById('count'), empty=document.getElementById('empty');
+  function norm(s){return (s||'').toLowerCase();}
+  q.addEventListener('input',function(){
+    var v=norm(q.value.trim()), n=0;
+    items.forEach(function(el){
+      var hit = !v || norm(el.textContent).indexOf(v)>-1;
+      el.style.display = hit ? '' : 'none';
+      if(hit){ n++; if(v) el.open=true; }
+    });
+    if(!v) items.forEach(function(el){ el.open=false; });
+    count.textContent=n;
+    empty.style.display = n ? 'none' : 'block';
+  });
+  // URLに #s3 などが付いていたら、その項目を開く
+  if(location.hash){
+    var t=document.querySelector(location.hash);
+    if(t && t.tagName==='DETAILS'){ t.open=true; t.scrollIntoView(); }
+  }
+})();
+</script>
 
 </body>
 </html>
