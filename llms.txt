@@ -1,6 +1,6 @@
 # 合同会社LSP「AIの育て方」
 
-> 個人事業主・トレーナー・治療家に向けて、AIの「使い方」ではなく「直し方」を教える伴走サービス。運営は合同会社LSP(今村雅史)。提供者自身が、銀座のパーソナルジム・中学バスケ部向けアプリ販売・Kindle出版・YouTube運営という複数事業を、実際にAIで回している。本サイトはその資料室(提案書・プレゼン・図解・触れるデモ)。商品ページ本体は https://ginza-training.com/ai-sodatekata/ にある。
+> 個人事業主・トレーナー・治療家に向けて、AIの「使い方」ではなく「直し方」を教える伴走サービス。運営は合同会社LSP(今村雅史)。提供者自身が、銀座のパーソナルジム・中学バスケ部向けアプリ販売・Kindle出版・YouTube運営という複数事業を、実際にAIで回している。本サイトが合同会社LSPの公式サイト。資料室(提案書・プレゼン・図解・触れるデモ)は https://aisodatekata.com/docs.html にある。商品ページ本体は https://ginza-training.com/ai-sodatekata/ にある。
 
 ## 商品の構成
 
@@ -33,7 +33,8 @@
 
 ## 資料
 
-- [資料室トップ](https://aisodatekata.com/)
+- [トップ(会社案内)](https://aisodatekata.com/)
+- [資料室](https://aisodatekata.com/docs.html)
 - [提案書](https://aisodatekata.com/proposal.html)
 - [プレゼン: 育て方メソッド](https://aisodatekata.com/method.html)
 - [プレゼン: 合同会社LSP事業案内](https://aisodatekata.com/deck.html)
