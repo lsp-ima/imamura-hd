@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIがうまく動かないときの、つまずき集｜合同会社LSP「AIの育て方」</title>
 <link rel="canonical" href="https://aisodatekata.com/guide/tsumazuki/">
-<meta name="description" content="AIが前の話を覚えていない、答えが一般論に戻る、自動化したはずの処理が止まっていた。実際に踏んだつまずきを症状別に並べ、それぞれ何が起きていて、どこを直せばいいかをまとめました。個人事業主・トレーナー・治療家向け。">
+<meta name="description" content="AIが前の話を覚えていない、答えが一般論に戻る、自動化したはずの処理が止まっていた、作らせたファイルの行方が分からない。実際に踏んだつまずきを症状別に並べ、それぞれ何が起きていて、どこを直せばいいかをまとめました。個人事業主・トレーナー・治療家向け。">
 <meta property="og:title" content="AIがうまく動かないときの、つまずき集">
 <meta property="og:description" content="症状から引ける、AIのつまずき集。原因と、直す場所を1つずつ書いています。">
 <meta property="og:type" content="article">
@@ -21,7 +21,7 @@
     {
       "@type": "Article",
       "headline": "AIがうまく動かないときの、つまずき集",
-      "description": "AIを仕事で使い始めた人がぶつかる症状を6つに分け、それぞれ何が起きているのかと、どこを直せばいいのかをまとめた実務向けの対処集。詰まりが見つかるたびに追記される。",
+      "description": "AIを仕事で使い始めた人がぶつかる症状を7つに分け、それぞれ何が起きているのかと、どこを直せばいいのかをまとめた実務向けの対処集。詰まりが見つかるたびに追記される。",
       "datePublished": "2026-08-04",
       "dateModified": "2026-08-04",
       "inLanguage": "ja",
@@ -43,7 +43,9 @@
         {"@type":"Question","name":"同じ間違いを何度言っても繰り返すのはなぜですか？",
          "acceptedAnswer":{"@type":"Answer","text":"会話の中で注意しても、その会話が終われば残らないためです。直すべき場所は指示ではなく前提の文章のほうです。やってほしくないことを1行足してください。多くの失敗は、やってほしいことの不足ではなく、やってほしくないことを伝えていないことから起きます。"}},
         {"@type":"Question","name":"出力が長すぎたり短すぎたりするのを安定させるには？",
-         "acceptedAnswer":{"@type":"Answer","text":"出力の形を指定していないためです。字数、箇条書きか文章か、表にするかを最初に決めて前提に書いておきます。毎回指示するのではなく前提に置けば、次からは言わなくても同じ形で返ってきます。"}}
+         "acceptedAnswer":{"@type":"Answer","text":"出力の形を指定していないためです。字数、箇条書きか文章か、表にするかを最初に決めて前提に書いておきます。毎回指示するのではなく前提に置けば、次からは言わなくても同じ形で返ってきます。"}},
+        {"@type":"Question","name":"AIに作らせたファイルやフォルダが、どこにあるか分からなくなりました。",
+         "acceptedAnswer":{"@type":"Answer","text":"作る速さに、置き場所を決める速さが追いついていないためです。頼めばすぐ動くので同時に三つも四つも走らせてしまい、何をどこに作ったかも、そもそも何を任せていたかも分からなくなります。対処は三つです。走らせるのは一度に一つにする。作らせる前に置き場所を先に決める。いま動いているものを書き出す場所を一つ持つ。"}}
       ]
     },
     {
@@ -147,7 +149,7 @@ footer a{color:var(--sub);margin:0 9px}
   <div class="crumb"><a href="/">合同会社LSP 資料室</a> ＞ つまずき集</div>
 
   <h1>AIがうまく動かないときの、つまずき集</h1>
-  <div class="meta">最終更新: 2026年8月4日 ／ 現在 <b>6件</b> ／ 合同会社LSP「AIの育て方」</div>
+  <div class="meta">最終更新: 2026年8月4日 ／ 現在 <b>7件</b> ／ 合同会社LSP「AIの育て方」</div>
 
   <p class="lede">
     ここに並んでいるのは、<b>全部わたしが実際に踏んだもの</b>です。
@@ -160,7 +162,7 @@ footer a{color:var(--sub);margin:0 9px}
 
   <div class="tools">
     <input class="search" id="q" type="search" placeholder="症状を入力して探す（例：覚えない、止まる、長い）" aria-label="症状で絞り込む">
-    <div class="hint"><span id="count">6</span> 件を表示中 ／ 見出しを押すと開きます</div>
+    <div class="hint"><span id="count">7</span> 件を表示中 ／ 見出しを押すと開きます</div>
   </div>
 
   <div id="list">
@@ -250,6 +252,24 @@ footer a{color:var(--sub);margin:0 9px}
       <div class="lbl">直すところ</div>
       <div class="fix"><b>形を前提のほうに書いておく。</b>毎回の指示に書くのではありません。
         一度前提に入れておけば、次から言わなくても同じ形で返ってきます。</div>
+    </div>
+  </details>
+
+  <details class="item" id="s7">
+    <summary><span class="num">7</span><span class="sm-body">
+      <p class="sym">作ったファイルやフォルダが、どこにあるか分からなくなった</p>
+      <span class="tag">運用</span>
+    </span><span class="chev">▶</span></summary>
+    <div class="inner">
+      <div class="lbl">何が起きているか</div>
+      <p class="cause">AIの答えがおかしいのではなく、<b>こちらの手が広がりすぎている</b>状態です。頼めばすぐ動くので、つい一度に三つも四つも走らせてしまいます。<b>作る速さに、置き場所を決める速さが追いついていません。</b></p>
+      <p>私の場合、しばらく経つとこうなっていました。フォルダを作った記憶はあるのに、どこに作ったか思い出せない。動いているはずのものが、いくつあるのかすら数えられない。どれも七割くらいで止まっていて、最後まで終わっているものが一つもない。<b>楽をするために始めたのに、探しものが増えていました。</b></p>
+      <div class="lbl">直すところ</div>
+      <div class="fix"><b>三つあります。</b>
+        <br>① <b>走らせるのは一度に一つ</b>。動き出して落ち着いてから次に進む
+        <br>② <b>作らせる前に、置き場所を先に決める</b>。フォルダを自分で作って「ここに作って」と指定する
+        <br>③ <b>いま動いているものを書き出す場所を、一つ持つ</b>。メモ1枚で足ります</div>
+      <p class="note">③がいちばん効きます。数えられない状態がいちばん重いので、まず数えられるようにしてください。</p>
     </div>
   </details>
 
