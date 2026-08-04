@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIがうまく動かないときの、つまずき集｜合同会社LSP「AIの育て方」</title>
+<link rel="canonical" href="https://aisodatekata.com/guide/tsumazuki/">
+<meta name="description" content="AIが前の話を覚えていない、答えが一般論に戻る、自動化したはずの処理が止まっていた。実際に踏んだつまずきを症状別に並べ、それぞれ何が起きていて、どこを直せばいいかをまとめました。個人事業主・トレーナー・治療家向け。">
+<meta property="og:title" content="AIがうまく動かないときの、つまずき集">
+<meta property="og:description" content="症状から引ける、AIのつまずき集。原因と、直す場所を1つずつ書いています。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aisodatekata.com/guide/tsumazuki/">
+<meta property="og:site_name" content="合同会社LSP 資料室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "AIがうまく動かないときの、つまずき集",
+      "description": "AIを仕事で使い始めた人がぶつかる症状を6つに分け、それぞれ何が起きているのかと、どこを直せばいいのかをまとめた実務向けの対処集。",
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {"@type":"WebPage","@id":"https://aisodatekata.com/guide/tsumazuki/"},
+      "author": {"@type": "Organization", "name": "合同会社LSP", "url": "https://ginza-training.com/ai-sodatekata/"},
+      "publisher": {"@type": "Organization", "name": "合同会社LSP", "url": "https://aisodatekata.com/"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"AIが昨日教えたことを今日は覚えていないのはなぜですか？",
+         "acceptedAnswer":{"@type":"Answer","text":"会話をまたいで記憶が残らないためです。AIはしゃべるたびにそれまでのやりとりを読み直しており、会話を閉じるとその内容は渡されなくなります。直し方は、覚えさせようとするのではなく、前提を書いた文章を用意して会話のたびに最初に渡すことです。"}},
+        {"@type":"Question","name":"最初はよかったのに、答えが途中から一般論に戻るのはなぜですか？",
+         "acceptedAnswer":{"@type":"Answer","text":"会話が長くなり、最初に渡した前提が押し出されたためです。一度に渡せる量には上限があり、古い部分から抜けていきます。長い相談は途中で会話を切り、前提を貼り直してから続けると安定します。"}},
+        {"@type":"Question","name":"自動化したはずの処理が動いていないのに、エラーが出ないのはなぜですか？",
+         "acceptedAnswer":{"@type":"Answer","text":"実行されなかった場合、失敗ではなく何も起きないためです。同じ時間帯に処理を並べすぎると後ろが実行されないことがあります。任せる仕事には必ず、動いたことを確かめる線を1本引いてください。件数や更新日時など、結果が残る場所を週に一度見るだけでも防げます。"}},
+        {"@type":"Question","name":"AIに書かせた文章が自分の言葉になりません。どうすればいいですか？",
+         "acceptedAnswer":{"@type":"Answer","text":"良い文章の書き方ではなく、自分の文章の見本を渡していないことが原因です。過去に自分で書いた文章を数百字そのまま渡し、この書き方に合わせてくださいと伝えると変わります。形容詞で説明するより、実物を見せるほうが確実です。"}},
+        {"@type":"Question","name":"同じ間違いを何度言っても繰り返すのはなぜですか？",
+         "acceptedAnswer":{"@type":"Answer","text":"会話の中で注意しても、その会話が終われば残らないためです。直すべき場所は指示ではなく前提の文章のほうです。やってほしくないことを1行足してください。多くの失敗は、やってほしいことの不足ではなく、やってほしくないことを伝えていないことから起きます。"}},
+        {"@type":"Question","name":"出力が長すぎたり短すぎたりするのを安定させるには？",
+         "acceptedAnswer":{"@type":"Answer","text":"出力の形を指定していないためです。字数、箇条書きか文章か、表にするかを最初に決めて前提に書いておきます。毎回指示するのではなく前提に置けば、次からは言わなくても同じ形で返ってきます。"}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"合同会社LSP 資料室","item":"https://aisodatekata.com/"},
+        {"@type":"ListItem","position":2,"name":"AIがうまく動かないときの、つまずき集","item":"https://aisodatekata.com/guide/tsumazuki/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#0b1020; --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.12);
+  --txt:#f1f5f9; --sub:#94a3b8; --cy:#22d3ee; --in:#818cf8; --pk:#e879f9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);line-height:1.95;
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
+  background-image:radial-gradient(900px 460px at 12% -6%,rgba(34,211,238,.10),transparent 60%),
+                   radial-gradient(760px 420px at 92% 3%,rgba(129,140,248,.10),transparent 58%);
+  background-attachment:fixed}
+a{color:var(--cy)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.topbar{border-bottom:1px solid var(--line);background:rgba(11,16,32,.8);
+  backdrop-filter:blur(10px);position:sticky;top:0;z-index:20}
+.topbar .wrap{display:flex;align-items:center;gap:12px;padding-top:13px;padding-bottom:13px}
+.topbar a.home{color:var(--txt);text-decoration:none;font-weight:900;font-size:15px;letter-spacing:.02em}
+.topbar .cta{margin-left:auto;text-decoration:none;font-size:13px;font-weight:800;padding:8px 15px;
+  border-radius:999px;background:linear-gradient(135deg,#22d3ee,#818cf8);color:#06121a;white-space:nowrap}
+.crumb{font-size:12px;color:var(--sub);margin:24px 0 4px}
+.crumb a{color:var(--sub)}
+h1{font-size:clamp(23px,5.2vw,34px);line-height:1.45;font-weight:900;margin:8px 0 14px}
+.meta{font-size:12.5px;color:var(--sub);border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:28px}
+.lede{background:var(--card);border-left:3px solid var(--cy);padding:18px 20px;border-radius:0 12px 12px 0;
+  margin:0 0 34px;font-size:16.5px}
+h2{font-size:clamp(19px,3.9vw,24px);font-weight:900;line-height:1.5;margin:48px 0 0;
+  padding-top:26px;border-top:1px solid var(--line)}
+.answer{background:rgba(34,211,238,.09);border:1px solid rgba(34,211,238,.26);border-radius:12px;
+  padding:14px 17px;margin:15px 0 22px;font-size:15.5px}
+.answer b{color:var(--cy)}
+h3{font-size:17px;font-weight:800;margin:32px 0 8px}
+p{font-size:16px;margin:0 0 17px}
+ul,ol{padding-left:1.25em;margin:0 0 18px}
+li{font-size:15.5px;margin-bottom:9px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:24px 0}
+.box h3{margin-top:0}
+.fix{background:rgba(129,140,248,.10);border:1px solid rgba(129,140,248,.28);border-radius:12px;
+  padding:15px 18px;margin:14px 0 8px;font-size:15.5px}
+.fix b{color:var(--in)}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 40px}
+.toc b{display:block;font-size:14px;margin-bottom:10px;color:var(--sub);font-weight:800}
+.toc ol{margin:0;padding-left:1.3em}
+.toc li{font-size:15px;margin-bottom:7px}
+pre{background:#070b16;border:1px solid var(--line);border-radius:12px;padding:18px 18px;
+  overflow-x:auto;font-size:13.5px;line-height:1.85;color:#dbe4f0;margin:16px 0 22px}
+.cta-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 24px;
+  text-align:center;margin:54px 0 30px}
+.cta-box h3{font-size:19px;margin:0 0 10px}
+.cta-box p{font-size:14.5px;color:var(--sub);margin-bottom:20px}
+.cta-box a.btn{display:inline-block;text-decoration:none;font-weight:900;font-size:15.5px;padding:14px 30px;
+  border-radius:999px;background:linear-gradient(135deg,#22d3ee,#818cf8);color:#06121a}
+.cta-box .sub{display:block;margin-top:14px;font-size:13px}
+footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 20px 44px;text-align:center;
+  font-size:12.5px;color:var(--sub)}
+footer a{color:var(--sub);margin:0 9px}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="/">合同会社LSP 資料室</a>
+  <a class="cta" href="https://ginza-training.com/ai-guide/">無料の入門編</a>
+</div></div>
+
+<div class="wrap">
+
+  <div class="crumb"><a href="/">合同会社LSP 資料室</a> ＞ AIがうまく動かないときの、つまずき集</div>
+
+  <h1>AIがうまく動かないときの、<br>つまずき集</h1>
+
+  <div class="meta">公開: 2026年8月4日 ／ 最終更新: 2026年8月4日 ／ 合同会社LSP「AIの育て方」</div>
+
+  <p class="lede">
+    ここに並んでいるのは、<b>全部わたしが実際に踏んだもの</b>です。
+    症状から探せるようにしてあります。どれも原因は違いますが、共通しているのは
+    <b>直す場所が「指示」ではなく「前提」のほうにある</b>ということです。
+  </p>
+
+  <div class="toc">
+    <b>症状から探す</b>
+    <ol>
+      <li><a href="#s1">昨日教えたことを、今日は覚えていない</a></li>
+      <li><a href="#s2">最初はよかったのに、途中から一般論に戻った</a></li>
+      <li><a href="#s3">動いているはずのものが、静かに止まっていた</a></li>
+      <li><a href="#s4">書かせた文章が、自分の言葉にならない</a></li>
+      <li><a href="#s5">同じ間違いを、何度言っても繰り返す</a></li>
+      <li><a href="#s6">長すぎる、短すぎる、形が毎回ちがう</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s1">1. 昨日教えたことを、今日は覚えていない</h2>
+  <div class="answer">
+    <b>AIは会話をまたいで覚えていません。</b>
+    しゃべるたびに、それまでのやりとりを最初から読み直しています。
+    会話を閉じると、その紙は渡されなくなります。
+  </div>
+
+  <p>
+    昨日、店のことをひととおり説明して、いい感じの答えが出た。今日また開いたら初対面の顔をしている。
+    これは不具合ではなく、そういう作りです。会話の中で教えたことは、その会話の中だけで生きています。
+  </p>
+
+  <div class="fix">
+    <b>直す場所</b>　覚えさせようとするのをやめて、<b>前提を書いた文章を1枚用意し、会話のたびに最初に渡す</b>。
+    書くのは、何の仕事か／誰が相手か／何を売っているか／言ってはいけないこと、の4つで足ります。
+  </div>
+
+  <p>
+    これだけで、毎回の説明がなくなります。詳しくは
+    <a href="/guide/ai-ga-oboenai/">AIが毎回忘れるのを、やめさせる方法</a>に書きました。
+  </p>
+
+  <h2 id="s2">2. 最初はよかったのに、途中から一般論に戻った</h2>
+  <div class="answer">
+    <b>会話が長くなって、最初に渡した前提が押し出されています。</b>
+    一度に渡せる量には上限があって、古いほうから順に抜けていきます。
+  </div>
+
+  <p>
+    長い相談をしていると、あるところから急に、どこかで読んだような答えが返ってくるようになります。
+    「さっき言ったのに」と思ったら、たいていこれです。AIが忘れたのではなく、こちらが渡せていない状態になっています。
+  </p>
+
+  <div class="fix">
+    <b>直す場所</b>　<b>会話を切って、新しく始め直す</b>。そのとき前提の1枚を貼り直してから続きを話します。
+    長い相談を1本の会話で押し切らないほうが、結果が安定します。
+  </div>
+
+  <h2 id="s3">3. 動いているはずのものが、静かに止まっていた</h2>
+  <div class="answer">
+    <b>これがいちばん怖い症状です。</b>
+    失敗すると音が鳴りますが、<b>実行されなかった場合は何も起きません。</b>
+    エラーも通知も出ないまま、ただ何日も止まっています。
+  </div>
+
+  <p>
+    毎日決まった時刻に情報を集める仕組みを動かしていたのですが、あるとき
+    <b>3日間まったく動いていなかった</b>ことがありました。エラーは1件も出ていません。
+    気づいたのは、集まっているはずの件数が増えていないのを見たときでした。
+  </p>
+
+  <p>
+    原因は、同じ時間帯に処理を並べすぎたことでした。一度に走れる本数には限りがあって、
+    後ろに並んでいたものが順番待ちのまま流れていた。時間をずらしたら元に戻りました。
+  </p>
+
+  <div class="fix">
+    <b>直す場所</b>　任せる仕事には、必ず<b>「動いていることを確かめる線」を1本引く</b>。
+    件数でも、最終更新の日時でも、結果が残る場所ならどこでもかまいません。
+    週に一度そこを見るだけで、静かな停止に気づけます。
+  </div>
+
+  <p>
+    自動化そのものより、<b>止まったときに気づける形にしておくこと</b>のほうが大事です。
+    ここを飛ばすと、動いているつもりの期間がそのまま損になります。
+  </p>
+
+  <h2 id="s4">4. 書かせた文章が、自分の言葉にならない</h2>
+  <div class="answer">
+    <b>自分の文章を見せていないからです。</b>
+    「自然に」「親しみやすく」と形容詞で頼んでも、相手にはどこを目指せばいいのか分かりません。
+  </div>
+
+  <p>
+    整ってはいるけれど自分では書かない言い回しになる、という状態です。
+    これは指示の言葉を工夫しても直りません。目標物が渡っていないからです。
+  </p>
+
+  <div class="fix">
+    <b>直す場所</b>　<b>過去に自分で書いた文章を、数百字そのまま渡す。</b>
+    「この書き方に合わせてください」と添えるだけで変わります。説明するより、実物を見せるほうが早いです。
+  </div>
+
+  <h2 id="s5">5. 同じ間違いを、何度言っても繰り返す</h2>
+  <div class="answer">
+    <b>注意した場所が会話の中だからです。</b>
+    その会話が終われば、注意も一緒に消えています。
+  </div>
+
+  <p>
+    「それは言わないで」と伝えて、そのときは直る。翌日また同じことをする。
+    これを繰り返していると、こちらが疲れていきます。
+  </p>
+
+  <div class="fix">
+    <b>直す場所</b>　指示ではなく、<b>前提の1枚に「やってほしくないこと」を1行足す</b>。
+    うまくいかない原因の多くは、やってほしいことの不足ではなく、
+    <b>やってほしくないことを伝えていないこと</b>にあります。人を雇うときと同じで、
+    事故は「言わなくても分かるだろう」と思っていたところで起きます。
+  </div>
+
+  <h2 id="s6">6. 長すぎる、短すぎる、形が毎回ちがう</h2>
+  <div class="answer">
+    <b>出力の形を決めていないからです。</b>
+    字数、箇条書きか文章か、表にするか。決めていなければ毎回変わります。
+  </div>
+
+  <div class="fix">
+    <b>直す場所</b>　形を<b>前提のほうに書いておく</b>。毎回の指示に書くのではありません。
+    一度前提に入れておけば、次から言わなくても同じ形で返ってきます。
+  </div>
+
+  <h2>ここに無い症状だったとき</h2>
+
+  <p>
+    この6つは、わたしが自分で踏んだものだけです。実際にはもっと細かい症状があります。
+    もし当てはまるものが無かったら、次の3つを書き出してみてください。それだけで原因が絞れることが多いです。
+  </p>
+
+  <div class="box">
+    <h3>詰まったときに書き出す3つ</h3>
+    <ul>
+      <li><b>どの場面で</b>（どのAIで、何をしようとしていたか）</li>
+      <li><b>何をしたら</b>（実際に打った指示。そのままで構いません）</li>
+      <li><b>どうなったか</b>（返ってきたもの。エラーの文字があればそのまま）</li>
+    </ul>
+    <p style="margin:14px 0 0;font-size:15px;color:var(--sub)">
+      この3つが揃うと、たいていは「前提が渡っていない」「形を決めていない」「やってほしくないことを言っていない」の
+      どれかに落ちます。
+    </p>
+  </div>
+
+  <div class="cta-box">
+    <h3>詰まったところから始めるのが、いちばん早い</h3>
+    <p>
+      無料の「AIの育て方 入門編」で、自分専用のAI秘書を作るためのプロンプトを配っています。<br>
+      ここに書いた前提の1枚も、その中に入っています。
+    </p>
+    <a class="btn" href="https://ginza-training.com/ai-guide/">無料の入門編を読む</a>
+    <span class="sub"><a href="https://ginza-training.com/ai-sodatekata/">一緒に直していくコースの内容と料金</a></span>
+  </div>
+
+</div>
+
+<footer>
+  <div>合同会社LSP「AIの育て方」</div>
+  <div style="margin-top:8px">
+    <a href="/">資料室トップ</a>
+    <a href="/guide/ai-ga-oboenai/">AIが毎回忘れるのをやめさせる方法</a>
+    <a href="https://ginza-training.com/ai-guide/">無料教材</a>
+  </div>
+</footer>
+
+</body>
+</html>
