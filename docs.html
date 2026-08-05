@@ -2,197 +2,302 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="YhwkKAXTjY5NN98T1U_tPFFoTAE7kgDbHi_ZHCISJdo" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>資料室 — 合同会社LSP「AIの育て方」</title>
+<meta name="description" content="合同会社LSP「AIの育て方」の資料室。提案書・プレゼン・図解、実際に動いているアプリのデモ、読みものをまとめています。">
 <link rel="canonical" href="https://aisodatekata.com/docs.html">
-<meta name="description" content="合同会社LSP(今村雅史)「AIの育て方」。サービス案内・提案書・プレゼン・図解、そして実際に作ったアプリのデモをまとめています。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="合同会社Life Style Proposer">
+<meta property="og:title" content="資料室 — 合同会社LSP「AIの育て方」">
+<meta property="og:description" content="提案書・プレゼン・図解、実際に動いているアプリのデモ、読みものをまとめています。">
+<meta property="og:url" content="https://aisodatekata.com/docs.html">
+<meta property="og:image" content="https://aisodatekata.com/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --bg:#0b1020; --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.12);
-    --txt:#f1f5f9; --sub:#94a3b8; --cy:#22d3ee; --in:#818cf8; --pk:#e879f9;
+    --navy:#0b1f3f; --ink:#141c28; --sub:#6b7686;
+    --line:#e3e7ed; --paper:#fff; --gray:#f5f7fa;
+    --acc:#1e5eff; --acc-2:#00c2d1;
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+    --gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
   }
-  html,body{background:var(--bg);color:var(--txt)}
-  body{
-    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-    line-height:1.85; -webkit-font-smoothing:antialiased; overflow-x:hidden;
-    min-height:100vh; padding:0 20px 72px;
-  }
-  .aurora{position:fixed;border-radius:50%;filter:blur(90px);opacity:.28;pointer-events:none;z-index:0}
-  .a1{width:520px;height:520px;background:#1d4ed8;top:-190px;left:-160px}
-  .a2{width:460px;height:460px;background:#7c3aed;bottom:-200px;right:-150px}
-  .wrap{position:relative;z-index:1;max-width:880px;margin:0 auto}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--gothic);
+    line-height:2;font-size:15px;-webkit-font-smoothing:antialiased;
+    font-feature-settings:"palt";overflow-x:hidden}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  @media(max-width:640px){.wrap{padding:0 22px}}
+  a{color:inherit}
 
-  nav{display:flex;align-items:center;gap:12px;padding:26px 0 0}
-  nav svg{width:38px;height:38px;flex:none}
-  nav b{display:block;font-size:14px;letter-spacing:.09em}
-  nav small{display:block;font-size:11px;color:var(--sub);letter-spacing:.05em}
+  header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:baseline;gap:11px;text-decoration:none}
+  .logo b{font-family:var(--mincho);font-size:18px;letter-spacing:.14em;font-weight:600;color:var(--navy)}
+  .logo small{font-size:10.5px;letter-spacing:.18em;color:var(--sub)}
+  nav{display:flex;gap:28px}
+  nav a{font-size:12.5px;letter-spacing:.1em;text-decoration:none;position:relative}
+  nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+    background:var(--navy);transition:width .3s}
+  nav a:hover::after{width:100%}
+  @media(max-width:860px){nav a:not(.home){display:none}}
 
-  header{padding:56px 0 12px}
-  .kicker{font-size:11.5px;letter-spacing:.22em;color:var(--cy);font-weight:700;margin-bottom:14px}
-  h1{font-size:clamp(28px,6vw,44px);font-weight:900;line-height:1.35;letter-spacing:-.01em}
-  .grad{background:linear-gradient(100deg,var(--cy),var(--in) 55%,var(--pk));
-        -webkit-background-clip:text;background-clip:text;color:transparent}
-  header p{color:var(--sub);font-size:14.5px;margin-top:16px;max-width:600px}
+  .lead-sec{padding:80px 0 0}
+  .kicker{font-size:10.5px;letter-spacing:.26em;color:var(--sub);display:block;margin-bottom:14px}
+  h1{font-family:var(--mincho);font-size:clamp(30px,4.4vw,46px);font-weight:600;
+    letter-spacing:.12em;color:var(--navy);line-height:1.5}
+  .lead-sec p{color:var(--sub);font-size:14.5px;margin-top:20px;max-width:660px;line-height:2.3}
+  .lead-sec .rule{margin-top:44px;height:1px;background:var(--line)}
 
-  section{margin-top:52px}
-  h2{font-size:17px;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:6px}
-  h2::before{content:"";width:4px;height:17px;border-radius:2px;
-             background:linear-gradient(180deg,var(--cy),var(--in))}
-  .note{color:var(--sub);font-size:13px;margin-bottom:20px;padding-left:14px}
+  section{padding:76px 0 0}
+  section:last-of-type{padding-bottom:0}
+  .sec-head{margin-bottom:38px}
+  .sec-head .num{font-size:10.5px;letter-spacing:.26em;color:var(--sub);display:block;margin-bottom:12px}
+  .sec-head h2{font-family:var(--mincho);font-size:clamp(21px,2.4vw,28px);font-weight:600;
+    letter-spacing:.09em;color:var(--navy);line-height:1.7}
+  .sec-head p{color:var(--sub);font-size:13.5px;margin-top:12px;max-width:640px;line-height:2.15}
 
-  .grid{display:grid;gap:13px}
-  @media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+  /* 資料の一覧 */
+  .docs{display:grid;grid-template-columns:repeat(2,1fr);gap:0 44px}
+  .doc{display:flex;gap:20px;align-items:baseline;padding:22px 0;
+    border-bottom:1px solid var(--line);text-decoration:none;transition:padding .25s,border-color .25s}
+  .doc:hover{padding-left:10px;border-color:var(--acc)}
+  .doc .t{font-size:10px;letter-spacing:.18em;color:var(--sub);flex:none;width:56px;padding-top:3px}
+  .doc b{font-family:var(--mincho);font-size:16px;font-weight:600;color:var(--navy);
+    display:block;letter-spacing:.04em;line-height:1.8}
+  .doc span{font-size:12.5px;color:var(--sub);display:block;margin-top:4px;line-height:1.95}
+  @media(max-width:860px){.docs{grid-template-columns:1fr}}
 
-  a.card{display:block;padding:18px 20px;border-radius:14px;border:1px solid var(--line);
-         background:var(--card);text-decoration:none;color:var(--txt);
-         transition:border-color .2s,background .2s,transform .2s}
-  a.card:hover{border-color:rgba(96,165,250,.6);background:rgba(96,165,250,.07);transform:translateY(-2px)}
-  a.card b{display:block;font-size:15.5px;margin-bottom:5px}
-  a.card span{display:block;font-size:12.5px;color:var(--sub);line-height:1.7}
-  a.card .tag{display:inline-block;font-size:10.5px;letter-spacing:.08em;font-weight:700;
-              padding:2px 8px;border-radius:99px;margin-bottom:8px;
-              background:rgba(34,211,238,.13);color:var(--cy);border:1px solid rgba(34,211,238,.3)}
-  a.card.primary{border-color:rgba(129,140,248,.45);
-                 background:linear-gradient(135deg,rgba(34,211,238,.1),rgba(232,121,249,.08))}
-  a.card.primary .tag{background:rgba(232,121,249,.14);color:#f0abfc;border-color:rgba(232,121,249,.32)}
+  /* 触れるもの */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+  .card{text-decoration:none;display:block}
+  .card figure{position:relative;aspect-ratio:16/10;overflow:hidden;margin-bottom:18px;
+    border:1px solid var(--line);background:var(--gray)}
+  .card figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    display:block;transition:opacity .3s}
+  .card figure::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);
+    transform:skewX(-18deg);transition:left .75s ease}
+  .card:hover figure::after{left:130%}
+  .card .tag{font-size:10px;letter-spacing:.2em;color:var(--acc)}
+  .card h3{font-family:var(--mincho);font-size:18px;font-weight:600;color:var(--navy);
+    margin:10px 0 8px;letter-spacing:.05em}
+  .card p{font-size:13px;color:var(--sub);line-height:2}
+  .card .go{font-size:11.5px;letter-spacing:.14em;color:var(--acc);margin-top:12px;display:inline-block}
+  .card .go::after{content:" →";transition:margin .25s}
+  .card:hover .go::after{margin-left:7px}
+  @media(max-width:860px){.cards{grid-template-columns:1fr;gap:44px}}
 
-  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
-         font-size:12px;color:#64748b;line-height:1.9}
-  footer a{color:#94a3b8}
+  /* 管理画面 */
+  .board{margin-top:8px}
+  .board img{width:100%;display:block;border:1px solid var(--line)}
+  .board .cap{font-size:12px;color:var(--sub);margin-top:14px;line-height:2}
+
+  /* 申し込み */
+  .cta{margin-top:96px;background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .cta::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(700px 320px at 50% 120%,rgba(30,94,255,.4),transparent 70%)}
+  .cta .wrap{position:relative;z-index:2;padding:88px 28px}
+  .cta h2{font-family:var(--mincho);font-size:clamp(21px,2.6vw,29px);font-weight:600;
+    letter-spacing:.1em;line-height:1.85}
+  .cta p{color:rgba(255,255,255,.62);font-size:13.5px;margin-top:18px;line-height:2.2;max-width:640px}
+  .btns{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+  .btn{position:relative;overflow:hidden;display:inline-block;padding:17px 40px;font-size:13px;
+    letter-spacing:.14em;text-decoration:none;border:1px solid rgba(255,255,255,.45);
+    color:#fff;transition:.3s;z-index:0}
+  .btn::before{content:"";position:absolute;inset:0;background:#fff;transform:translateY(101%);
+    transition:transform .35s cubic-bezier(.3,.8,.3,1);z-index:-1}
+  .btn:hover::before{transform:none}
+  .btn:hover{color:var(--navy);border-color:#fff}
+  .btn.fill{background:#fff;color:var(--navy);border-color:#fff}
+  .btn.fill::before{background:var(--acc)}
+  .btn.fill:hover{color:#fff;border-color:var(--acc)}
+
+  footer{padding:56px 0 48px;font-size:12px;color:var(--sub)}
+  footer .top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;
+    padding-bottom:30px;border-bottom:1px solid var(--line)}
+  footer .cname{font-family:var(--mincho);font-size:16px;color:var(--navy);letter-spacing:.12em}
+  footer .links{display:flex;gap:24px;flex-wrap:wrap}
+  footer a{color:var(--sub);text-decoration:none}
+  footer a:hover{color:var(--navy)}
+  footer .copy{margin-top:24px;font-size:11px;letter-spacing:.08em;color:#9aa3b0}
+
+  .anim .rise{opacity:0;transform:translateY(18px);transition:opacity .85s ease,transform .85s ease}
+  .anim .rise.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.anim .rise{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
-<div class="aurora a1"></div><div class="aurora a2"></div>
 
-<div class="wrap">
-  <nav>
-    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <linearGradient id="lg" x1="0" y1="48" x2="48" y2="0">
-          <stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
-        </linearGradient>
-      </defs>
-      <path d="M24 3 42 13.5 V34.5 L24 45 6 34.5 V13.5 Z" fill="none" stroke="url(#lg)" stroke-width="2.6" stroke-linejoin="round"/>
-      <path d="M24 36 V21" stroke="url(#lg)" stroke-width="2.6" stroke-linecap="round"/>
-      <path d="M24 24 C19.5 23 15.5 19 14 13 C20 14 23 17.5 24 21.5 Z" fill="url(#lg)"/>
-      <path d="M24 27 C28.5 26 32.5 22 34 16 C28 17 25 20.5 24 24.5 Z" fill="url(#lg)" opacity=".75"/>
-      <circle cx="14" cy="13" r="2" fill="#22d3ee"/>
-      <circle cx="34" cy="16" r="2" fill="#e879f9"/>
-      <circle cx="24" cy="36" r="2.2" fill="#818cf8"/>
-    </svg>
-    <span><b>合同会社LSP</b><small>AIの育て方</small></span>
-  </nav>
+<header>
+  <div class="wrap">
+    <a class="logo" href="/"><b>合同会社LSP</b><small>AIの育て方</small></a>
+    <nav>
+      <a class="home" href="/">← 会社案内へ</a>
+      <a href="#docs">資料</a>
+      <a href="#demo">触れるもの</a>
+      <a href="#read">読みもの</a>
+      <a href="#contact">申し込み</a>
+    </nav>
+  </div>
+</header>
 
-  <header>
-    <p class="kicker">DOCUMENTS &amp; DEMO</p>
-    <h1>AIは、<span class="grad">育て方</span>で決まる。</h1>
-    <p>合同会社LSP(今村雅史)「AIの育て方」。サービスの案内、詳しい資料、そして
-    <b>実際に動いているアプリ</b>をここにまとめています。</p>
-  </header>
-
-  <section>
-    <h2>サービスを知る・申し込む</h2>
-    <p class="note">まずはここから。無料教材は登録不要で今すぐ読めます。</p>
-    <div class="grid two">
-      <a class="card primary" href="ai-guide.html">
-        <span class="tag">無料・登録不要</span>
-        <b>無料教材「AIの育て方 入門編」</b>
-        <span>コピーして貼るだけで、あなた専用の秘書AIの土台ができます。</span></a>
-      <a class="card" href="https://ginza-training.com/ai-sodatekata/">
-        <span class="tag">サービス案内</span>
-        <b>「AIの育て方」とは</b>
-        <span>できること・料金・進め方をまとめたページ。</span></a>
-      <a class="card" href="https://ginza-training.com/ai-apply/">
-        <span class="tag">申し込み</span>
-        <b>セットアップのお申し込み</b>
-        <span>ご相談だけでも構いません。フォームからどうぞ。</span></a>
-      <a class="card" href="https://note.com/lifestylepro/m/mfcf2fe3147e7">
-        <span class="tag">読みもの</span>
-        <b>note「AIで変わる、トレーナー・治療家の未来」</b>
-        <span>体を支える仕事に、AIはどう役立つのか。現場での使い方をマガジンにまとめています。</span></a>
-    </div>
-  </section>
-
-  <section>
-    <h2>資料を見る</h2>
-    <p class="note">提案・打ち合わせで使っている資料そのものです。そのまま開けます。</p>
-    <div class="grid two">
-      <a class="card" href="proposal.html">
-        <span class="tag">提案書</span>
-        <b>ご提案 — AIの育て方、教えます</b>
-        <span>何に困っている人に、何をお渡しするのか。1枚で分かる提案書。</span></a>
-      <a class="card" href="method.html">
-        <span class="tag">プレゼン</span>
-        <b>AIは、どうやって育つのか</b>
-        <span>育て方メソッドの中身。AIが育つ仕組みと、育たない理由。</span></a>
-      <a class="card" href="deck.html">
-        <span class="tag">プレゼン</span>
-        <b>合同会社LSP 事業案内</b>
-        <span>会社紹介スライド。何をやってきて、何ができるのか。</span></a>
-      <a class="card" href="map-overview.html">
-        <span class="tag">図解</span>
-        <b>「AIの育て方」全体像</b>
-        <span>入口から卒業まで、サービス全体を1枚の図に。</span></a>
-      <a class="card" href="map-flow.html">
-        <span class="tag">図解</span>
-        <b>商品と工程</b>
-        <span>何を、どの順番で、どうやってお渡しするか。</span></a>
-      <a class="card" href="expense-flow.html">
-        <span class="tag">図解</span>
-        <b>経費のしくみ（レシートを撮るだけ）</b>
-        <span>撮る→AIが読む→週1で自動記帳。実際に毎日使っている流れ。</span></a>
-    </div>
-  </section>
-
-  <section>
-    <h2>実際に作ったものを触る</h2>
-    <p class="note">プログラミングの学習経験がない代表が、AIと二人三脚で作って、現場で毎日動いているアプリです。デモはそのまま触れます。</p>
-    <div class="grid two">
-      <a class="card" href="https://lsp-ima.github.io/team-board/demo/">
-        <span class="tag">触れるデモ</span>
-        <b>作戦盤 TEAM BOARD(デモ)</b>
-        <span>部活動のチーム共有アプリ。作戦盤・動画・出欠・連絡が1つに。ログイン不要で操作できます。</span></a>
-      <a class="card" href="https://lsp-ima.github.io/team-board-LP/">
-        <span class="tag">紹介ページ</span>
-        <b>TEAM BOARD のLP</b>
-        <span>実際に販売しているアプリの紹介ページ。</span></a>
-      <a class="card" href="https://lsp-ima.github.io/basket-video-analysis/">
-        <span class="tag">触れるデモ</span>
-        <b>AI動画分析・スタッツまとめ</b>
-        <span>試合動画から得点などのプレー候補をAIが検出し、スタッツシートにまとめます。動画は端末の外に出ません。</span></a>
-    </div>
-  </section>
-
-  <section>
-    <h2>読みもの</h2>
-    <p class="note">AIを使い始めた人がほぼ全員ぶつかるところを、その場で使える形にして置いています。</p>
-    <div class="grid two">
-      <a class="card" href="guide/ai-ga-oboenai/">
-        <span class="tag">やり方</span>
-        <b>AIが毎回忘れるのを、やめさせる方法</b>
-        <span>昨日教えたことを今日は覚えていない。これはAIの性能ではなく、教える場所の問題です。会話の外に「毎回読ませる1枚」を持つ、という話。</span></a>
-      <a class="card" href="guide/tsumazuki/">
-        <span class="tag">つまずき集</span>
-        <b>AIがうまく動かないときの、つまずき集</b>
-        <span>覚えていない／一般論に戻る／自動化したはずが静かに止まっていた。実際に踏んだ6つの症状を、原因と直す場所つきで並べました。</span></a>
-    </div>
-  </section>
-
-  <section>
-    <h2>AIが回している、運営そのもの</h2>
-    <p class="note">全事業の進捗が自動で集まる管理画面。人が入力しているのではなく、
-    ファイルの更新を見て勝手に更新されます。<b>各案件の内部メモは伏せた状態</b>で載せています。</p>
-    <img src="assets/dashboard-masked.png" alt="全事業の進捗が自動更新される管理画面"
-         style="width:100%;max-width:100%;border-radius:14px;border:1px solid var(--line);display:block">
-  </section>
-
-  <footer>
-    合同会社LSP(今村雅史) — 銀座のパーソナルトレーナー / 中学バスケットボール部コーチ / Kindle著者<br>
-    お問い合わせ: <a href="https://x.com/lsp_ima">X @lsp_ima</a> ・
-    <a href="mailto:info@ginza-training.com">info@ginza-training.com</a>
-  </footer>
+<div class="lead-sec">
+  <div class="wrap">
+    <span class="kicker">DOCUMENTS &amp; DEMO</span>
+    <h1>資料室</h1>
+    <p>打ち合わせで実際にお見せしている資料を、そのまま置いています。
+    提案書も、進め方の図解も、実際に動いているアプリも、ここから開けます。
+    <b>ご覧いただくのに、登録も連絡先も要りません。</b></p>
+    <div class="rule"></div>
+  </div>
 </div>
+
+<!-- 01 資料 -->
+<section id="docs">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <span class="num">01 &nbsp;/&nbsp; DOCUMENTS</span>
+      <h2>資料</h2>
+      <p>提案・打ち合わせで使っているものそのものです。</p>
+    </div>
+    <div class="docs rise">
+      <a class="doc" href="proposal.html"><span class="t">提案書</span>
+        <span><b>ご提案 — AIの育て方、教えます</b><span>何に困っている人に、何をお渡しするのか。1枚で分かる提案書。</span></span></a>
+      <a class="doc" href="method.html"><span class="t">プレゼン</span>
+        <span><b>AIは、どうやって育つのか</b><span>育て方メソッドの中身。育つ仕組みと、育たない理由。</span></span></a>
+      <a class="doc" href="deck.html"><span class="t">プレゼン</span>
+        <span><b>合同会社LSP 事業案内</b><span>何をやってきて、何ができるのか。</span></span></a>
+      <a class="doc" href="map-overview.html"><span class="t">図解</span>
+        <span><b>「AIの育て方」全体像</b><span>入口から卒業まで、サービス全体を1枚の図に。</span></span></a>
+      <a class="doc" href="map-flow.html"><span class="t">図解</span>
+        <span><b>商品と工程</b><span>何を、どの順番で、どうやってお渡しするか。</span></span></a>
+      <a class="doc" href="expense-flow.html"><span class="t">図解</span>
+        <span><b>経費のしくみ（レシートを撮るだけ）</b><span>撮る→AIが読む→週1で自動記帳。毎日使っている流れ。</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 02 触れるもの -->
+<section id="demo">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <span class="num">02 &nbsp;/&nbsp; DEMO</span>
+      <h2>実際に、動いているもの。</h2>
+      <p>プログラミングの学習経験がない代表が、AIと二人三脚で作って、現場で動いているものです。そのまま触れます。</p>
+    </div>
+    <div class="cards rise">
+      <a class="card" href="https://lsp-ima.github.io/team-board/demo/">
+        <figure><img src="assets/work-teamboard.jpg" alt="作戦盤 TEAM BOARD のデモ画面" loading="lazy"></figure>
+        <span class="tag">触れるデモ</span>
+        <h3>作戦盤 TEAM BOARD</h3>
+        <p>部活動のチーム共有アプリ。作戦盤・動画・出欠・連絡が1つに。ログイン不要で操作できます。</p>
+        <span class="go">デモを触る</span>
+      </a>
+      <a class="card" href="https://lsp-ima.github.io/koma-dori-studio/">
+        <figure><img src="assets/work-komadori.jpg" alt="コマ撮りスタジオの画面" loading="lazy"></figure>
+        <span class="tag">公開ツール</span>
+        <h3>コマ撮りスタジオ</h3>
+        <p>画像を並べるだけでコマ撮りアニメを作り、動画で書き出せます。インストール不要、どなたでも使えます。</p>
+        <span class="go">使ってみる</span>
+      </a>
+      <a class="card" href="https://lsp-ima.github.io/team-board-LP/">
+        <figure><img src="assets/work-tblp.jpg" alt="TEAM BOARD の紹介ページ" loading="lazy"></figure>
+        <span class="tag">紹介ページ</span>
+        <h3>TEAM BOARD のLP</h3>
+        <p>実際に販売しているアプリの紹介ページ。値段や機能はここにまとめています。</p>
+        <span class="go">ページを見る</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 読みもの -->
+<section id="read">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <span class="num">03 &nbsp;/&nbsp; READING</span>
+      <h2>読みもの</h2>
+      <p>AIを使い始めた人がほぼ全員ぶつかるところを、その場で使える形にして置いています。</p>
+    </div>
+    <div class="docs rise">
+      <a class="doc" href="guide/ai-ga-oboenai/"><span class="t">やり方</span>
+        <span><b>AIが毎回忘れるのを、やめさせる方法</b><span>昨日教えたことを今日は覚えていない。これは性能ではなく、教える場所の問題です。</span></span></a>
+      <a class="doc" href="guide/tsumazuki/"><span class="t">つまずき集</span>
+        <span><b>AIがうまく動かないときの、つまずき集</b><span>実際に踏んだ症状を、原因と直す場所つきで並べました。</span></span></a>
+      <a class="doc" href="https://note.com/lifestylepro/m/mfcf2fe3147e7"><span class="t">note</span>
+        <span><b>AIで変わる、トレーナー・治療家の未来</b><span>体を支える仕事に、AIはどう役立つのか。全記事無料のマガジン。</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 04 運営そのもの -->
+<section id="board">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <span class="num">04 &nbsp;/&nbsp; INSIDE</span>
+      <h2>AIが回している、運営そのもの。</h2>
+      <p>全事業の進捗が自動で集まる管理画面。人が入力しているのではなく、ファイルの更新を見て勝手に更新されます。</p>
+    </div>
+    <div class="board rise">
+      <img src="assets/dashboard-masked.png" alt="全事業の進捗が自動更新される管理画面" loading="lazy">
+      <p class="cap">各案件の内部メモは伏せた状態で載せています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 申し込み -->
+<div class="cta" id="contact">
+  <div class="wrap">
+    <h2 class="rise">まず、無料の教材から。</h2>
+    <p class="rise">登録もメールアドレスも要りません。読んで、貼って、その場で動きます。
+    そのうえで直し方まで知りたくなったら、伴走をご相談ください。ご相談だけでも構いません。</p>
+    <div class="btns rise">
+      <a class="btn fill" href="https://ginza-training.com/ai-guide/"><span>無料教材を読む</span></a>
+      <a class="btn" href="https://ginza-training.com/ai-sodatekata/"><span>サービスを見る</span></a>
+      <a class="btn" href="https://ginza-training.com/ai-apply/"><span>申し込む・相談する</span></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <p class="cname">合同会社 Life Style Proposer</p>
+        <p style="margin-top:10px">AIの育て方 / 作戦盤 TEAM BOARD</p>
+      </div>
+      <div class="links">
+        <a href="/">会社案内</a>
+        <a href="https://note.com/lifestylepro">note</a>
+        <a href="https://x.com/lsp_ima">X</a>
+        <a href="https://www.instagram.com/lsp_ima/">Instagram</a>
+        <a href="mailto:info@ginza-training.com">お問い合わせ</a>
+      </div>
+    </div>
+    <p class="copy">© 2026 合同会社 Life Style Proposer</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  root.classList.add('anim');
+  const rises = [...document.querySelectorAll('.rise')];
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+  rises.forEach(el => io.observe(el));
+  // 保険：監視が働いていなければ演出ごと降ろす（中身が見えないまま残るのを防ぐ）
+  setTimeout(() => {
+    const stuck = rises.some(el => {
+      const r = el.getBoundingClientRect();
+      return r.bottom > 0 && r.top < innerHeight && !el.classList.contains('in');
+    });
+    if (stuck) root.classList.remove('anim');
+  }, 1800);
+})();
+</script>
 </body>
 </html>
