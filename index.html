@@ -131,73 +131,35 @@
   .flip .lead b{color:#7fd7ff;font-weight:600}
   .flip .sub{color:rgba(255,255,255,.6);font-size:14px;margin-top:32px;max-width:620px}
 
-  /* ── 目玉：AIが育つ実演 ── */
-  .grow{position:relative;height:340vh;background:var(--navy)}
-  .grow-stick{position:sticky;top:0;height:100vh;display:flex;align-items:center;
-    overflow:hidden;padding-top:74px}
-  .grow-bg{position:absolute;inset:0;background:
-    radial-gradient(700px 400px at 70% 50%,rgba(30,94,255,.28),transparent 70%)}
-  .grow-in{position:relative;z-index:2;width:100%}
-  .grow-head{margin-bottom:14px}
+  /* ── どうやって育てるのか（紙芝居4コマ・演出なし） ── */
+  .grow{position:relative;background:var(--navy);padding:110px 0 120px;overflow:hidden}
+  .grow::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(700px 380px at 75% 30%,rgba(30,94,255,.26),transparent 70%)}
+  .grow .wrap{position:relative;z-index:2}
+  .grow-head{margin-bottom:56px}
   .grow-head .num{font-size:10.5px;letter-spacing:.26em;color:rgba(255,255,255,.45)}
   .grow-head h2{font-family:var(--mincho);font-size:clamp(24px,3vw,36px);font-weight:600;
     color:#fff;letter-spacing:.09em;margin-top:14px}
-  .grow-note{color:rgba(255,255,255,.62);font-size:13.5px;margin-top:10px;max-width:640px}
-  /* いま何段目を見ているのかを常に出す */
-  .steps{list-style:none;display:flex;gap:0;margin-bottom:22px;border-top:1px solid rgba(255,255,255,.14)}
-  .steps li{flex:1;display:flex;align-items:center;gap:11px;padding:16px 18px 0 0;
-    position:relative;opacity:.34;transition:opacity .45s}
-  .steps li::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:0;
-    background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .5s}
-  .steps li.on{opacity:1}
-  .steps li.on::before,.steps li.past::before{width:100%}
-  .steps li.past{opacity:.6}
-  .steps i{font-style:normal;font-family:var(--mincho);font-size:15px;color:#fff;
-    width:26px;height:26px;flex:none;border:1px solid rgba(255,255,255,.4);border-radius:50%;
-    display:flex;align-items:center;justify-content:center;line-height:1}
-  .steps li.on i{background:var(--acc);border-color:var(--acc)}
-  .steps span{font-size:12.5px;letter-spacing:.06em;color:#fff}
-  .col-lbl{font-size:10.5px;letter-spacing:.24em;color:rgba(255,255,255,.45);margin-bottom:16px}
-  .stage{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
-  .chat{border:1px solid rgba(255,255,255,.16);border-radius:4px;background:rgba(255,255,255,.04);
-    padding:24px 28px;min-height:252px}
-  .q{font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.06em;padding-bottom:18px;
-    border-bottom:1px solid rgba(255,255,255,.12)}
-  .q b{color:#fff;font-weight:400}
-  .a{padding-top:22px;position:relative;min-height:148px}
-  /* 入れ替わりが二重写しに見えないよう、消える方を先に抜く */
-  .a .txt{font-size:15.5px;line-height:2.2;color:#fff;position:absolute;inset:22px 0 0 0;
-    opacity:0;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease}
-  .a .txt.on{opacity:1;transform:none;transition:opacity .5s ease .22s,transform .5s ease .22s}
-  .a .txt em{font-style:normal;color:#7fd7ff}
-  .a .tone{font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.4);
-    position:absolute;left:0;bottom:-6px}
-  .feed .lbl{font-size:10.5px;letter-spacing:.24em;color:rgba(255,255,255,.4);margin-bottom:18px}
-  .sheet{border:1px solid rgba(255,255,255,.16);border-left:2px solid var(--acc-2);
-    padding:14px 18px;margin-bottom:10px;background:rgba(255,255,255,.03);
-    opacity:0;transform:translateX(18px);transition:opacity .55s,transform .55s}
-  .sheet.on{opacity:1;transform:none}
-  .sheets{position:relative}
-  /* 「まだ何も渡していません」は1枚目の位置に重ねる。消えたあとに空白が残らないように */
-  .sheet.empty{position:absolute;top:0;left:0;right:0;margin:0;
-    border-left-color:rgba(255,255,255,.28);background:var(--navy)}
-  .sheet.empty b{color:rgba(255,255,255,.7)}
-  .sheet b{display:block;font-size:13.5px;color:#fff;font-weight:600;letter-spacing:.05em}
-  .sheet span{display:block;font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.9;margin-top:4px}
-  .meter{margin-top:22px;border-top:1px solid rgba(255,255,255,.14);padding-top:16px;
-    display:flex;align-items:baseline;gap:12px}
-  .meter .n{font-family:var(--mincho);font-size:34px;color:#fff;line-height:1;min-width:46px}
-  .meter .u{font-size:11.5px;color:rgba(255,255,255,.5);letter-spacing:.16em}
-  .bar{height:2px;background:rgba(255,255,255,.14);margin-top:16px;position:relative}
-  .bar i{position:absolute;inset:0 auto 0 0;width:0;
-    background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .6s}
+  .grow-note{color:rgba(255,255,255,.62);font-size:13.5px;margin-top:14px;max-width:660px;line-height:2.2}
+  .koma{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .koma > div{display:flex;flex-direction:column}
+  .koma figure{position:relative;aspect-ratio:4/3;margin-bottom:18px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}
+  .koma figure svg,.koma figure img{position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;display:block}
+  .koma .no{font-family:var(--mincho);font-size:12px;letter-spacing:.24em;color:var(--acc-2)}
+  .koma h3{font-family:var(--mincho);font-size:18px;font-weight:600;color:#fff;
+    letter-spacing:.05em;line-height:1.7;margin:10px 0 10px}
+  .koma p{font-size:13px;color:rgba(255,255,255,.62);line-height:2.05}
+  .koma em{font-style:normal;color:#7fd7ff}
+  .grow-foot{margin-top:52px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);
+    font-size:13.5px;color:rgba(255,255,255,.72);line-height:2.1;max-width:760px}
+  .grow-foot b{color:#fff;font-weight:600}
   @media(max-width:860px){
-    .grow{height:300vh}
-    .stage{grid-template-columns:1fr;gap:30px}
-    .chat{min-height:250px;padding:20px}
-    .steps{gap:0}
-    .steps li{flex-direction:column;align-items:flex-start;gap:7px;padding:14px 10px 0 0}
-    .steps span{font-size:11px;line-height:1.6}
+    .grow{padding:80px 0 88px}
+    .grow-head{margin-bottom:36px}
+    .koma{grid-template-columns:1fr;gap:34px}
+    .koma figure{aspect-ratio:16/9}
   }
 
   /* ── 横に流れるWORKS ── */
@@ -354,50 +316,65 @@
   </div>
 </div>
 
-<!-- ══ 目玉：育つところを見せる ══ -->
+<!-- ══ どうやって育てるのか（紙芝居4コマ） ══ -->
 <div class="grow" id="grow">
-  <div class="grow-stick">
-    <div class="grow-bg"></div>
-    <div class="grow-in wrap">
-      <div class="grow-head">
-        <span class="num">01 &nbsp;/&nbsp; HOW IT GROWS</span>
-        <h2>質問は同じ。渡したものだけが違う。</h2>
-        <p class="grow-note">スクロールすると、AIに渡すものが1枚ずつ増えます。答えがどう変わるか見てください。</p>
+  <div class="wrap">
+    <div class="grow-head rise">
+      <span class="num">01 &nbsp;/&nbsp; HOW TO GROW</span>
+      <h2>どうやって育てるのか。</h2>
+      <p class="grow-note">特別なことはしません。渡すものを2枚つくって、毎朝読ませるだけです。この4コマが、伴走コースでやっていることのほぼ全部です。</p>
+    </div>
+    <div class="koma rise">
+      <div>
+        <figure><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e5eff"/><stop offset="1" stop-color="#00c2d1"/></linearGradient></defs><rect x="128" y="52" width="144" height="196" rx="3" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.86)" stroke-width="1.6"/>
+<line x1="152" y1="92" x2="248" y2="92" stroke="rgba(255,255,255,.86)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="152" y1="124" x2="230" y2="124" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+<line x1="152" y1="152" x2="242" y2="152" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+<line x1="152" y1="180" x2="214" y2="180" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+<circle cx="252" cy="212" r="26" fill="none" stroke="url(#g1)" stroke-width="3"/>
+<line x1="236" y1="228" x2="268" y2="196" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/></svg></figure>
+        <span class="no">01</span>
+        <h3>掟を1枚、書く</h3>
+        <p>やってほしくないことを短く決めます。<em>「一般論で答えない」「時間は120分まで」</em>。長い説明より、この2行の方が効きます。</p>
       </div>
-      <ol class="steps">
-        <li data-s="0"><i>1</i><span>何も渡していないAI</span></li>
-        <li data-s="1"><i>2</i><span>掟を渡したAI</span></li>
-        <li data-s="2"><i>3</i><span>現場の記録まで渡したAI</span></li>
-      </ol>
-      <div class="stage">
-        <div class="chat">
-          <p class="col-lbl">AIの答え</p>
-          <p class="q">あなた：<b>今日の練習メニューを考えて</b></p>
-          <div class="a">
-            <p class="txt on" data-s="0">基礎練習とシュート練習をバランスよく行いましょう。ウォーミングアップを忘れずに。
-              <span class="tone">— 誰にでも言える話</span></p>
-            <p class="txt" data-s="1">中学生の部活動であれば、<em>時間は120分以内</em>に収め、下級生が離脱しないメニュー配分にしましょう。
-              <span class="tone">— 相手が少し見えてきた</span></p>
-            <p class="txt" data-s="2">昨日40分オーバーで下級生の集中が切れていました。今日は<em>ハーフコート中心・全員が触る形</em>に落とします。
-              最後の10分は前回できなかった<em>ボックスアウト</em>を入れます。
-              <span class="tone">— 現場の続きから話し始める</span></p>
-          </div>
-        </div>
-        <div class="feed">
-          <p class="col-lbl">AIに渡したもの</p>
-          <div class="sheets">
-            <div class="sheet empty" data-s="0"><b>まだ何も渡していません</b><span>だから、誰にでも言える話しか返ってきません</span></div>
-            <div class="sheet" data-s="1"><b>掟（やってはいけないこと）</b><span>一般論で答えない／時間の上限を必ず守る</span></div>
-            <div class="sheet" data-s="2"><b>現場の記録</b><span>昨日の練習ログ・できなかった項目</span></div>
-            <div class="sheet" data-s="2"><b>ルーティン</b><span>毎朝、前日のログを読んでから答える</span></div>
-          </div>
-          <div class="meter">
-            <span class="n" id="mn">0</span><span class="u">枚</span>
-          </div>
-          <div class="bar"><i id="mb"></i></div>
-        </div>
+      <div>
+        <figure><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e5eff"/><stop offset="1" stop-color="#00c2d1"/></linearGradient></defs><rect x="40" y="70" width="130" height="160" rx="3" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.5)" stroke-width="1.6"/>
+<line x1="62" y1="104" x2="148" y2="104" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round"/>
+<line x1="62" y1="132" x2="134" y2="132" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round"/>
+<line x1="62" y1="160" x2="148" y2="160" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round"/>
+<line x1="62" y1="188" x2="118" y2="188" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round"/>
+<path d="M190 150 H262" stroke="url(#g2)" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M246 132 L266 150 L246 168" fill="none" stroke="url(#g2)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="284" y="96" width="80" height="108" rx="10" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.86)" stroke-width="1.6"/>
+<circle cx="308" cy="134" r="5" fill="url(#g2)"/><circle cx="340" cy="134" r="5" fill="url(#g2)"/>
+<path d="M306 166 Q324 180 342 166" fill="none" stroke="rgba(255,255,255,.86)" stroke-width="2.4" stroke-linecap="round"/></svg></figure>
+        <span class="no">02</span>
+        <h3>現場の記録を渡す</h3>
+        <p>昨日のログ、できなかったこと。<em>事実だけでいい</em>。AIは、これを持っていないから毎回ふりだしに戻ります。</p>
+      </div>
+      <div>
+        <figure><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e5eff"/><stop offset="1" stop-color="#00c2d1"/></linearGradient></defs><circle cx="200" cy="150" r="78" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.6"/>
+<path d="M200 66 A84 84 0 1 1 128 106" fill="none" stroke="url(#g3)" stroke-width="4" stroke-linecap="round"/>
+<path d="M182 52 L200 66 L182 82" fill="none" stroke="url(#g3)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="168" y="118" width="64" height="72" rx="3" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.86)" stroke-width="1.6"/>
+<line x1="182" y1="140" x2="218" y2="140" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/>
+<line x1="182" y1="158" x2="210" y2="158" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/>
+<line x1="182" y1="176" x2="218" y2="176" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/></svg></figure>
+        <span class="no">03</span>
+        <h3>毎朝、読ませる</h3>
+        <p>答える前に必ずこの2枚を読む、という決まりを作ります。<em>ここが「育つ」の正体</em>で、賢いAIを探すことではありません。</p>
+      </div>
+      <div>
+        <figure><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e5eff"/><stop offset="1" stop-color="#00c2d1"/></linearGradient></defs><path d="M64 74 H336 a10 10 0 0 1 10 10 V196 a10 10 0 0 1 -10 10 H150 l-40 34 v-34 H64 a10 10 0 0 1 -10 -10 V84 a10 10 0 0 1 10 -10 Z" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.86)" stroke-width="1.8"/>
+<line x1="88" y1="112" x2="300" y2="112" stroke="url(#g4)" stroke-width="3" stroke-linecap="round"/>
+<line x1="88" y1="142" x2="262" y2="142" stroke="rgba(255,255,255,.55)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="88" y1="172" x2="292" y2="172" stroke="url(#g4)" stroke-width="3" stroke-linecap="round"/></svg></figure>
+        <span class="no">04</span>
+        <h3>答えが、現場の続きになる</h3>
+        <p>「昨日40分オーバーでしたね」から話が始まります。<em>同じAI・同じ質問</em>のまま、渡したものだけが違います。</p>
       </div>
     </div>
+    <p class="grow-foot rise">つまずくのは、たいてい<b>掟が増えすぎたとき</b>と<b>記録を渡し忘れたとき</b>です。どこを直せばそれが戻るのか——伴走コースで教えているのは、この直し方の方です。</p>
   </div>
 </div>
 
@@ -423,7 +400,7 @@
         <p>画像を並べるだけでコマ撮りアニメを作り、動画で書き出せます。インストール不要、どなたでも使えます。</p>
         <span class="go">使ってみる</span>
       </a>
-      <a class="wcard" href="ai-guide.html">
+      <a class="wcard" href="https://ginza-training.com/ai-guide/">
         <div class="ph"><img src="assets/work-guide.jpg" alt="無料教材「AIの育て方 入門編」のページ" loading="lazy"></div>
         <span class="tag">無料・登録不要</span>
         <h3>AIの育て方 入門編</h3>
@@ -511,7 +488,7 @@
     <p class="rise">登録もメールアドレスも要りません。読んで、貼って、その場で動きます。<br>
     そのうえで直し方まで知りたくなったら、伴走をご相談ください。</p>
     <div class="btns rise">
-      <a class="btn fill" href="ai-guide.html"><span>無料教材を読む</span></a>
+      <a class="btn fill" href="https://ginza-training.com/ai-guide/"><span>無料教材を読む</span></a>
       <a class="btn" href="https://ginza-training.com/ai-sodatekata/"><span>サービスを見る</span></a>
     </div>
   </div>
@@ -582,30 +559,9 @@
   const grow = document.getElementById('grow');
   const works = document.getElementById('works');
   const rail = document.getElementById('rail');
-  const mn = document.getElementById('mn'), mb = document.getElementById('mb'), pgi = document.getElementById('pgi');
-  const txts = [...document.querySelectorAll('.a .txt')];
-  const sheets = [...document.querySelectorAll('.sheet')];
-  const SHEETS = [0, 1, 3];           // 段階ごとの累計枚数
+  const pgi = document.getElementById('pgi');
   const wide = () => matchMedia('(min-width:861px)').matches;
-  let stage = -1, ticking = false;
-
-  const steps = [...document.querySelectorAll('.steps li')];
-  const setStage = (s) => {
-    if (s === stage) return;
-    stage = s;
-    txts.forEach(t => t.classList.toggle('on', +t.dataset.s === s));
-    sheets.forEach(el => {
-      // 「まだ何も渡していません」は0段目だけ。それ以外は積み上げていく
-      el.classList.toggle('on', el.classList.contains('empty') ? s === 0 : +el.dataset.s <= s);
-    });
-    steps.forEach(li => {
-      const n = +li.dataset.s;
-      li.classList.toggle('on', n === s);
-      li.classList.toggle('past', n < s);
-    });
-    mn.textContent = SHEETS[s];
-    mb.style.width = (SHEETS[s] / 3 * 100) + '%';
-  };
+  let ticking = false;
 
   let driven = false;
   const frame = () => {
@@ -618,8 +574,6 @@
 
     if (grow) {
       const r = grow.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, -r.top / (grow.offsetHeight - innerHeight)));
-      setStage(p < .33 ? 0 : p < .66 ? 1 : 2);
       hd.classList.toggle('on-dark', r.top < 60 && r.bottom > 60);
     }
 
@@ -635,7 +589,6 @@
   addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', frame);
   requestAnimationFrame(frame);
-  setStage(0);
   // 保険：requestAnimationFrame が回らない環境では、直接呼ぶ方式に切り替える
   setTimeout(() => {
     if (driven) return;
