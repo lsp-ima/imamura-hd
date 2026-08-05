@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIの答えが一般論にしかならないときに直すところ｜合同会社LSP「AIの育て方」</title>
+<link rel="canonical" href="https://aisodatekata.com/guide/ippanron/">
+<meta name="description" content="ChatGPTに聞いても「バランスの良い食事を心がけましょう」のような当たり前の答えしか返ってこない。原因は聞き方ではなく、渡している材料のほうにあります。何を渡せば自分の仕事の答えになるのかを解説します。">
+<meta property="og:title" content="AIの答えが一般論にしかならないときに直すところ">
+<meta property="og:description" content="当たり前の答えしか返ってこないのは、AIが凡庸だからではありません。判断に使う材料を渡していないからです。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aisodatekata.com/guide/ippanron/">
+<meta property="og:site_name" content="合同会社LSP 資料室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "AIの答えが一般論にしかならないときに直すところ",
+      "description": "AIが当たり前の答えしか返さないのは、聞き方ではなく渡している材料の問題である、という考え方と直し方。",
+      "datePublished": "2026-08-05",
+      "dateModified": "2026-08-05",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {"@type":"WebPage","@id":"https://aisodatekata.com/guide/ippanron/"},
+      "author": {"@type": "Organization", "name": "合同会社LSP", "url": "https://aisodatekata.com/"},
+      "publisher": {"@type": "Organization", "name": "合同会社LSP", "url": "https://aisodatekata.com/"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"ChatGPTの答えが当たり前の内容にしかならないのはなぜですか？",
+         "acceptedAnswer":{"@type":"Answer","text":"判断に使う材料を渡していないからです。材料がないとき、AIは誰にでも当てはまる無難な答えを返します。相手が凡庸なのではなく、その場で言える範囲のことしか言っていない状態です。自分の現場の事実を先に渡すと、答えは具体的になります。"}},
+        {"@type":"Question","name":"AIに具体的な答えを出させるには、何を渡せばいいですか？",
+         "acceptedAnswer":{"@type":"Answer","text":"渡すのは三つです。①いま起きている事実（数字・状況・実際に出た言葉）②自分がすでに試して駄目だったこと ③どういう答えなら採用できるかの条件。特に②を渡すと、教科書的な選択肢が最初から外れるので、答えが一段深くなります。"}},
+        {"@type":"Question","name":"プロンプトを長く丁寧に書けば解決しますか？",
+         "acceptedAnswer":{"@type":"Answer","text":"長さは関係ありません。指示を丁寧にしても、材料が増えていなければ答えは変わりません。うまくいかないときに足すべきなのは指示の言葉ではなく、AIが知らない自分側の事実です。"}},
+        {"@type":"Question","name":"AIに役割を与える方法は効果がありますか？",
+         "acceptedAnswer":{"@type":"Answer","text":"役割の指定だけでは、その職業がよく言いそうな言い回しに変わるだけで、中身は一般論のままです。効くのは役割ではなく判断基準です。「何を優先し、何を捨てるか」を一行で渡すほうが、答えは変わります。"}},
+        {"@type":"Question","name":"具体的な数字を渡すのが怖いのですが、渡さないといけませんか？",
+         "acceptedAnswer":{"@type":"Answer","text":"個人が特定される情報や、お客様から預かった情報は渡さないでください。渡すべきなのは自分の仕事の状況であって、人の情報ではありません。名前を伏せ、範囲をぼかしても、判断に必要な材料は残ります。"}}
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "AIの答えを一般論から自分の仕事の答えに変える手順",
+      "description": "指示を書き直す前に、AIが知らない自分側の材料を渡す。",
+      "step": [
+        {"@type":"HowToStep","name":"事実を書き出す","text":"いま実際に起きていることを、数字と実際に出た言葉のまま3行書く。"},
+        {"@type":"HowToStep","name":"駄目だったことを書く","text":"すでに試して効かなかったことを2行書いて、選択肢から外す。"},
+        {"@type":"HowToStep","name":"採用条件を書く","text":"どういう答えなら実行できるのか（かけられる時間・お金・人手）を1行書く。"},
+        {"@type":"HowToStep","name":"それから聞く","text":"この5〜6行を貼ってから、いつもの質問をする。"}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"合同会社LSP 資料室","item":"https://aisodatekata.com/"},
+        {"@type":"ListItem","position":2,"name":"AIの答えが一般論にしかならないときに直すところ","item":"https://aisodatekata.com/guide/ippanron/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#0b1020; --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.12);
+  --txt:#f1f5f9; --sub:#94a3b8; --cy:#22d3ee; --in:#818cf8; --pk:#e879f9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);line-height:1.95;
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
+  background-image:radial-gradient(900px 460px at 12% -6%,rgba(34,211,238,.10),transparent 60%),
+                   radial-gradient(760px 420px at 92% 3%,rgba(129,140,248,.10),transparent 58%);
+  background-attachment:fixed}
+a{color:var(--cy)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.topbar{border-bottom:1px solid var(--line);background:rgba(11,16,32,.8);
+  backdrop-filter:blur(10px);position:sticky;top:0;z-index:20}
+.topbar .wrap{display:flex;align-items:center;gap:12px;padding-top:13px;padding-bottom:13px}
+.topbar a.home{color:var(--txt);text-decoration:none;font-weight:900;font-size:15px;letter-spacing:.02em}
+.topbar .cta{margin-left:auto;text-decoration:none;font-size:13px;font-weight:800;padding:8px 15px;
+  border-radius:999px;background:linear-gradient(135deg,#22d3ee,#818cf8);color:#06121a;white-space:nowrap}
+.crumb{font-size:12px;color:var(--sub);margin:24px 0 4px}
+.crumb a{color:var(--sub)}
+h1{font-size:clamp(23px,5.2vw,34px);line-height:1.45;font-weight:900;margin:8px 0 14px}
+.meta{font-size:12.5px;color:var(--sub);border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:28px}
+.lede{background:var(--card);border-left:3px solid var(--cy);padding:18px 20px;border-radius:0 12px 12px 0;
+  margin:0 0 34px;font-size:16.5px}
+h2{font-size:clamp(19px,3.9vw,24px);font-weight:900;line-height:1.5;margin:48px 0 0;
+  padding-top:26px;border-top:1px solid var(--line)}
+.answer{background:rgba(34,211,238,.09);border:1px solid rgba(34,211,238,.26);border-radius:12px;
+  padding:14px 17px;margin:15px 0 22px;font-size:15.5px}
+.answer b{color:var(--cy)}
+h3{font-size:17px;font-weight:800;margin:32px 0 8px}
+p{font-size:16px;margin:0 0 17px}
+ul,ol{padding-left:1.25em;margin:0 0 18px}
+li{font-size:15.5px;margin-bottom:9px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:24px 0}
+.box h3{margin-top:0}
+pre{background:#070b16;border:1px solid var(--line);border-radius:12px;padding:18px 18px;
+  overflow-x:auto;font-size:13.5px;line-height:1.85;color:#dbe4f0;margin:16px 0 22px}
+.cta-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 24px;
+  text-align:center;margin:54px 0 30px}
+.cta-box h3{font-size:19px;margin:0 0 10px}
+.cta-box p{font-size:14.5px;color:var(--sub);margin-bottom:20px}
+.cta-box a.btn{display:inline-block;text-decoration:none;font-weight:900;font-size:15.5px;padding:14px 30px;
+  border-radius:999px;background:linear-gradient(135deg,#22d3ee,#818cf8);color:#06121a}
+.cta-box .sub{display:block;margin-top:14px;font-size:13px}
+footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 20px 44px;text-align:center;
+  font-size:12.5px;color:var(--sub)}
+footer a{color:var(--sub);margin:0 9px}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="/">合同会社LSP 資料室</a>
+  <a class="cta" href="/ai-guide.html">無料の入門編</a>
+</div></div>
+
+<div class="wrap">
+
+  <div class="crumb"><a href="/">合同会社LSP 資料室</a> ＞ AIの答えが一般論にしかならないときに直すところ</div>
+
+  <h1>AIの答えが一般論に<br>しかならないときに、直すところ</h1>
+
+  <div class="meta">公開: 2026年8月5日 ／ 最終更新: 2026年8月5日 ／ 合同会社LSP「AIの育て方」</div>
+
+  <p class="lede">
+    「うちのお客さんが続かないんですが、どうしたらいいですか」と聞いて、
+    返ってきたのが「目標設定を一緒に行い、小さな成功体験を積み重ねましょう」。
+    <b>知ってるよ、という答えです。</b>
+    これでAIを見限る人が本当に多いんですが、原因は聞き方ではないんですよ。
+  </p>
+
+  <h2>AIの答えが当たり前の内容にしかならないのは、なぜですか？</h2>
+  <div class="answer">
+    <b>判断に使う材料を渡していないからです。</b>
+    材料がないとき、AIは誰にでも当てはまる無難な答えを返します。
+  </div>
+
+  <p>
+    考えてみると当たり前で、いまの話をまったく知らない人にいきなり
+    「うちのお客さんが続かない」と言ったら、その人も同じことを言います。
+    目標を決めましょう、小さく始めましょう、と。それしか言えないので。
+  </p>
+  <p>
+    AIが凡庸なのではなく、<strong>その場で言える範囲のことしか言っていない</strong>だけなんです。
+    だから直すのは、聞き方ではなく渡す材料のほうです。
+  </p>
+
+  <h2>では、何を渡せばいいですか？</h2>
+  <div class="answer">
+    <b>三つです。①いま起きている事実 ②すでに試して駄目だったこと ③どういう答えなら採用できるかの条件。</b>
+    このうち②が一番効きます。
+  </div>
+
+  <p>
+    ①は、数字と、実際に出た言葉のまま書きます。
+    「続かない」ではなく「10回券を買った方の3人が、5回目までで来なくなった。最後の連絡は『仕事が落ち着いたらまた』でした」。
+    これだけで、AIが考えられる範囲がまったく変わります。
+  </p>
+  <p>
+    ②は、教科書に載っている選択肢を先に外すためのものです。
+    「予約のリマインドは送っている」「次回予約はその場で取ってもらっている」と書いておけば、
+    その二つを提案してくることはなくなります。<strong>凡庸な答えは、こうやって最初から潰しておく。</strong>
+  </p>
+  <p>
+    ③は、実行できない案が返ってくるのを防ぎます。
+    「一人でやっているので、手作業が毎日発生するものは無理です」の一行があるかないかで、返ってくる案の質が変わります。
+  </p>
+
+  <h2>渡す材料は、こういう形で足します</h2>
+
+<pre>【いま起きていること】
+・10回券を買った方のうち3人が、5回目までで来なくなった。
+・最後にもらった連絡は「仕事が落ち着いたらまた」。
+・来なくなる前の2回は、いずれも予約の変更が入っていた。
+
+【もう試して効かなかったこと】
+・前日のリマインド送信。読まれてはいる。
+・その場での次回予約。予約は取るが、後で変更になる。
+
+【採用できる条件】
+・一人でやっているので、毎日手作業が発生するものは無理。
+・お金をかけずにできる範囲で。</pre>
+
+  <p>
+    この6行を貼ってから、同じ質問をします。
+    書くのに3分もかかりません。それでも、返ってくるものは別物になります。
+  </p>
+
+  <h2>プロンプトを長く丁寧に書けば解決しませんか？</h2>
+  <div class="answer">
+    <b>長さは関係ありません。</b>
+    指示を丁寧にしても、材料が増えていなければ答えは変わらないからです。
+  </div>
+
+  <p>
+    「プロンプトの書き方」を調べると、丁寧な言い回しや呪文のような定型文がたくさん出てきます。
+    試すのは自由ですが、<strong>一般論が返ってくる問題は、それでは直りません</strong>。
+    足りていないのは言い方ではなく、AIが知りようのない自分側の事実だからです。
+  </p>
+
+  <h2>「あなたは経験豊富なトレーナーです」のような役割指定は効きますか？</h2>
+  <div class="answer">
+    役割の指定だけだと、<b>その職業がよく言いそうな言い回しに変わるだけ</b>で、中身は一般論のままです。
+    効くのは役割ではなく、判断基準です。
+  </div>
+
+  <p>
+    役割を与えると、口調は変わります。専門用語も増えます。それで「深くなった」と感じてしまうのが厄介なところで、
+    中身を読むと、言っていることは前と同じだったりします。
+  </p>
+  <p>
+    渡すなら、<strong>何を優先して、何を捨てるか</strong>のほうです。
+    「短期の結果より、続けられることを優先する」「合わない人には勧めない」。
+    こういう一行が入ると、返ってくる案の並び順が変わります。ここが役割指定との違いです。
+  </p>
+
+  <div class="box">
+    <h3>一般論が返ってきたときの手順</h3>
+    <ol>
+      <li>指示を書き直そうとする手を、いったん止める</li>
+      <li>「この話を知らない人には、これを言うしかないな」と思えるか確かめる</li>
+      <li>思えたら、AIではなく材料が足りていない。事実を3行足す</li>
+      <li>それでも当たり前なら、すでに試して駄目だったことを2行足す</li>
+    </ol>
+    <p style="margin-bottom:0">
+      この順番で足していくと、たいてい2回目か3回目で、自分の現場の話になります。
+    </p>
+  </div>
+
+  <h2>具体的な数字を渡すのが怖いのですが、渡さないといけませんか？</h2>
+  <div class="answer">
+    <b>個人が特定される情報と、お客様から預かった情報は渡さないでください。</b>
+    渡すのは自分の仕事の状況であって、人の情報ではありません。
+  </div>
+
+  <p>
+    名前を書く必要はありません。「Aさん」で十分です。
+    住所も、連絡先も、病歴も要りません。判断に必要なのは
+    <strong>いつ・何が起きて・自分が何をしたか</strong>だけなので、それを伏せずに書けば足ります。
+  </p>
+  <p>
+    ここは最初に線を引いておいたほうがいいところです。
+    「渡せるものと渡せないもの」を自分の中で決めていないと、便利さに引っ張られて、あとから困ることになります。
+  </p>
+
+  <h2>これは、覚えさせる話とは別ですか？</h2>
+  <div class="answer">
+    別です。<b>こちらは1回の会話の中身の話、覚えさせるのは会話をまたぐ話。</b>
+    両方やると、毎回の説明が消えて、答えも自分の仕事のものになります。
+  </div>
+
+  <p>
+    毎回同じ前提を説明し直しているなら、そちらは
+    <a href="/guide/ai-ga-oboenai/">AIが毎回忘れるのを、やめさせる方法</a>のほうに書いてあります。
+    自分の前提を1枚にして会話の外に置いておく話です。
+  </p>
+  <p>
+    その1枚があると、この記事の①と③は毎回書かなくてよくなります。
+    <strong>毎回書くのは②（今回すでに試して駄目だったこと）だけ</strong>になる。ここまで来ると、かなり楽です。
+  </p>
+  <p>
+    ほかの症状は、<a href="/guide/tsumazuki/">AIがうまく動かないときの、つまずき集</a>にまとめてあります。
+  </p>
+
+  <div class="cta-box">
+    <h3>ここから先を、実際にやってみる</h3>
+    <p>
+      無料の「AIの育て方 入門編」で、自分専用のAI秘書を作るためのプロンプトを配っています。<br>
+      申し込みの前に、手を動かして試せます。
+    </p>
+    <a class="btn" href="/ai-guide.html">無料の入門編を読む</a>
+    <span class="sub"><a href="https://ginza-training.com/ai-sodatekata/">伴走コースの内容と料金を見る</a></span>
+  </div>
+
+</div>
+
+<footer>
+  <div>合同会社LSP「AIの育て方」</div>
+  <div style="margin-top:8px">
+    <a href="/">資料室トップ</a>
+    <a href="/ai-guide.html">無料教材</a>
+    <a href="https://ginza-training.com/ai-sodatekata/">伴走コース</a>
+  </div>
+</footer>
+
+</body>
+</html>
