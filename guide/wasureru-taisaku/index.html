@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会話が長くなるとAIが忘れる。その対策｜合同会社LSP「AIの育て方」</title>
+<link rel="canonical" href="https://aisodatekata.com/guide/wasureru-taisaku/">
+<meta name="description" content="ChatGPTが会話の途中から前提を忘れる理由と対策。会話を区切る場所、引き継ぎの文面、忘れ始めたときのサインの見分け方を解説します。">
+<meta property="og:title" content="会話が長くなるとAIが忘れる。その対策">
+<meta property="og:description" content="忘れているのではなく、押し出されています。区切って、引き継がせるのが対策です。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aisodatekata.com/guide/wasureru-taisaku/">
+<meta property="og:site_name" content="合同会社LSP 資料室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "会話が長くなるとAIが忘れる。その対策",
+      "description": "会話が長くなるとAIが前提を守らなくなる理由と対策。会話を区切る位置、要約による引き継ぎの手順、忘れ始めたサインの見分け方を解説する。",
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-08-30",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://aisodatekata.com/guide/wasureru-taisaku/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "合同会社LSP",
+        "url": "https://aisodatekata.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "合同会社LSP",
+        "url": "https://aisodatekata.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "会話が長くなるとAIが忘れるのは、なぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一度に見られる分量に限りがあり、新しく書いたものが増えるほど、最初に渡した前提が押し出されるためです。忘れたのではなく、視界から外れています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "会話が長くなったときの対策は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "3つあります。仕事の区切りで会話を新しくする、区切る前に要約を作らせて次の会話に貼る、脱線した話を同じ会話に混ぜない。粘って言い直すよりも、開き直すほうが早く戻ります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "会話は、どこで切ればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "話題が変わったところです。文章を作らせていた会話で、その文章の評価を頼み始めたら、そこが切れ目です。同じ案件でも、工程が変われば会話を分けます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "会話を切ると、それまでの内容はどう引き継ぎますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "切る直前に「ここまでの前提と決まったことを10行でまとめて」と言わせ、その10行を新しい会話の最初に貼ります。全部の履歴は要りません。決まったことだけを持っていきます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "忘れ始めたサインはありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "指定した文体が急に戻る、当たり前の一般論が混ざる、前に外したはずの選択肢がまた出てくる。このどれかが出たら、会話を新しくする合図です。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "会話が長くなったときの引き継ぎ手順",
+      "description": "区切って、決まったことだけを次の会話に渡す。",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "切れ目を決める",
+          "text": "話題や工程が変わったところで会話を区切ると決めておく。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "要約を作らせる",
+          "text": "切る直前に「ここまでの前提と決まったことを10行でまとめて」と言わせる。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "新しい会話に貼る",
+          "text": "前提の1枚と、その10行を、新しい会話の最初に貼る。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "守られているか見る",
+          "text": "最初の1回の出力で、指定した文体と禁止事項が守られているかを確認する。"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "合同会社LSP 資料室",
+          "item": "https://aisodatekata.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "読みもの",
+          "item": "https://aisodatekata.com/guide/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "会話が長くなるとAIが忘れる。その対策",
+          "item": "https://aisodatekata.com/guide/wasureru-taisaku/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --navy:#0b1f3f; --navy-2:#122a52; --ink:#141c28; --sub:#6b7686;
+  --line:#e3e7ed; --paper:#fff; --gray:#f5f7fa;
+  --acc:#1e5eff; --acc-2:#00c2d1;
+  --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  --gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);
+  font-size:15.5px;line-height:2.05;-webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt";overflow-x:hidden}
+::selection{background:rgba(30,94,255,.14)}
+a{color:var(--acc);text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:.22em;text-decoration-color:rgba(30,94,255,.38);
+  transition:text-decoration-color .25s,color .25s}
+a:hover{text-decoration-color:var(--acc)}
+b,strong{font-weight:600;color:var(--navy)}
+
+/* 読む幅：本文は720pxまで */
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+@media(max-width:520px){.wrap{padding:0 18px}}
+
+/* ── 上部バー ── */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:14px;height:62px;padding-top:0;padding-bottom:0}
+.topbar a.home{font-family:var(--mincho);font-size:16px;font-weight:600;letter-spacing:.12em;
+  color:var(--navy);text-decoration:none;position:relative;white-space:nowrap}
+.topbar a.home::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+  background:currentColor;transition:width .3s}
+.topbar a.home:hover::after{width:100%}
+.topbar .cta{margin-left:auto;white-space:nowrap;text-decoration:none;
+  font-size:11.5px;letter-spacing:.12em;color:#fff;background:var(--navy);
+  border:1px solid var(--navy);padding:9px 18px;
+  transition:background .3s,border-color .3s}
+.topbar .cta:hover{background:var(--acc);border-color:var(--acc)}
+@media(max-width:480px){
+  .topbar .wrap{height:56px;gap:10px}
+  .topbar a.home{font-size:13.5px;letter-spacing:.05em}
+  .topbar .cta{font-size:10.5px;letter-spacing:.05em;padding:8px 12px}
+}
+
+/* ── 記事の頭 ── */
+.crumb{font-size:11.5px;letter-spacing:.06em;color:var(--sub);margin:46px 0 14px;line-height:1.9}
+.crumb a{color:var(--sub);text-decoration:none}
+.crumb a:hover{color:var(--navy)}
+h1{font-family:var(--mincho);font-size:clamp(26px,5.2vw,40px);font-weight:600;
+  line-height:1.62;letter-spacing:.06em;color:var(--navy);margin:0 0 22px}
+.meta{font-size:12px;letter-spacing:.04em;color:var(--sub);line-height:2;
+  border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:36px}
+.meta b{color:var(--navy)}
+.lede{background:var(--gray);border:1px solid var(--line);border-left:3px solid var(--navy);
+  padding:24px 26px;margin:0 0 40px;font-size:15.5px;line-height:2.15}
+.lede b{color:var(--navy)}
+
+/* ── 本文 ── */
+h2{font-family:var(--mincho);font-size:clamp(20px,3.6vw,27px);font-weight:600;
+  line-height:1.65;letter-spacing:.06em;color:var(--navy);
+  margin:64px 0 0;padding-top:30px;border-top:1px solid var(--line)}
+h3{font-family:var(--mincho);font-size:17px;font-weight:600;letter-spacing:.04em;
+  line-height:1.7;color:var(--navy);margin:34px 0 10px}
+p{margin:0 0 20px}
+ul,ol{padding-left:1.4em;margin:0 0 20px}
+li{margin-bottom:10px}
+li::marker{color:var(--sub)}
+
+/* 質問への答え（結論を先に置く箱） */
+.answer{background:rgba(30,94,255,.045);border:1px solid rgba(30,94,255,.16);
+  border-left:3px solid var(--acc);padding:18px 22px;margin:22px 0 28px;
+  font-size:15px;line-height:2.1}
+.answer b{color:var(--navy)}
+
+pre{background:var(--gray);border:1px solid var(--line);padding:24px 22px;margin:18px 0 28px;
+  font-family:"SF Mono",Menlo,Consolas,monospace;font-size:12.6px;line-height:1.95;
+  color:var(--ink);white-space:pre-wrap;word-break:break-word;overflow-x:auto}
+
+.box{position:relative;background:var(--paper);border:1px solid var(--line);
+  padding:30px 28px 26px;margin:32px 0}
+.box::before{content:"";position:absolute;left:-1px;top:-1px;width:64px;height:2px;
+  background:linear-gradient(90deg,var(--acc),var(--acc-2))}
+.box h3{margin-top:0}
+.box ul,.box ol{margin-bottom:0}
+
+/* ── 紺の反転帯（CTA） ── */
+.cta-box{position:relative;overflow:hidden;background:var(--navy);color:#fff;
+  text-align:center;padding:54px 30px 50px;margin:76px 0 44px}
+.cta-box::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(520px 260px at 20% 0%,rgba(30,94,255,.34),transparent 70%),
+  radial-gradient(420px 220px at 85% 100%,rgba(0,194,209,.2),transparent 70%)}
+.cta-box>*{position:relative;z-index:2}
+.cta-box h3{font-family:var(--mincho);font-size:clamp(19px,3.2vw,24px);font-weight:600;
+  letter-spacing:.08em;color:#fff;margin:0 0 16px;line-height:1.75}
+.cta-box p{color:rgba(255,255,255,.72);font-size:14px;line-height:2.2;
+  max-width:560px;margin:0 auto 26px}
+.cta-box a.btn{display:inline-block;text-decoration:none;background:#fff;color:var(--navy);
+  border:1px solid #fff;padding:16px 38px;font-size:13px;letter-spacing:.14em;
+  transition:background .3s,color .3s,border-color .3s}
+.cta-box a.btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.cta-box .sub{display:block;margin-top:20px;font-size:12.5px}
+.cta-box .sub a{color:rgba(255,255,255,.66);text-decoration-color:rgba(255,255,255,.3)}
+.cta-box .sub a:hover{color:#fff;text-decoration-color:#fff}
+@media(max-width:520px){.cta-box{padding:44px 22px 42px}.cta-box a.btn{display:block;padding:15px 20px}}
+
+footer{border-top:1px solid var(--line);padding:44px 20px 56px;text-align:center;
+  font-size:12px;color:var(--sub);line-height:2.2}
+footer a{color:var(--sub);margin:0 10px;text-decoration:none}
+footer a:hover{color:var(--navy)}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RCJJ3YX5LM');
+</script>
+
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="/">合同会社LSP 資料室</a>
+  <a class="cta" href="/ai-guide.html">無料の入門編</a>
+</div></div>
+
+<div class="wrap">
+
+  <div class="crumb"><a href="/">合同会社LSP 資料室</a> ＞ <a href="/guide/">読みもの</a> ＞ 会話が長くなるとAIが忘れる。その対策</div>
+
+  <h1>会話が長くなるとAIが忘れる。<br>その対策</h1>
+
+  <div class="meta">公開: 2026年8月30日 ／ 最終更新: 2026年8月30日 ／ 合同会社LSP「AIの育て方」</div>
+
+  <p class="lede">
+    最初はちゃんと守っていたのに、20往復くらいすると元に戻っている。
+    これは忘れたのではなく、後から入れたものに押し出されているだけなんですよ。
+    <b>対策は、粘ることではなく、区切って引き継がせることです。</b>
+  </p>
+
+  <h2>会話が長くなると忘れるのは、なぜですか？</h2>
+  <div class="answer">
+    <b>忘れたのではなく、押し出されています。</b>
+    一度に見られる分量に限りがあり、後から書いたものが増えるほど最初の前提が視界から外れます。
+  </div>
+
+  <p>
+    最初はちゃんと守っていたのに、20往復くらいすると元に戻っている。
+    これは性能が落ちたのではなく、<strong>後ろに積まれた文章に前提が埋もれた</strong>状態です。
+  </p>
+  <p>
+    もう1つ厄介なのが、途中の脱線も一緒に材料になることです。
+    試して駄目だった案も、言い間違いも、雑談も、全部ふまえた答えになる。だんだんぼやけていきます。
+  </p>
+
+  <h2>対策は、何ですか？</h2>
+  <div class="answer">
+    <b>粘るのをやめて、区切って引き継がせます。</b>
+    ①仕事の区切りで会話を新しくする ②切る前に要約を作らせる ③脱線を同じ会話に混ぜない。
+  </div>
+
+  <p>
+    多くの人は、ずれた会話をなんとか元に戻そうとします。言い直す、強調する、大文字で書く。
+    <strong>これが一番時間を使います。</strong>戻すより、開き直すほうが速いです。
+  </p>
+
+  <h2>会話は、どこで切ればいいですか？</h2>
+  <div class="answer">
+    <b>話題か工程が変わったところです。</b>
+    同じ案件でも、作る工程と見る工程は別の会話にします。
+  </div>
+
+  <p>
+    分かりやすい切れ目は、文章を書かせていた会話で、その文章の評価を頼み始めたときです。
+    そこは別の仕事なので、会話を分けます。
+  </p>
+  <p>
+    ついでに言うと、書かせた本人に採点させると点が甘くなります。
+    <strong>会話を分けること自体が、精度対策になっています。</strong>
+  </p>
+
+  <h2>切ったあと、それまでの内容はどう引き継ぎますか？</h2>
+  <div class="answer">
+    切る直前に<b>「ここまでの前提と決まったことを10行でまとめて」</b>と言わせ、
+    その10行を新しい会話の最初に貼ります。
+  </div>
+
+<pre>（古い会話の最後で）
+ここまでの前提と決まったことを10行でまとめてください。
+・決まったこと
+・やらないと決めたこと（理由も）
+・次にやること
+この3つが入る形で。
+
+（新しい会話の最初で）
+＜前提の1枚を貼る＞
+＜上で作った10行を貼る＞
+では、続きから始めます。◯◯をお願いします。</pre>
+
+  <p>
+    ポイントは<strong>「やらないと決めたこと」を入れること</strong>です。
+    ここが抜けると、新しい会話で一度却下した案がまた出てきます。理由まで書かせておくと、戻ってきません。
+  </p>
+  <p>
+    全部の履歴は要りません。決まったことだけを持っていく。10行で足ります。
+  </p>
+
+  <h2>途中で切りたくない、長い作業のときは？</h2>
+  <div class="answer">
+    <b>作業の途中経過を、会話の外に出しておきます。</b>
+    会話の中だけに置いておくと、押し出されたときに一緒に消えます。
+  </div>
+
+  <p>
+    決まったことをメモ帳に書き出しながら進めるということです。地味ですが、これが一番強いです。
+    会話が壊れても、メモがあれば新しい会話で即座に復帰できます。
+  </p>
+  <p>
+    長い資料を毎回貼り直すのも避けたほうがいいです。分量を食うので、押し出しが早く来ます。
+    <strong>資料そのものではなく、そこから抜いた要点だけを固定します。</strong>
+  </p>
+
+  <h2>忘れ始めたサインは、ありますか？</h2>
+  <div class="answer">
+    3つあります。<b>指定した文体が急に戻る／当たり前の一般論が混ざる／外したはずの選択肢がまた出てくる。</b>
+  </div>
+
+  <div class="box">
+    <h3>サインが出たときの手順</h3>
+    <ol>
+      <li>その場で言い直さない（言い直すと、また分量が増えます）</li>
+      <li>「ここまでの前提と決まったことを10行でまとめて」と言わせる</li>
+      <li>新しい会話を開き、前提の1枚とその10行を貼る</li>
+      <li>1回出力させて、文体と禁止事項が守られているか確認する</li>
+    </ol>
+    <p style="margin-bottom:0">
+      慣れると30秒で終わります。粘って15分使うより、ずっと速いです。
+    </p>
+  </div>
+
+  <p style="margin-top:34px">
+    あわせて読む: <a href="/guide/seido-ga-ochita/">昨日まで良かったAIの精度が急に落ちたときに見るところ</a>／<a href="/guide/ai-ga-oboenai/">AIが毎回忘れるのを、やめさせる方法</a>
+  </p>
+
+  <div class="cta-box">
+    <h3>ここから先を、実際にやってみる</h3>
+    <p>
+      無料の「AIの育て方 入門編」で、自分専用のAI秘書を作るためのプロンプトを配っています。<br>
+      申し込みの前に、手を動かして試せます。
+    </p>
+    <a class="btn" href="/ai-guide.html">無料の入門編を読む</a>
+    <span class="sub"><a href="https://aisodatekata.com/ai-sodatekata/">伴走コースの内容と料金を見る</a></span>
+  </div>
+
+</div>
+
+<footer>
+  <div>合同会社LSP「AIの育て方」</div>
+  <div style="margin-top:8px">
+    <a href="/">資料室トップ</a>
+    <a href="/guide/">読みもの一覧</a>
+    <a href="/ai-guide.html">無料教材</a>
+    <a href="https://aisodatekata.com/ai-sodatekata/">伴走コース</a>
+  </div>
+</footer>
+
+</body>
+</html>

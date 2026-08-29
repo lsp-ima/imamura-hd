@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPTが覚えてくれないのは、覚えさせる場所を作っていないから｜合同会社LSP「AIの育て方」</title>
+<link rel="canonical" href="https://aisodatekata.com/guide/oboete-kurenai/">
+<meta name="description" content="ChatGPTが覚えてくれないときの対処。覚えさせる場所は4つあり、それぞれ用途が違います。手元の1枚・カスタム指示・メモリ・プロジェクトの使い分けと、覚えているかの確かめ方を解説します。">
+<meta property="og:title" content="ChatGPTが覚えてくれないのは、覚えさせる場所を作っていないから">
+<meta property="og:description" content="覚えさせる場所は4つあります。どれに何を置くかが決まっていないと、いつまでも毎回説明することになります。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aisodatekata.com/guide/oboete-kurenai/">
+<meta property="og:site_name" content="合同会社LSP 資料室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "ChatGPTが覚えてくれないのは、覚えさせる場所を作っていないから",
+      "description": "ChatGPTに前提を覚えさせるための置き場所4種類(手元の1枚・カスタム指示・メモリ機能・プロジェクト)の使い分けと、実際に読まれているかを確認する方法を解説する。",
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-08-30",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://aisodatekata.com/guide/oboete-kurenai/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "合同会社LSP",
+        "url": "https://aisodatekata.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "合同会社LSP",
+        "url": "https://aisodatekata.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ChatGPTが覚えてくれないのは、なぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "覚えさせる場所を用意していないためです。チャットの中で伝えたことは、その会話が終わると残りません。残したい内容は、会話の外にある置き場所に書く必要があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ChatGPTに前提を覚えさせる場所は、どこにありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "4つあります。自分の手元に持つ1枚のメモ、カスタム指示、メモリ機能、プロジェクトやGPTsのような会話をまとめる箱です。手元の1枚だけが自分で全部見えて直せるため、まずここから作ります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "メモリ機能に任せてはいけませんか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "補助としては使えますが、それだけに頼るのは勧めません。何が記憶されたのかを自分で確認しづらく、サービスごとに仕様も違うためです。手元に1枚あれば、ずれたときにどこを直せばいいかが分かります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "前提が実際に読まれているか、どうやって確かめますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "用件を渡す前に「いま渡した前提を3行で要約して」と言わせます。要約が自分の意図とずれていれば、その時点で書き方を直します。読まれているつもりで進めるのが、一番時間を無駄にします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "手元の1枚には何を書きますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "自分が何者か、誰に向けて仕事をしているか、してほしくないこと、出力の形式の4つです。最初から完成させず、ずれるたびに1行足して育てます。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "ChatGPTに前提を覚えさせる置き場所の作り方",
+      "description": "手元の1枚を土台にし、その上にカスタム指示とメモリを足す。",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "手元に1枚作る",
+          "text": "メモ帳に、自分の前提を4項目で書く。これが土台になる。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "変わらない部分をカスタム指示へ写す",
+          "text": "職業や口調の希望など、どの会話でも同じ部分だけをカスタム指示に入れる。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "会話の箱を仕事ごとに分ける",
+          "text": "プロジェクトやGPTsを使い、仕事の種類ごとに会話をまとめる。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "読まれているか確かめる",
+          "text": "用件の前に「前提を3行で要約して」と言わせ、ずれていれば1枚のほうを直す。"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "合同会社LSP 資料室",
+          "item": "https://aisodatekata.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "読みもの",
+          "item": "https://aisodatekata.com/guide/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ChatGPTが覚えてくれないのは、覚えさせる場所を作っていないから",
+          "item": "https://aisodatekata.com/guide/oboete-kurenai/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --navy:#0b1f3f; --navy-2:#122a52; --ink:#141c28; --sub:#6b7686;
+  --line:#e3e7ed; --paper:#fff; --gray:#f5f7fa;
+  --acc:#1e5eff; --acc-2:#00c2d1;
+  --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  --gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);
+  font-size:15.5px;line-height:2.05;-webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt";overflow-x:hidden}
+::selection{background:rgba(30,94,255,.14)}
+a{color:var(--acc);text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:.22em;text-decoration-color:rgba(30,94,255,.38);
+  transition:text-decoration-color .25s,color .25s}
+a:hover{text-decoration-color:var(--acc)}
+b,strong{font-weight:600;color:var(--navy)}
+
+/* 読む幅：本文は720pxまで */
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+@media(max-width:520px){.wrap{padding:0 18px}}
+
+/* ── 上部バー ── */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:14px;height:62px;padding-top:0;padding-bottom:0}
+.topbar a.home{font-family:var(--mincho);font-size:16px;font-weight:600;letter-spacing:.12em;
+  color:var(--navy);text-decoration:none;position:relative;white-space:nowrap}
+.topbar a.home::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+  background:currentColor;transition:width .3s}
+.topbar a.home:hover::after{width:100%}
+.topbar .cta{margin-left:auto;white-space:nowrap;text-decoration:none;
+  font-size:11.5px;letter-spacing:.12em;color:#fff;background:var(--navy);
+  border:1px solid var(--navy);padding:9px 18px;
+  transition:background .3s,border-color .3s}
+.topbar .cta:hover{background:var(--acc);border-color:var(--acc)}
+@media(max-width:480px){
+  .topbar .wrap{height:56px;gap:10px}
+  .topbar a.home{font-size:13.5px;letter-spacing:.05em}
+  .topbar .cta{font-size:10.5px;letter-spacing:.05em;padding:8px 12px}
+}
+
+/* ── 記事の頭 ── */
+.crumb{font-size:11.5px;letter-spacing:.06em;color:var(--sub);margin:46px 0 14px;line-height:1.9}
+.crumb a{color:var(--sub);text-decoration:none}
+.crumb a:hover{color:var(--navy)}
+h1{font-family:var(--mincho);font-size:clamp(26px,5.2vw,40px);font-weight:600;
+  line-height:1.62;letter-spacing:.06em;color:var(--navy);margin:0 0 22px}
+.meta{font-size:12px;letter-spacing:.04em;color:var(--sub);line-height:2;
+  border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:36px}
+.meta b{color:var(--navy)}
+.lede{background:var(--gray);border:1px solid var(--line);border-left:3px solid var(--navy);
+  padding:24px 26px;margin:0 0 40px;font-size:15.5px;line-height:2.15}
+.lede b{color:var(--navy)}
+
+/* ── 本文 ── */
+h2{font-family:var(--mincho);font-size:clamp(20px,3.6vw,27px);font-weight:600;
+  line-height:1.65;letter-spacing:.06em;color:var(--navy);
+  margin:64px 0 0;padding-top:30px;border-top:1px solid var(--line)}
+h3{font-family:var(--mincho);font-size:17px;font-weight:600;letter-spacing:.04em;
+  line-height:1.7;color:var(--navy);margin:34px 0 10px}
+p{margin:0 0 20px}
+ul,ol{padding-left:1.4em;margin:0 0 20px}
+li{margin-bottom:10px}
+li::marker{color:var(--sub)}
+
+/* 質問への答え（結論を先に置く箱） */
+.answer{background:rgba(30,94,255,.045);border:1px solid rgba(30,94,255,.16);
+  border-left:3px solid var(--acc);padding:18px 22px;margin:22px 0 28px;
+  font-size:15px;line-height:2.1}
+.answer b{color:var(--navy)}
+
+pre{background:var(--gray);border:1px solid var(--line);padding:24px 22px;margin:18px 0 28px;
+  font-family:"SF Mono",Menlo,Consolas,monospace;font-size:12.6px;line-height:1.95;
+  color:var(--ink);white-space:pre-wrap;word-break:break-word;overflow-x:auto}
+
+.box{position:relative;background:var(--paper);border:1px solid var(--line);
+  padding:30px 28px 26px;margin:32px 0}
+.box::before{content:"";position:absolute;left:-1px;top:-1px;width:64px;height:2px;
+  background:linear-gradient(90deg,var(--acc),var(--acc-2))}
+.box h3{margin-top:0}
+.box ul,.box ol{margin-bottom:0}
+
+/* ── 紺の反転帯（CTA） ── */
+.cta-box{position:relative;overflow:hidden;background:var(--navy);color:#fff;
+  text-align:center;padding:54px 30px 50px;margin:76px 0 44px}
+.cta-box::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(520px 260px at 20% 0%,rgba(30,94,255,.34),transparent 70%),
+  radial-gradient(420px 220px at 85% 100%,rgba(0,194,209,.2),transparent 70%)}
+.cta-box>*{position:relative;z-index:2}
+.cta-box h3{font-family:var(--mincho);font-size:clamp(19px,3.2vw,24px);font-weight:600;
+  letter-spacing:.08em;color:#fff;margin:0 0 16px;line-height:1.75}
+.cta-box p{color:rgba(255,255,255,.72);font-size:14px;line-height:2.2;
+  max-width:560px;margin:0 auto 26px}
+.cta-box a.btn{display:inline-block;text-decoration:none;background:#fff;color:var(--navy);
+  border:1px solid #fff;padding:16px 38px;font-size:13px;letter-spacing:.14em;
+  transition:background .3s,color .3s,border-color .3s}
+.cta-box a.btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.cta-box .sub{display:block;margin-top:20px;font-size:12.5px}
+.cta-box .sub a{color:rgba(255,255,255,.66);text-decoration-color:rgba(255,255,255,.3)}
+.cta-box .sub a:hover{color:#fff;text-decoration-color:#fff}
+@media(max-width:520px){.cta-box{padding:44px 22px 42px}.cta-box a.btn{display:block;padding:15px 20px}}
+
+footer{border-top:1px solid var(--line);padding:44px 20px 56px;text-align:center;
+  font-size:12px;color:var(--sub);line-height:2.2}
+footer a{color:var(--sub);margin:0 10px;text-decoration:none}
+footer a:hover{color:var(--navy)}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RCJJ3YX5LM');
+</script>
+
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="/">合同会社LSP 資料室</a>
+  <a class="cta" href="/ai-guide.html">無料の入門編</a>
+</div></div>
+
+<div class="wrap">
+
+  <div class="crumb"><a href="/">合同会社LSP 資料室</a> ＞ <a href="/guide/">読みもの</a> ＞ ChatGPTが覚えてくれないのは、覚えさせる場所を作っていないから</div>
+
+  <h1>ChatGPTが覚えてくれないのは、<br>覚えさせる場所を作っていないから</h1>
+
+  <div class="meta">公開: 2026年8月30日 ／ 最終更新: 2026年8月30日 ／ 合同会社LSP「AIの育て方」</div>
+
+  <p class="lede">
+    毎回同じ説明をしているなら、AIの性能ではなく、置き場所の話です。
+    覚えさせる場所は、実は4つあります。手元の1枚、カスタム指示、メモリ機能、プロジェクト。
+    <b>この4つの使い分けが決まっていないと、どこにも定着しないんですよ。</b>
+  </p>
+
+  <h2>ChatGPTが覚えてくれないのは、なぜですか？</h2>
+  <div class="answer">
+    <b>覚えさせる場所を用意していないからです。</b>
+    チャットの中で伝えたことは、その会話が終わると残りません。
+  </div>
+
+  <p>
+    「昨日あれだけ説明したのに」と思うところですが、昨日の説明は昨日の会話の中にあります。
+    今日の会話には持ち込まれていません。だから、また一から説明することになる。
+  </p>
+  <p>
+    なので、やることは「覚えさせよう」と頑張ることではなく、<strong>覚えておく場所を先に決めること</strong>です。
+  </p>
+
+  <h2>覚えさせる場所は、どこにありますか？</h2>
+  <div class="answer">
+    4つあります。<b>①手元に持つ1枚のメモ ②カスタム指示 ③メモリ機能 ④プロジェクトやGPTsのような箱。</b>
+    まず①を作ります。
+  </div>
+
+  <ul>
+    <li><strong>① 手元の1枚</strong>：メモ帳やドキュメントに自分で持つ文章。会話のたびに最初に貼る。全部見えて、直せて、どのAIでも使える</li>
+    <li><strong>② カスタム指示</strong>：設定画面に入れておく、常に効く前提。どの会話でも変わらない部分だけを入れる</li>
+    <li><strong>③ メモリ機能</strong>：AIが会話から拾って自動で覚えるもの。便利だが、何を覚えたかが見えにくい</li>
+    <li><strong>④ プロジェクト・GPTs</strong>：仕事の種類ごとに会話と資料をまとめておく箱。案件ごとの前提を置くのに向く</li>
+  </ul>
+
+  <h2>どれを使えばいいですか？</h2>
+  <div class="answer">
+    <b>①を土台にして、その上に②と④を足します。③は補助です。</b>
+    置くものが決まっていれば、迷いません。
+  </div>
+
+<div class="box">
+    <h3>どこに、何を置くか</h3>
+    <ul>
+      <li><strong>① 手元の1枚</strong>　…　仕事ごとの前提。ずれるたびに1行足していく本体</li>
+      <li><strong>② カスタム指示</strong>　…　職業・口調・してほしくないこと（毎回同じ部分だけ）</li>
+      <li><strong>③ メモリ機能</strong>　…　任せきりにしない。たまに中身を見て、古いものを消す</li>
+      <li><strong>④ プロジェクト</strong>　…　案件ごとの資料と、その案件だけの決めごと</li>
+    </ul>
+    <p style="margin-bottom:0">
+      迷ったら①に置きます。置き場所が決まっていないものは、どこにも定着しません。
+    </p>
+  </div>
+
+  <p>
+    ①を土台にする理由は単純で、<strong>ここだけが自分で全部見えて、直せて、別のAIに移せる</strong>からです。
+    サービスを乗り換えても、②③④は持っていけませんが、①はコピーするだけで済みます。
+  </p>
+
+  <h2>メモリ機能に任せてはいけませんか？</h2>
+  <div class="answer">
+    補助としては使えますが、それだけに頼るのは勧めません。
+    <b>何が記憶されたのかを自分で確認しづらく、サービスごとに仕様も違うからです。</b>
+  </div>
+
+  <p>
+    問題が起きるのは、うまくいかなくなったときです。
+    中身が見えないと、どこを直せばいいのかが分からない。原因が特定できないまま、聞き方をいじり続けることになります。
+  </p>
+  <p>
+    ときどき中身を開いて、古くなったものを消しておくといいです。
+    半年前の案件の前提が残っていて、それが今の答えを引っぱっていることがあります。
+  </p>
+
+  <h2>手元の1枚には、何を書きますか？</h2>
+  <div class="answer">
+    <b>①自分が何者か ②誰に向けて仕事をしているか ③してほしくないこと ④出力の形式。</b>
+    ③が一番効きます。
+  </div>
+
+<pre>【私について】
+・◯◯（職種）をしています。◯年目です。
+・お客さんは主に◯◯な方です。
+
+【してほしくないこと】
+・カタカナの専門用語を並べない
+・「いかがでしたか」で締めない
+・根拠がないときは「わからない」と言う
+
+【出し方】
+・結論から。前置きはいらない
+・話し言葉の文章で</pre>
+
+  <p>
+    最初から完成させようとしないでください。3行で始めて、ずれるたびに1行足す。
+    <strong>使って足した行だけが効きます。</strong>想像で書いた行は、だいたい効きません。
+  </p>
+
+  <h2>前提が本当に読まれているか、どうやって確かめますか？</h2>
+  <div class="answer">
+    用件を渡す前に、<b>「いま渡した前提を3行で要約して」</b>と言わせます。
+    ここでずれていたら、その先は全部ずれます。
+  </div>
+
+  <p>
+    これをやる人は少ないんですが、効果は大きいです。
+    読まれているつもりで長い作業を進めて、最後に全部やり直すのが一番もったいない。
+  </p>
+
+  <div class="box">
+    <h3>覚えさせる場所を作る手順</h3>
+    <ol>
+      <li>メモ帳に1枚作って、4項目を書く（3行ずつで十分）</li>
+      <li>そのうち、どの会話でも同じ部分だけをカスタム指示に写す</li>
+      <li>仕事の種類ごとにプロジェクトを作り、案件の資料をそこに置く</li>
+      <li>新しい会話のたびに1枚を貼り、「3行で要約して」で読まれたか確かめる</li>
+      <li>ずれたら、指示を言い換えずに1枚のほうへ1行足す</li>
+    </ol>
+    <p style="margin-bottom:0">
+      ここまで来ると、毎回の説明がなくなります。
+    </p>
+  </div>
+
+  <p style="margin-top:34px">
+    あわせて読む: <a href="/guide/ai-ga-oboenai/">AIが毎回忘れるのを、やめさせる方法</a>／<a href="/guide/custom-shiji/">カスタム指示に何を書くか、実際の中身を全部見せる</a>
+  </p>
+
+  <div class="cta-box">
+    <h3>ここから先を、実際にやってみる</h3>
+    <p>
+      無料の「AIの育て方 入門編」で、自分専用のAI秘書を作るためのプロンプトを配っています。<br>
+      申し込みの前に、手を動かして試せます。
+    </p>
+    <a class="btn" href="/ai-guide.html">無料の入門編を読む</a>
+    <span class="sub"><a href="https://aisodatekata.com/ai-sodatekata/">伴走コースの内容と料金を見る</a></span>
+  </div>
+
+</div>
+
+<footer>
+  <div>合同会社LSP「AIの育て方」</div>
+  <div style="margin-top:8px">
+    <a href="/">資料室トップ</a>
+    <a href="/guide/">読みもの一覧</a>
+    <a href="/ai-guide.html">無料教材</a>
+    <a href="https://aisodatekata.com/ai-sodatekata/">伴走コース</a>
+  </div>
+</footer>
+
+</body>
+</html>

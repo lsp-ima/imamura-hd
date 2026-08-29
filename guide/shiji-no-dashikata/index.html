@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIへの指示は、長く書くほど悪くなる｜合同会社LSP「AIの育て方」</title>
+<link rel="canonical" href="https://aisodatekata.com/guide/shiji-no-dashikata/">
+<meta name="description" content="AIへの指示の出し方。指示を「前提・依頼・出力の形」の3つに分けると安定します。長く書くほど悪くなる理由と、判定できない言葉を使わないコツを解説します。">
+<meta property="og:title" content="AIへの指示は、長く書くほど悪くなる">
+<meta property="og:description" content="指示は3つに分けます。毎回同じ前提、今回だけの依頼、出してほしい形。混ぜると効きません。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aisodatekata.com/guide/shiji-no-dashikata/">
+<meta property="og:site_name" content="合同会社LSP 資料室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "AIへの指示は、長く書くほど悪くなる",
+      "description": "AIへの指示の構造を、毎回同じ前提・今回だけの依頼・出力の形の3つに分ける方法。指示を長くしても精度が上がらない理由と、判定できる言葉の選び方を解説する。",
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-08-30",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://aisodatekata.com/guide/shiji-no-dashikata/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "合同会社LSP",
+        "url": "https://aisodatekata.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "合同会社LSP",
+        "url": "https://aisodatekata.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "AIへの指示は、どう出すのが正しいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "3つに分けて渡します。毎回同じ前提、今回だけの依頼、出してほしい出力の形です。この3つを混ぜて1本の長文にすると、どれが優先されるかが決まらず、途中の指定が落ちます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "指示を長く書くほど悪くなるのはなぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "お願いの数が増えるほど、1つあたりの重みが下がるためです。10個並べると後ろのほうが薄まります。長さではなく、一度に頼む数を減らすほうが効きます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一度に何個までお願いしていいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1つです。文章を書かせるのと、その文章を評価させるのを同時に頼むと、どちらも中途半端になります。書かせてから、別の会話で見せるほうが早く終わります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "「丁寧に」「いい感じに」が効かないのはなぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "守られたかどうかを自分で判定できない言葉だからです。判定できない指示は、出力を見ても直せているのか分かりません。「文末を『です・ます』にする」のように、見れば分かる形に置き換えます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "指示が効いたかどうかは、どう確かめますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "同じ用件をもう一度渡して、直っているかを見ます。1回の出力で判断せず、2回目で同じ癖が出るかどうかを見ると、指示が効いているのか偶然なのかが分かれます。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "AIへの指示を3つに分ける手順",
+      "description": "前提・依頼・出力の形に分けて渡す。",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "前提を切り出す",
+          "text": "毎回同じ内容(自分が何者か・してほしくないこと)を1枚にまとめ、会話の最初に貼る。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "依頼を1つにする",
+          "text": "今回やってほしいことを1つだけ書く。2つあるなら会話を分ける。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "出力の形を先に決める",
+          "text": "長さ・文体・箇条書きの可否など、出してほしい形を依頼と分けて書く。"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "判定できる言葉に直す",
+          "text": "「丁寧に」のような曖昧な語を、見れば分かる条件に置き換える。"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "合同会社LSP 資料室",
+          "item": "https://aisodatekata.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "読みもの",
+          "item": "https://aisodatekata.com/guide/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AIへの指示は、長く書くほど悪くなる",
+          "item": "https://aisodatekata.com/guide/shiji-no-dashikata/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --navy:#0b1f3f; --navy-2:#122a52; --ink:#141c28; --sub:#6b7686;
+  --line:#e3e7ed; --paper:#fff; --gray:#f5f7fa;
+  --acc:#1e5eff; --acc-2:#00c2d1;
+  --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  --gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);
+  font-size:15.5px;line-height:2.05;-webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt";overflow-x:hidden}
+::selection{background:rgba(30,94,255,.14)}
+a{color:var(--acc);text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:.22em;text-decoration-color:rgba(30,94,255,.38);
+  transition:text-decoration-color .25s,color .25s}
+a:hover{text-decoration-color:var(--acc)}
+b,strong{font-weight:600;color:var(--navy)}
+
+/* 読む幅：本文は720pxまで */
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+@media(max-width:520px){.wrap{padding:0 18px}}
+
+/* ── 上部バー ── */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:14px;height:62px;padding-top:0;padding-bottom:0}
+.topbar a.home{font-family:var(--mincho);font-size:16px;font-weight:600;letter-spacing:.12em;
+  color:var(--navy);text-decoration:none;position:relative;white-space:nowrap}
+.topbar a.home::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+  background:currentColor;transition:width .3s}
+.topbar a.home:hover::after{width:100%}
+.topbar .cta{margin-left:auto;white-space:nowrap;text-decoration:none;
+  font-size:11.5px;letter-spacing:.12em;color:#fff;background:var(--navy);
+  border:1px solid var(--navy);padding:9px 18px;
+  transition:background .3s,border-color .3s}
+.topbar .cta:hover{background:var(--acc);border-color:var(--acc)}
+@media(max-width:480px){
+  .topbar .wrap{height:56px;gap:10px}
+  .topbar a.home{font-size:13.5px;letter-spacing:.05em}
+  .topbar .cta{font-size:10.5px;letter-spacing:.05em;padding:8px 12px}
+}
+
+/* ── 記事の頭 ── */
+.crumb{font-size:11.5px;letter-spacing:.06em;color:var(--sub);margin:46px 0 14px;line-height:1.9}
+.crumb a{color:var(--sub);text-decoration:none}
+.crumb a:hover{color:var(--navy)}
+h1{font-family:var(--mincho);font-size:clamp(26px,5.2vw,40px);font-weight:600;
+  line-height:1.62;letter-spacing:.06em;color:var(--navy);margin:0 0 22px}
+.meta{font-size:12px;letter-spacing:.04em;color:var(--sub);line-height:2;
+  border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:36px}
+.meta b{color:var(--navy)}
+.lede{background:var(--gray);border:1px solid var(--line);border-left:3px solid var(--navy);
+  padding:24px 26px;margin:0 0 40px;font-size:15.5px;line-height:2.15}
+.lede b{color:var(--navy)}
+
+/* ── 本文 ── */
+h2{font-family:var(--mincho);font-size:clamp(20px,3.6vw,27px);font-weight:600;
+  line-height:1.65;letter-spacing:.06em;color:var(--navy);
+  margin:64px 0 0;padding-top:30px;border-top:1px solid var(--line)}
+h3{font-family:var(--mincho);font-size:17px;font-weight:600;letter-spacing:.04em;
+  line-height:1.7;color:var(--navy);margin:34px 0 10px}
+p{margin:0 0 20px}
+ul,ol{padding-left:1.4em;margin:0 0 20px}
+li{margin-bottom:10px}
+li::marker{color:var(--sub)}
+
+/* 質問への答え（結論を先に置く箱） */
+.answer{background:rgba(30,94,255,.045);border:1px solid rgba(30,94,255,.16);
+  border-left:3px solid var(--acc);padding:18px 22px;margin:22px 0 28px;
+  font-size:15px;line-height:2.1}
+.answer b{color:var(--navy)}
+
+pre{background:var(--gray);border:1px solid var(--line);padding:24px 22px;margin:18px 0 28px;
+  font-family:"SF Mono",Menlo,Consolas,monospace;font-size:12.6px;line-height:1.95;
+  color:var(--ink);white-space:pre-wrap;word-break:break-word;overflow-x:auto}
+
+.box{position:relative;background:var(--paper);border:1px solid var(--line);
+  padding:30px 28px 26px;margin:32px 0}
+.box::before{content:"";position:absolute;left:-1px;top:-1px;width:64px;height:2px;
+  background:linear-gradient(90deg,var(--acc),var(--acc-2))}
+.box h3{margin-top:0}
+.box ul,.box ol{margin-bottom:0}
+
+/* ── 紺の反転帯（CTA） ── */
+.cta-box{position:relative;overflow:hidden;background:var(--navy);color:#fff;
+  text-align:center;padding:54px 30px 50px;margin:76px 0 44px}
+.cta-box::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(520px 260px at 20% 0%,rgba(30,94,255,.34),transparent 70%),
+  radial-gradient(420px 220px at 85% 100%,rgba(0,194,209,.2),transparent 70%)}
+.cta-box>*{position:relative;z-index:2}
+.cta-box h3{font-family:var(--mincho);font-size:clamp(19px,3.2vw,24px);font-weight:600;
+  letter-spacing:.08em;color:#fff;margin:0 0 16px;line-height:1.75}
+.cta-box p{color:rgba(255,255,255,.72);font-size:14px;line-height:2.2;
+  max-width:560px;margin:0 auto 26px}
+.cta-box a.btn{display:inline-block;text-decoration:none;background:#fff;color:var(--navy);
+  border:1px solid #fff;padding:16px 38px;font-size:13px;letter-spacing:.14em;
+  transition:background .3s,color .3s,border-color .3s}
+.cta-box a.btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.cta-box .sub{display:block;margin-top:20px;font-size:12.5px}
+.cta-box .sub a{color:rgba(255,255,255,.66);text-decoration-color:rgba(255,255,255,.3)}
+.cta-box .sub a:hover{color:#fff;text-decoration-color:#fff}
+@media(max-width:520px){.cta-box{padding:44px 22px 42px}.cta-box a.btn{display:block;padding:15px 20px}}
+
+footer{border-top:1px solid var(--line);padding:44px 20px 56px;text-align:center;
+  font-size:12px;color:var(--sub);line-height:2.2}
+footer a{color:var(--sub);margin:0 10px;text-decoration:none}
+footer a:hover{color:var(--navy)}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RCJJ3YX5LM');
+</script>
+
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="/">合同会社LSP 資料室</a>
+  <a class="cta" href="/ai-guide.html">無料の入門編</a>
+</div></div>
+
+<div class="wrap">
+
+  <div class="crumb"><a href="/">合同会社LSP 資料室</a> ＞ <a href="/guide/">読みもの</a> ＞ AIへの指示は、長く書くほど悪くなる</div>
+
+  <h1>AIへの指示は、<br>長く書くほど悪くなる</h1>
+
+  <div class="meta">公開: 2026年8月30日 ／ 最終更新: 2026年8月30日 ／ 合同会社LSP「AIの育て方」</div>
+
+  <p class="lede">
+    指示の出し方を調べると、だいたい「具体的に細かく書きましょう」と出てきます。
+    それで長く書くと、今度は途中の指定が守られなくなる。心当たりありませんか。
+    <b>足りないのは長さではなく、分け方なんですよ。</b>
+  </p>
+
+  <h2>AIへの指示は、どう出すのが正しいですか？</h2>
+  <div class="answer">
+    <b>3つに分けて渡します。①毎回同じ前提 ②今回だけの依頼 ③出してほしい形。</b>
+    混ぜて1本の長文にすると、どれが優先されるか決まりません。
+  </div>
+
+  <p>
+    指示の出し方を調べると「具体的に細かく」と出てきます。それ自体は間違っていません。
+    ただ、細かく書いた結果できあがるのが<strong>1本の長い塊</strong>だと、途中の指定が守られなくなります。
+  </p>
+  <p>
+    分けると何が変わるかというと、直す場所が決まります。
+    文体がずれたら③を直す。中身が薄かったら②に材料を足す。毎回同じ癖が出るなら①に1行足す。
+    <strong>混ざっていると、どこを直せばいいのか分かりません。</strong>
+  </p>
+
+  <h2>なぜ長く書くほど悪くなるのですか？</h2>
+  <div class="answer">
+    <b>お願いの数が増えるほど、1つあたりの重みが下がるからです。</b>
+    10個並べれば、後ろのほうは薄まります。
+  </div>
+
+  <p>
+    人に頼むときも同じですよね。「これとこれとこれ、あとこれもお願い」と言われたら、最後のほうは記憶に残りません。
+    長さの問題ではなく、数の問題です。
+  </p>
+  <p>
+    なので、長く書くこと自体は悪くありません。<strong>悪いのは、一度に頼む数が多いこと</strong>です。
+    前提を200行書いても構いませんが、今回の依頼は1つにします。
+  </p>
+
+  <h2>前提・依頼・形には、それぞれ何を書きますか？</h2>
+  <div class="answer">
+    前提は毎回同じ。依頼は今回だけ。形は出力の見た目。<b>この境目を守ると、使い回しが効きます。</b>
+  </div>
+
+<pre>【前提】（毎回同じ。1枚にしてコピーで貼る）
+・パーソナルジムをやっています。5年目です。
+・お客さんは30代〜40代の女性が中心です。
+・カタカナの専門用語は使わない。
+・「いかがでしたか」で締めない。
+
+【依頼】（今回だけ。1つに絞る）
+・下の問い合わせに返信の下書きを作ってください。
+・材料：
+  （実際に来た問い合わせの文面をそのまま貼る）
+  （すでに試して駄目だった案があれば書く）
+  （どういう返事なら送れるかの条件）
+
+【形】
+・300字前後。
+・箇条書きは使わない。
+・料金と所要時間は必ず入れる。</pre>
+
+  <p>
+    この形にすると、明日も使えます。【前提】と【形】は貼り直すだけで、【依頼】の中身だけ入れ替わる。
+    <strong>毎回ゼロから書かなくなった時点で、だいぶ楽になります。</strong>
+  </p>
+
+  <h2>一度に何個までお願いしていいですか？</h2>
+  <div class="answer">
+    <b>1つです。</b>
+    書かせることと、その出来を評価させることを同時に頼まないでください。
+  </div>
+
+  <p>
+    自分で書いたものを自分で採点させると、だいたい甘い点がつきます。
+    書かせる会話と、見せる会話を分けたほうがいい。同じAIでも、別の会話にするだけで指摘が変わります。
+  </p>
+  <p>
+    急がば回れで、分けたほうが速いです。1回で全部やらせようとして3回やり直すより、
+    2回に分けて1回ずつ通したほうが、結局早く終わります。
+  </p>
+
+  <h2>「丁寧に」「いい感じに」が効かないのは、なぜですか？</h2>
+  <div class="answer">
+    <b>守られたかどうかを、自分で判定できない言葉だからです。</b>
+    判定できない指示は、直っているかも分かりません。
+  </div>
+
+<div class="box">
+    <h3>判定できない言葉を、判定できる条件に置き換える</h3>
+    <ul>
+      <li>いい感じに　→　<strong>300字前後、話し言葉で</strong></li>
+      <li>丁寧に　→　<strong>文末は「です・ます」</strong></li>
+      <li>硬くしない　→　<strong>「〜に際し」「〜ならびに」を使わない</strong></li>
+      <li>分かりやすく　→　<strong>1文を50字以内にする</strong></li>
+      <li>プロっぽく　→　<strong>消す（効いていません）</strong></li>
+    </ul>
+    <p style="margin-bottom:0">
+      右側は、出てきた文章を見れば守られたか分かります。左側は分かりません。
+    </p>
+  </div>
+
+  <p>
+    <strong>自分が判定できない言葉は、書いても意味がない</strong>と思って削ってしまって大丈夫です。
+  </p>
+
+  <h2>指示が効いたかどうかは、どう確かめますか？</h2>
+  <div class="answer">
+    <b>同じ用件をもう一度渡して、2回目でも同じように出るかを見ます。</b>
+    1回だけでは、偶然と区別がつきません。
+  </div>
+
+  <p>
+    1回目でうまくいくと、そこで満足して次に進みたくなります。
+    でも2回目で同じ癖が出るなら、その指示は効いていません。たまたま当たっただけです。
+  </p>
+  <p>
+    面倒に見えますが、ここを1回やるだけで、後から「なんで戻ったんだろう」と悩む時間が消えます。
+  </p>
+
+  <p style="margin-top:34px">
+    あわせて読む: <a href="/guide/shiji-template/">使い回せる指示のひな形と、ひな形が効かない場面</a>／<a href="/guide/seido-wo-ageru/">ChatGPTの精度を上げる、たった1つの準備</a>
+  </p>
+
+  <div class="cta-box">
+    <h3>ここから先を、実際にやってみる</h3>
+    <p>
+      無料の「AIの育て方 入門編」で、自分専用のAI秘書を作るためのプロンプトを配っています。<br>
+      申し込みの前に、手を動かして試せます。
+    </p>
+    <a class="btn" href="/ai-guide.html">無料の入門編を読む</a>
+    <span class="sub"><a href="https://aisodatekata.com/ai-sodatekata/">伴走コースの内容と料金を見る</a></span>
+  </div>
+
+</div>
+
+<footer>
+  <div>合同会社LSP「AIの育て方」</div>
+  <div style="margin-top:8px">
+    <a href="/">資料室トップ</a>
+    <a href="/guide/">読みもの一覧</a>
+    <a href="/ai-guide.html">無料教材</a>
+    <a href="https://aisodatekata.com/ai-sodatekata/">伴走コース</a>
+  </div>
+</footer>
+
+</body>
+</html>
