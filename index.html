@@ -441,6 +441,21 @@
     </div>
   </section>
 
+  <section class="sec tight" id="note">
+    <div class="wrap reveal">
+      <span class="kicker">決める前に読めるもの</span>
+      <h2>実際にAIに任せた話を、noteに書いています。</h2>
+      <p class="lead">うまくいった話も、止まった話もあります。読んで、自分の仕事に置きかえてみてください。</p>
+      <ul class="lead">
+        <li><a href="https://note.com/lifestylepro/n/ne7e7bf942bf4" target="_blank" rel="noopener">プログラミングができないトレーナーがAIに業務を任せるまでにやったこと</a></li>
+        <li><a href="https://note.com/lifestylepro/n/n4a2807bed27f" target="_blank" rel="noopener">人がやったほうが早い仕事をAIにやらせてはいけません</a></li>
+        <li><a href="https://note.com/lifestylepro/n/n9881d2832be4" target="_blank" rel="noopener">予約管理システムを入れる前に、申し込みがどこで数えられているか確かめてください</a></li>
+        <li><a href="https://note.com/lifestylepro/n/nea32193659e5" target="_blank" rel="noopener">全部AIに書かせて本を出版しました【Kindle】</a></li>
+      </ul>
+      <p class="lead"><a href="https://note.com/lifestylepro/m/mfcf2fe3147e7" target="_blank" rel="noopener">マガジンで全部読む</a></p>
+    </div>
+  </section>
+
   <section class="sec gray" id="tsuishin">
     <div class="wrap reveal">
       <span class="kicker">追伸</span>
@@ -456,10 +471,10 @@
       <h2>読んで合うと思ったら、ここからです。</h2>
       <p class="lead">3ヶ月後に手元に残るのは、動いているAIと、ずれたときに自分で直せる力です。</p>
       <div class="cta-row">
-        <a class="btn btn-main" href="https://forms.gle/AvNCqskTvCsv6XvM9" target="_blank" rel="noopener">申し込む(総額 95,000円)</a>
-        <a class="btn btn-ghost" href="https://aisodatekata.com/docs.html" target="_blank" rel="noopener">提案書・図解を見る(資料室)</a>
+        <a class="btn btn-main" href="https://coconala.com/services/4424245" target="_blank" rel="noopener">まず1,000円で試す(ココナラ)</a>
+        <a class="btn btn-ghost" href="https://forms.gle/AvNCqskTvCsv6XvM9" target="_blank" rel="noopener">申し込む(総額 95,000円)</a>
       </div>
-      <p class="micro">迷うところは、フォームの備考に。返信で答えます。</p>
+      <p class="micro">迷うところは、フォームの備考に。返信で答えます。<a href="/docs.html">提案書・図解(資料室)</a>もあります。</p>
     </div>
   </section>
 
@@ -500,6 +515,10 @@
     if(h.indexOf('forms.gle/AvNCqskTvCsv6XvM9')>=0){
       a.addEventListener('click',function(){
         if(typeof gtag==='function')gtag('event','apply_click',{gclid:got.gclid||'',utm_source:got.utm_source||'',utm_campaign:got.utm_campaign||''});
+      });
+    }else if(h.indexOf('coconala.com/services/4424245')>=0){
+      a.addEventListener('click',function(){
+        if(typeof gtag==='function')gtag('event','trial_click',{utm_source:got.utm_source||''});
       });
     }else if(qs&&/aisodatekata\.com\/(ai-guide|ai-sodatekata)\/?$/.test(h)){a.href=h+qs;}
   });
