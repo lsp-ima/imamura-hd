@@ -92,7 +92,7 @@
   .hero .sub4{font-family:var(--mincho);font-size:clamp(16px,2vw,20px);color:var(--navy);line-height:1.8;margin-top:20px}
   .hero .price-line{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub)}
   .hero .price-line b{font-family:var(--mincho);color:var(--navy);font-size:17px;font-variant-numeric:tabular-nums}
-  .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .portrait img,.portrait video{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#0b1f3f}
   .portrait figcaption{font-size:12px;color:var(--sub);line-height:1.85;margin-top:12px}
   .portrait figcaption b{display:block;font-family:var(--mincho);font-size:15px;color:var(--navy);letter-spacing:.04em}
   @media(max-width:760px){.hero{padding:56px 0 64px}.hero .wrap{grid-template-columns:1fr;gap:32px}
@@ -240,7 +240,7 @@
         <p class="micro">1,000円の体験では、任せる1つ目を一緒に決めて、貼るだけで使える指示文を渡します(7日)。<br>申込フォームは6問・3分。入金は内容確認のあとです。</p>
       </div>
       <figure class="portrait">
-        <img src="/assets/profile.jpg" alt="今村雅史">
+        <video src="/assets/hero.mp4" poster="/assets/hero.jpg" autoplay muted loop playsinline aria-label="パソコンでAIに指示を書いている手元"></video>
         <figcaption><b>今村 雅史</b>合同会社LSP 代表<br>パーソナルトレーナー歴20年以上<br>AIを使い始めて4年</figcaption>
       </figure>
     </div>
@@ -352,6 +352,7 @@
     <div class="wrap reveal who">
       <span class="kicker">教える人</span>
       <h2>自分の会社を、実際にAIで回している人です。</h2>
+      <img src="/assets/profile.jpg" alt="今村雅史" style="display:block;width:160px;aspect-ratio:4/5;object-fit:cover;margin:0 0 16px">
       <p class="name">今村 雅史</p>
       <p class="role">合同会社LSP 代表／パーソナルトレーナー歴20年以上・現役中学バスケ部コーチ／Kindle『AIは、覚えない』著者</p>
       <p>銀座のジム、部活アプリの販売、出版、YouTube、noteの連載を、AIと一緒に回しています。決まった時刻に動く仕事はAIに任せ、AIの間違いを見つけて直すのは私がやります。プログラミングの知識はありません。</p>
