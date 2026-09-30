@@ -208,6 +208,40 @@
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .9s cubic-bezier(.16,.8,.3,1)}
   .reveal.on{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  /* ── 縦書きの最初の画面(9/28以前のトップから復元) ── */
+  .vh{position:relative;height:calc(100vh - 67px);min-height:560px;overflow:hidden;background:var(--paper)}
+  .vh-grid{position:absolute;inset:0;
+    background-image:linear-gradient(rgba(11,31,63,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(11,31,63,.05) 1px,transparent 1px);
+    background-size:64px 64px;animation:vh-drift 32s linear infinite}
+  @keyframes vh-drift{to{background-position:64px 64px}}
+  .vh-ph{position:absolute;top:0;right:0;width:52%;height:118%;overflow:hidden;will-change:transform}
+  .vh-ph>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:28% center;display:block}
+  .vh-in{position:relative;z-index:3;height:100%;display:flex;align-items:center}
+  .vtxt{writing-mode:vertical-rl;font-family:var(--mincho);font-weight:600;margin:0;
+    font-size:clamp(32px,4vw,54px);line-height:1.7;letter-spacing:.14em;color:var(--navy);
+    max-height:64vh;text-shadow:0 2px 24px rgba(255,255,255,.85)}
+  .vtxt .c{display:inline-block;opacity:0;transform:translateY(-.5em);animation:vh-drop .9s cubic-bezier(.2,.8,.25,1) forwards}
+  @keyframes vh-drop{to{opacity:1;transform:none}}
+  .vtxt .hl{position:relative}
+  .vtxt .hl::before{content:"";position:absolute;right:-.16em;top:0;width:.1em;height:0;
+    background:linear-gradient(180deg,var(--acc),#00c2d1);border-radius:2px;animation:vh-grow .9s .5s cubic-bezier(.2,.8,.25,1) forwards}
+  @keyframes vh-grow{to{height:100%}}
+  .vh-cue{position:absolute;bottom:34px;z-index:4;left:max(28px,calc((100vw - 1120px)/2 + 28px));font-size:10px;letter-spacing:.26em;color:var(--sub)}
+  .vh-cue i{display:block;width:1px;height:44px;margin:12px 0 0;background:var(--line);position:relative;overflow:hidden}
+  .vh-cue i::after{content:"";position:absolute;inset:0;background:var(--navy);animation:vh-run 1.9s ease-in-out infinite}
+  @keyframes vh-run{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+  @media(max-width:860px){
+    .vh{height:auto;min-height:0}
+    .vh-ph{position:relative;width:100%;height:300px}
+    .vh-in{height:auto;padding-top:48px;padding-bottom:8px}
+    .vtxt{writing-mode:horizontal-tb;max-height:none;line-height:1.85;letter-spacing:.04em}
+    .vtxt .hl::before{display:none}
+    .vh-cue{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .vh-grid,.vtxt .c,.vtxt .hl::before,.vh-cue i::after{animation:none!important}
+    .vtxt .c{opacity:1;transform:none}
+  }
 </style>
 </head>
 <body>
@@ -223,6 +257,15 @@
 </header>
 
 <main>
+
+  <section class="vh" aria-label="AIは、育て方で決まる。">
+    <div class="vh-grid"></div>
+    <div class="vh-ph" id="vhPh"><video src="/assets/hero.mp4" poster="/assets/hero.jpg" autoplay muted loop playsinline aria-label="パソコンでAIに指示を書いている手元"></video></div>
+    <div class="vh-in wrap">
+      <p class="vtxt" id="vtxt">AIは、<br><span class="hl">育て方</span>で決まる。</p>
+    </div>
+    <div class="vh-cue">SCROLL<i></i></div>
+  </section>
 
   <section class="hero">
     <div class="wrap">
@@ -240,7 +283,7 @@
         <p class="micro">1,000円の体験では、任せる1つ目を一緒に決めて、貼るだけで使える指示文を渡します(7日)。<br>申込フォームは6問・3分。入金は内容確認のあとです。</p>
       </div>
       <figure class="portrait">
-        <video src="/assets/hero.mp4" poster="/assets/hero.jpg" autoplay muted loop playsinline aria-label="パソコンでAIに指示を書いている手元"></video>
+        <img src="/assets/profile.jpg" alt="今村雅史">
         <figcaption><b>今村 雅史</b>合同会社LSP 代表<br>パーソナルトレーナー歴20年以上<br>AIを使い始めて4年</figcaption>
       </figure>
     </div>
@@ -352,7 +395,6 @@
     <div class="wrap reveal who">
       <span class="kicker">教える人</span>
       <h2>自分の会社を、実際にAIで回している人です。</h2>
-      <img src="/assets/profile.jpg" alt="今村雅史" style="display:block;width:160px;aspect-ratio:4/5;object-fit:cover;margin:0 0 16px">
       <p class="name">今村 雅史</p>
       <p class="role">合同会社LSP 代表／パーソナルトレーナー歴20年以上・現役中学バスケ部コーチ／Kindle『AIは、覚えない』著者</p>
       <p>銀座のジム、部活アプリの販売、出版、YouTube、noteの連載を、AIと一緒に回しています。決まった時刻に動く仕事はAIに任せ、AIの間違いを見つけて直すのは私がやります。プログラミングの知識はありません。</p>
@@ -523,6 +565,25 @@
       });
     }else if(qs&&/aisodatekata\.com\/(ai-guide|ai-sodatekata)\/?$/.test(h)){a.href=h+qs;}
   });
+})();
+</script>
+<script>
+(function(){
+  var vt=document.getElementById('vtxt');
+  if(vt&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var i=0;
+    (function wrap(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(n){
+        if(n.nodeType===3){
+          var f=document.createDocumentFragment();
+          Array.from(n.textContent).forEach(function(ch){var s=document.createElement('span');s.className='c';s.textContent=ch;s.style.animationDelay=(0.1+i*0.03)+'s';f.appendChild(s);i++;});
+          n.parentNode.replaceChild(f,n);
+        }else if(n.nodeType===1&&n.tagName!=='BR'){wrap(n);}
+      });
+    })(vt);
+  }
+  var ph=document.getElementById('vhPh');
+  if(ph){addEventListener('scroll',function(){if(matchMedia('(min-width:861px)').matches)ph.style.transform='translateY('+(-scrollY*0.12)+'px)';},{passive:true});}
 })();
 </script>
 </body>
