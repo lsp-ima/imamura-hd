@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/9｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/9(月)</div>
+<h1>AIに記事を書かせたら、7か所まちがっていました</h1>
+<p>うちでは毎朝6時に、AIがAIのニュースを集めて記事を1本書いています。人は何もしていません。</p><p>今朝の分は、書き上がったあとに別のAIに「元の記事と照らし合わせて」と頼んだところ、まちがいが7か所見つかりました。</p><p>多かったのはこの3つです。<br>・日付のとりちがえ(発表された日と、記事になった日)<br>・「誰の数字か」のとりちがえ(会社の発表か、記者の計算か)<br>・数の中身のとりちがえ(「ファイルの半分」ではなく「リポジトリの半分」)</p><p>原因は順番でした。本当は「確かめてから保存」の手順なのに、AIが先に保存して、あとから確かめていました。そのせいで一度作った記事を作り直しています。同じ失敗は今回で3回目です。</p><p>小さな会社で、お知らせ文や見積の送付文をAIに書かせるときも同じことが起きます。AIは自信満々にまちがえます。なので、書かせたあとに「確かめ係」を1回はさむのがおすすめです。</p>
+<h2>そのまま貼れる指示文(確かめ係)</h2>
+<pre id="p">これから「元の資料」と「AIが書いた文」を貼ります。
+AIが書いた文のうち、元の資料と合わないところを全部出してください。
+
+出し方:
+- まちがい: 書いた文の該当部分 → 元の資料では何と書いてあるか
+- 元の資料に無いこと: 書いた文の該当部分
+- 日付・金額・人の名前・数は特に1つずつ照らし合わせる
+直した文は作らなくていいです。まちがいの一覧だけ出してください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: 今朝6時のAIニュース自動作成の実行記録(claude.ai ルーティン「AI News Daily」11/09分)<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
