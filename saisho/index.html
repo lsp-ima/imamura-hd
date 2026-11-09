@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIに最初に任せる仕事を3問で決める｜合同会社LSP</title>
+<meta name="description" content="小さな会社・個人事業主向け。3つの質問に答えると、ChatGPTやClaudeに最初に任せる仕事が1つ決まり、そのまま貼れる指示文が出ます。無料・登録不要。">
+<link rel="canonical" href="https://aisodatekata.com/saisho/">
+<meta property="og:title" content="AIに最初に任せる仕事を3問で決める">
+<meta property="og:description" content="3つ答えると、最初に任せる仕事と、貼るだけの指示文が出ます。無料・登録不要。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aisodatekata.com/saisho/">
+<meta property="og:site_name" content="合同会社LSP">
+<meta property="og:locale" content="ja_JP">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RCJJ3YX5LM');
+</script>
+<style>
+:root{
+  --navy:#0b1f3f; --ink:#141c28; --sub:#6b7686;
+  --line:#e3e7ed; --paper:#fff; --gray:#f5f7fa;
+  --acc:#1e5eff; --line-green:#06c755;
+  --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  --gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.85;font-size:16px}
+.wrap{max-width:640px;margin:0 auto;padding:28px 16px 64px}
+.top{font-family:var(--mincho);font-size:14px;letter-spacing:.12em;color:var(--sub)}
+.top a{color:inherit;text-decoration:none}
+h1{font-family:var(--mincho);font-weight:600;font-size:clamp(24px,6vw,32px);line-height:1.45;margin:18px 0 10px}
+.lead{color:var(--sub);margin:0 0 24px;font-size:15px}
+.step{display:none}
+.step.on{display:block}
+.qno{font-size:13px;color:var(--acc);font-weight:700;letter-spacing:.08em}
+h2{font-family:var(--mincho);font-weight:600;font-size:21px;line-height:1.5;margin:6px 0 6px}
+.hint{color:var(--sub);font-size:14px;margin:0 0 14px}
+.opts{display:grid;gap:10px;margin:0 0 20px}
+.opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;background:#fff}
+.opt input{margin-top:6px;flex:none;width:18px;height:18px}
+.opt small{display:block;color:var(--sub);font-size:13px;line-height:1.6}
+.opt.checked{border-color:var(--acc);background:#f2f6ff}
+.btns{display:flex;gap:10px}
+button{font:inherit;border:0;border-radius:999px;padding:12px 22px;cursor:pointer}
+.next{background:var(--navy);color:#fff;flex:1}
+.next:disabled{opacity:.35;cursor:default}
+.back{background:var(--gray);color:var(--ink)}
+.field{width:100%;font:inherit;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:4px 0 18px}
+.pick{border-left:4px solid var(--acc);background:var(--gray);padding:14px 16px;border-radius:0 10px 10px 0;margin:8px 0 18px}
+.pick b{font-size:19px;font-family:var(--mincho)}
+.pick p{margin:6px 0 0;font-size:14.5px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13.5px;line-height:1.8;margin:8px 0 10px}
+.copy{background:var(--acc);color:#fff;width:100%}
+.copied{background:#2e7d32}
+h3{font-family:var(--mincho);font-weight:600;font-size:17px;margin:28px 0 6px}
+ol,ul{padding-left:1.3em;margin:6px 0}
+li{margin:4px 0}
+.later{font-size:14px;color:var(--sub)}
+.next-box{border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:28px}
+.next-box p{margin:0 0 10px;font-size:15px}
+.linebtn{display:block;text-align:center;background:var(--line-green);color:#fff;text-decoration:none;border-radius:999px;padding:12px;font-weight:700}
+.linebtn.pending{background:var(--gray);color:var(--sub);pointer-events:none;font-weight:400}
+.kws{font-size:14px;color:var(--sub)}
+.kws code{display:inline-block;background:var(--gray);border:1px solid var(--line);border-radius:6px;padding:0 8px;margin:2px 4px 2px 0;color:var(--ink);font-family:var(--gothic)}
+.restart{background:none;color:var(--sub);text-decoration:underline;padding:0;margin-top:18px}
+footer{margin-top:40px;font-size:13px;color:var(--sub)}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="https://aisodatekata.com/">合同会社LSP</a></div>
+  <h1>AIに最初に任せる仕事を、3問で決める</h1>
+  <p class="lead">小さな会社・個人事業主向け。答えると、最初に任せる仕事が1つ決まって、ChatGPTやClaudeにそのまま貼れる指示文が出ます。無料・登録なしです。</p>
+
+  <!-- Q1 -->
+  <section class="step on" id="s1">
+    <div class="qno">質問 1 / 3</div>
+    <h2>週に1回以上ある仕事を、全部選んでください</h2>
+    <p class="hint">「書く」「まとめる」「名前を付ける」系の仕事だけ並べています。</p>
+    <div class="opts" id="q1"></div>
+    <div class="btns"><button class="next" id="n1" disabled>次へ</button></div>
+  </section>
+
+  <!-- Q2 -->
+  <section class="step" id="s2">
+    <div class="qno">質問 2 / 3</div>
+    <h2>この中で、間違えると取り返しがつかないものは？</h2>
+    <p class="hint">金額・契約・クレーム対応など。選んだものは「後に回す」側に入れます。無ければそのまま次へ。</p>
+    <div class="opts" id="q2"></div>
+    <div class="btns"><button class="back" data-go="1">戻る</button><button class="next" id="n2">次へ</button></div>
+  </section>
+
+  <!-- Q3 -->
+  <section class="step" id="s3">
+    <div class="qno">質問 3 / 3</div>
+    <h2>いま、AIはどう使っていますか？</h2>
+    <p class="hint">指示文を「どこに貼るか」が変わります。</p>
+    <div class="opts" id="q3"></div>
+    <label for="biz" class="hint" style="display:block;margin:0">お仕事を一言で(任意。例: 整体院、不動産仲介、ダンス教室)</label>
+    <input class="field" id="biz" maxlength="30" placeholder="空欄なら〔 〕のまま出ます">
+    <div class="btns"><button class="back" data-go="2">戻る</button><button class="next" id="n3" disabled>結果を見る</button></div>
+  </section>
+
+  <!-- 結果 -->
+  <section class="step" id="s4">
+    <div class="qno">結果</div>
+    <div class="pick"><span class="hint" style="margin:0">最初に任せるのは</span><br><b id="r-task"></b><p id="r-why"></p></div>
+
+    <h3>貼るだけの指示文</h3>
+    <pre id="r-prompt"></pre>
+    <button class="copy" id="copy">指示文をコピーする</button>
+
+    <h3>使い方</h3>
+    <ol id="r-how"></ol>
+
+    <h3>1週間だけ、これを続けてください</h3>
+    <p>返ってきた下書きを自分で直したら、<b>直したところを1行</b>、指示文の一番下の「直したところ」に足します。次からはその分、直す手間が減ります。AIは覚えないので、覚えさせる場所はこの指示文です。</p>
+
+    <p class="later" id="r-later"></p>
+
+    <div class="next-box">
+      <p><b>2つ目からの指示文は、LINEで受け取れます。</b>LINEを追加して、仕事の名前をひと言送ると、その仕事の指示文がすぐ返ってきます。</p>
+      <p class="kws" id="r-kws"></p>
+      <p><b>うまく返ってこなかったとき</b>は、返ってきた文をそのままLINEに貼ってください。どこを1行足せば直るかを見て、直した指示文を返します。こちらは今村が自分で見ています。</p>
+      <a class="linebtn pending" id="line" href="#">LINEを追加する</a>
+    </div>
+
+    <button class="restart" id="restart">最初からやり直す</button>
+  </section>
+
+  <footer>作った人: 今村雅史(合同会社LSP)。パーソナルトレーナー歴20年以上、仕事でAIを使い始めて4年。入力したお仕事の名前はどこにも送っていません(指示文はページの中で組み立てています)。どの選択肢が選ばれたかだけ、アクセス解析で数えています。<br><a href="https://aisodatekata.com/">aisodatekata.com</a></footer>
+</div>
+
+<script>
+// ===== 設定 =====
+// LINEの入口(2026-11-09 本人決定: 既存「AIの育て方」を無料の人にも開く)
+const LINE_URL = 'https://lin.ee/8Cbsliu';
+
+// ===== 中身 =====
+// order = 迷ったときに先に選ぶ順(回数が多く、送る前に自分の目を通せるもの)
+const TASKS = [
+  { id:'mail', kw:'メール', label:'メール・LINEの返信', sub:'問い合わせ、予約、日程の調整など',
+    task:'メール・LINEの返信の下書き', to:'お客さん',
+    why:'毎週何度も来て、送る前に必ず自分の目を通せる仕事です。回数が多いほど直す機会も多く、いちばん早く育ちます。',
+    input:'届いた文を貼ります。返したい中身をひと言添えることもあります。',
+    output:'そのまま送れる返信文を1つ',
+    rules:['届いた文の質問には全部答える。答えられないものは〔要確認〕にする','長くしない。スマホの1画面に収める'] },
+  { id:'memo', kw:'メモ', label:'打ち合わせのメモ・議事録の整理', sub:'走り書き、音声の文字起こし',
+    task:'メモの整理', to:'自分',
+    why:'自分しか読まないので、多少ずれても困りません。毎回「決まったこと」と「やること」が分かれて出るだけで、見返す時間が減ります。',
+    input:'打ち合わせや電話の走り書き・文字起こしを貼ります。',
+    output:'「決まったこと」「やること(誰が・いつまで)」「決まっていないこと」の3つに分けた箇条書き',
+    rules:['メモに無いことを足さない','誰が・いつが書いていない「やること」には〔担当?〕〔期限?〕と付ける'] },
+  { id:'notice', kw:'お知らせ', label:'お知らせ・案内文', sub:'休業、料金の変更、キャンペーン、イベント',
+    task:'お知らせ文の下書き', to:'お客さん',
+    why:'型が決まっている仕事なので、指示文に「いつもの言い回し」を足していくと、毎回ほぼ直さずに出せるようになります。',
+    input:'伝えたいことを箇条書きで貼ります。',
+    output:'お知らせ文を1つと、LINEやSNS用に3行に縮めた版',
+    rules:['日付・金額・時間は私が書いたまま使う。変えない','言いにくいこと(値上げなど)は、理由を先に1行で書く'] },
+  { id:'sns', kw:'投稿', label:'SNS・ブログの投稿文', sub:'Instagram、Googleマップの投稿、ブログ',
+    task:'投稿文の下書き', to:'お客さん・これからお客さんになる人',
+    why:'ネタのメモさえあれば毎回作れて、出す前に自分で読めます。続けるほど「自分の言い方」が指示文にたまります。',
+    input:'今日あったことや伝えたいことのメモを貼ります。',
+    output:'投稿文を1つ(最初の1行で何の話か分かるように)',
+    rules:['実績や数字を盛らない。メモに無い数字は書かない','専門用語は言い換える'] },
+  { id:'file', kw:'ファイル', label:'ファイル名・フォルダの整理', sub:'写真、書類、データの名前がバラバラ',
+    task:'ファイル名の付け直し', to:'自分',
+    why:'答えを見て「合っているか」がすぐ分かる仕事です。一度ルールが決まれば、次からは一覧を貼るだけで済みます。',
+    input:'今あるファイル名の一覧を貼ります。',
+    output:'名前の付け方のルールを1つと、「今の名前 → 新しい名前」の表',
+    rules:['日付は先頭に「年-月-日」(例: 2026-11-09)で入れる','中身が名前から分からないものは〔中身?〕と付けて、勝手に決めない'] },
+  { id:'quote', kw:'送付文', label:'見積・請求・書類の送付文', sub:'見積書や請求書を送るときの文、書類の説明',
+    task:'書類を送るときの文の下書き', to:'取引先',
+    why:'送付文は型が決まっていて、毎回ほぼ同じ形で出せます。金額は自分が書いたものをそのまま使う決まりにしておけば安全です。',
+    input:'送る書類の種類・宛先・金額・期限をメモで貼ります。',
+    output:'送付のメール文を1つ',
+    rules:['金額・日付・品目は私が書いたまま使う。計算し直さない','書類の中身の説明は3行まで'] },
+  { id:'web', kw:'ホームページ', label:'ホームページ・チラシの文章', sub:'店の紹介、メニューの説明、求人',
+    task:'ホームページやチラシの文章の下書き', to:'これからお客さんになる人',
+    why:'一度に何案も出せるので、選ぶだけで前に進みます。直した好みを指示文に足すと、2回目からぐっと近づきます。',
+    input:'店やサービスの説明をメモで貼ります。',
+    output:'見出し1行と本文300字くらいを、違う切り口で3案',
+    rules:['実績や数字を盛らない。メモに無いことは書かない','「誰に向けた文か」を最初に1行で書いてから本文を書く'] }
+];
+
+const AI = [
+  { id:'none', label:'まだ使っていない', sub:'これから始める',
+    how:['スマホかパソコンで ChatGPT を開きます(無料のままで大丈夫です)。','新しいチャットに、上の指示文を貼って送ります。','「わかりました」と返ってきたら、続けて材料(届いた文やメモ)を貼ります。','次の回も、新しいチャットを開いて同じ指示文から始めます。'] },
+  { id:'free', label:'無料版で、質問するだけ', sub:'調べもの・相談に使っている',
+    how:['新しいチャットに、上の指示文を貼って送ります。','続けて材料(届いた文やメモ)を貼ります。','この仕事をするときは、毎回この指示文から始めます。指示文はスマホのメモに置いておくと楽です。'] },
+  { id:'paid', label:'有料版(ChatGPT Plus など)を使っている', sub:'',
+    how:['ChatGPTで「プロジェクト」を1つ作り、名前をこの仕事の名前にします。','プロジェクトの「指示」の欄に、上の指示文を貼ります。','以後、この仕事はそのプロジェクトの中のチャットで頼みます。毎回貼る必要はありません。'] },
+  { id:'other', label:'Claude・Gemini を使っている', sub:'',
+    how:['Claude なら「プロジェクト」を作り、指示の欄に貼ります。Gemini なら「Gem」を作り、カスタム指示に貼ります。','以後、この仕事はそのプロジェクト(Gem)の中で頼みます。','無料版で作れない場合は、新しいチャットの最初に指示文を貼ってから材料を貼ります。'] }
+];
+
+const ORDER = ['mail','memo','notice','sns','file','quote','web'];
+const state = { have:new Set(), risky:new Set(), ai:null };
+
+function track(name, params){ if (typeof gtag === 'function') gtag('event', name, params || {}); }
+
+function optEl(type, name, item, set, onChange){
+  const lab = document.createElement('label');
+  lab.className = 'opt';
+  const inp = document.createElement('input');
+  inp.type = type; inp.name = name; inp.value = item.id;
+  const box = document.createElement('div');
+  box.innerHTML = item.label + (item.sub ? '<small>' + item.sub + '</small>' : '');
+  lab.append(inp, box);
+  inp.addEventListener('change', () => {
+    if (type === 'checkbox') { inp.checked ? set.add(item.id) : set.delete(item.id); lab.classList.toggle('checked', inp.checked); }
+    else { document.querySelectorAll('input[name="'+name+'"]').forEach(x => x.closest('.opt').classList.toggle('checked', x.checked)); }
+    onChange && onChange(inp);
+  });
+  return lab;
+}
+
+const q1 = document.getElementById('q1');
+TASKS.forEach(t => q1.append(optEl('checkbox','q1',t,state.have,() => { document.getElementById('n1').disabled = state.have.size === 0; })));
+const q3 = document.getElementById('q3');
+AI.forEach(a => q3.append(optEl('radio','q3',a,null,inp => { state.ai = inp.value; document.getElementById('n3').disabled = false; })));
+
+function show(n){
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('on'));
+  document.getElementById('s'+n).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => show(b.dataset.go)));
+
+document.getElementById('n1').addEventListener('click', () => {
+  // Q2は Q1で選んだものだけ並べる
+  const q2 = document.getElementById('q2'); q2.innerHTML = '';
+  [...state.risky].forEach(id => { if (!state.have.has(id)) state.risky.delete(id); });
+  TASKS.filter(t => state.have.has(t.id)).forEach(t => {
+    const el = optEl('checkbox','q2',t,state.risky);
+    if (state.risky.has(t.id)) { el.querySelector('input').checked = true; el.classList.add('checked'); }
+    q2.append(el);
+  });
+  track('saisho_q1', {count: state.have.size});
+  show(2);
+});
+document.getElementById('n2').addEventListener('click', () => { track('saisho_q2', {risky: state.risky.size}); show(3); });
+document.getElementById('n3').addEventListener('click', () => { render(); show(4); });
+
+function choose(){
+  const safe = ORDER.filter(id => state.have.has(id) && !state.risky.has(id));
+  if (safe.length) return { pick: safe[0], allRisky:false };
+  return { pick: 'memo', allRisky:true }; // 全部が「取り返しがつかない」ときは、自分しか読まないメモから
+}
+
+function buildPrompt(t, biz){
+  const who = biz ? biz + 'を営む' : '〔お仕事〕を営む';
+  return [
+    'あなたは、' + who + '私の「' + t.task + '」係です。',
+    '',
+    'これから私が' + t.input,
+    '作ってほしいもの: ' + t.output,
+    '',
+    '守ること:',
+    '- 読む相手は' + t.to + '。' + (t.to === '自分' ? '短く、見返しやすく。' : 'ていねいに、でも堅くしすぎない話し言葉で。'),
+    ...t.rules.map(r => '- ' + r),
+    '- 分からないこと(日付・金額・名前など)は勝手に埋めず、〔要確認〕と書く',
+    '- 最後に「確認してほしいところ」を1行だけ書く',
+    '',
+    '直したところ(使いながら1行ずつ足していく):',
+    '- '
+  ].join('\n');
+}
+
+function render(){
+  const {pick, allRisky} = choose();
+  const t = TASKS.find(x => x.id === pick);
+  const ai = AI.find(x => x.id === state.ai);
+  const biz = document.getElementById('biz').value.trim();
+  document.getElementById('r-task').textContent = t.task;
+  document.getElementById('r-why').textContent = allRisky
+    ? '選んだ仕事が全部「間違えると困るもの」だったので、最初は自分しか読まないメモの整理から始めます。AIの癖が分かってから、本命に移るほうが止まりません。'
+    : t.why;
+  document.getElementById('r-prompt').textContent = buildPrompt(t, biz);
+  const how = document.getElementById('r-how'); how.innerHTML = '';
+  ai.how.forEach(s => { const li = document.createElement('li'); li.textContent = s; how.append(li); });
+  const later = TASKS.filter(x => (state.have.has(x.id) || x.id === pick) && x.id !== pick).map(x => x.label);
+  document.getElementById('r-later').textContent = later.length
+    ? '後に回したもの: ' + later.join('、') + '。1つ目が1週間回ってから、次を足すほうが止まりません。'
+    : '';
+  const kwTasks = TASKS.filter(x => x.id !== pick);
+  const laterIds = new Set(TASKS.filter(x => state.have.has(x.id) && x.id !== pick).map(x => x.id));
+  kwTasks.sort((a,b) => laterIds.has(b.id) - laterIds.has(a.id));
+  document.getElementById('r-kws').innerHTML = '送る言葉: ' + kwTasks.map(x => '<code>' + x.kw + '</code>').join('');
+  const line = document.getElementById('line');
+  if (LINE_URL) { line.href = LINE_URL; line.classList.remove('pending'); line.textContent = 'LINEを追加する'; line.target = '_blank'; line.rel = 'noopener'; }
+  track('saisho_result', {task: pick, ai: state.ai, all_risky: allRisky});
+}
+
+document.getElementById('copy').addEventListener('click', async e => {
+  const text = document.getElementById('r-prompt').textContent;
+  try { await navigator.clipboard.writeText(text); }
+  catch(_) { const ta = document.createElement('textarea'); ta.value = text; document.body.append(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+  e.target.textContent = 'コピーしました'; e.target.classList.add('copied');
+  setTimeout(() => { e.target.textContent = '指示文をコピーする'; e.target.classList.remove('copied'); }, 2000);
+  track('saisho_copy', {task: choose().pick});
+});
+document.getElementById('line').addEventListener('click', () => track('saisho_line', {task: choose().pick}));
+document.getElementById('restart').addEventListener('click', () => location.reload());
+</script>
+</body>
+</html>
