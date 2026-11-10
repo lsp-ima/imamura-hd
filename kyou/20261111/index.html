@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/11｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/11(水)</div>
+<h1>ニュースの取り込み口が古いまま空っぽになっていました</h1>
+<p>うちでは毎朝6時に、AIがAIのニュースを集めて記事を1本書いています。材料は、技術系サイトの新着を読みこむ4つの取り込み口から拾っています。</p><p>今朝はその4つが、そろって古い内容のまま止まっていました。直近24時間の新着が、ほぼゼロです。ここでAIが「新着なし」と受け取って書き進めていたら、材料のない記事ができていました。</p><p>AIは取り込み口が古くなっていることに気づいて、そのうち1つは別の入口(公開されているデータの取り口)に切りかえました。そこから前日公開分を19本拾い、実務で使える話を3本確保しています。</p><p>小さな会社でも、毎朝の集計や問い合わせの一覧をAIに読ませていると、元のデータが更新されないまま「今日は0件でした」と報告されることがあります。AIは0件でも普通の顔で報告します。</p><p>なので、決まった作業には「件数が0のときと、いつもの半分以下のときは、書く前にそう言って」と1行足しておくのがおすすめです。</p>
+<h2>そのまま貼れる指示文(0件のときの見張り)</h2>
+<pre id="p">これから毎日の集計(または一覧)を貼ります。そのあと、まとめ作業を頼みます。
+作業に入る前に、貼られた件数を先に書いてください。
+次のどれかに当たるときは、まとめを作らずに止まって教えてください。
+- 件数が0件
+- 件数が、いつもの目安(ここに数字を入れる: 例 20件)の半分以下
+- 日付が、今日から2日以上古いものばかり
+止まるときは「どの項目が少ないか」と「元のデータが更新されていない可能性」を1行ずつ書いてください。足りない分を想像で埋めないでください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: 今朝6時のAIニュース自動作成の実行記録(claude.ai ルーティン「AI News Daily」11/11分)<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
