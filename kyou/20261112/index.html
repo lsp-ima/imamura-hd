@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/12｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/12(木)</div>
+<h1>AIが前の日の記事を読み直して、同じ話を落としました</h1>
+<p>うちでは毎朝6時に、AIがAIのニュースを集めて記事を1本書いています。いつもはニュースを12本のせます。今朝は9本でした。</p><p>減らしたのはAIの判断です。書く前に前の日の記事を読み直したところ、今朝集まったニュースの多くを、前の日の記事がもう取り上げていました。そのまま書くと、2日続けて同じ話を読ませることになります。そこでAIは「前回から何が動いたか」だけを残しました。</p><p>残した1本目は、会議で使う新しい機能の話です。前の日の記事には「近日提供で、まだ使えない」と書いてありました。それが今朝は提供開始に変わっていました。同じ題でも、動いた点があるので残しています。動きのなかった話は落としました。本数を合わせるために古い話で埋めることはしていません。</p><p>小さな会社でも、毎日の日報や週1回のお知らせ、SNSの投稿をAIに書かせていると、同じ話が何度も出てきます。AIは前に何を書いたかを覚えていないので、頼むたびに初めての話として書くからです。</p><p>なので、くり返しの書きものを頼むときは、前回の分をいっしょに貼って「前回と同じ話は落として、変わったところだけ書いて」と足すのがおすすめです。本数や長さが足りなくなっても、埋めさせないほうが読む人の役に立ちます。</p>
+<h2>そのまま貼れる指示文(前回との重なり落とし)</h2>
+<pre id="p">これから「前回書いた文」と「今回の材料」を貼ります。そのあと、今回の文を書いてもらいます。
+書く前に、今回の材料を1つずつ前回の文と見くらべて、次の3つに分けて一覧にしてください。
+- 新しい話: 前回の文に出てこない
+- 動いた話: 前回も出たが、日付・数・状態のどれかが変わった(何がどう変わったかを1行で)
+- 同じ話: 前回と変わっていない
+今回の文には「新しい話」と「動いた話」だけを使ってください。
+「同じ話」は使わないでください。本数や長さが足りなくなっても、同じ話や想像で埋めないでください。足りないときは「今回は◯本です」と最初に書いてください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: 今朝6時のAIニュース自動作成の実行記録(claude.ai ルーティン「AI News Daily」11/12分)<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
