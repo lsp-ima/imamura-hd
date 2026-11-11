@@ -67,6 +67,19 @@ li{margin:4px 0}
 .linebtn.pending{background:var(--gray);color:var(--sub);pointer-events:none;font-weight:400}
 .kws{font-size:14px;color:var(--sub)}
 .kws code{display:inline-block;background:var(--gray);border:1px solid var(--line);border-radius:6px;padding:0 8px;margin:2px 4px 2px 0;color:var(--ink);font-family:var(--gothic)}
+.pbar{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin:0 0 18px}
+.pbar i{display:block;height:100%;width:0;background:var(--acc);transition:width .35s ease}
+.promise{list-style:none;padding:0;margin:-8px 0 24px;font-size:14.5px}
+.promise li{padding:6px 0 6px 22px;position:relative;margin:0;border-bottom:1px solid var(--line)}
+.promise li:before{content:"";position:absolute;left:4px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--acc)}
+.cmp{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 8px}
+.cmp b{display:block;font-size:13px;color:var(--acc);margin-bottom:4px}
+.cmp p{margin:0;font-size:15px}
+.src{margin-top:28px;padding-top:16px;border-top:1px solid var(--line)}
+.src p{font-size:13px;color:var(--sub);margin:0 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--ink)}
+.chip.on{border-color:var(--acc);background:#f2f6ff}
 .restart{background:none;color:var(--sub);text-decoration:underline;padding:0;margin-top:18px}
 footer{margin-top:40px;font-size:13px;color:var(--sub)}
 footer a{color:inherit}
@@ -77,6 +90,12 @@ footer a{color:inherit}
   <div class="top"><a href="https://aisodatekata.com/">合同会社LSP</a></div>
   <h1>AIに最初に任せる仕事を、3問で決める</h1>
   <p class="lead">小さな会社・個人事業主向け。答えると、最初に任せる仕事が1つ決まって、ChatGPTやClaudeにそのまま貼れる指示文が出ます。無料・登録なしです。</p>
+  <ul class="promise">
+    <li>最初に任せる仕事が1つ決まる</li>
+    <li>ChatGPTやClaudeに貼るだけの指示文</li>
+    <li>今のやり方と、何が変わるのか</li>
+  </ul>
+  <div class="pbar"><i id="pbar"></i></div>
 
   <!-- Q1 -->
   <section class="step on" id="s1">
@@ -111,6 +130,7 @@ footer a{color:inherit}
   <section class="step" id="s4">
     <div class="qno">結果</div>
     <div class="pick"><span class="hint" style="margin:0">最初に任せるのは</span><br><b id="r-task"></b><p id="r-why"></p></div>
+    <div class="cmp"><b id="r-cmp-h"></b><p id="r-cmp"></p></div>
 
     <h3>貼るだけの指示文</h3>
     <pre id="r-prompt"></pre>
@@ -129,6 +149,19 @@ footer a{color:inherit}
       <p class="kws" id="r-kws"></p>
       <p><b>うまく返ってこなかったとき</b>は、返ってきた文をそのままLINEに貼ってください。どこを1行足せば直るかを見て、直した指示文を返します。こちらは今村が自分で見ています。</p>
       <a class="linebtn pending" id="line" href="#">LINEを追加する</a>
+    </div>
+
+    <div class="src">
+      <p>よければ1つだけ。このページはどこで知りましたか？(結果は変わりません)</p>
+      <div class="chips" id="src">
+        <button class="chip" data-src="note">note</button>
+        <button class="chip" data-src="search">検索</button>
+        <button class="chip" data-src="ai">ChatGPTなどのAI</button>
+        <button class="chip" data-src="sns">SNS</button>
+        <button class="chip" data-src="person">人から聞いた・会って教わった</button>
+        <button class="chip" data-src="other">その他</button>
+      </div>
+      <p id="src-thanks" hidden>ありがとうございます。</p>
     </div>
 
     <button class="restart" id="restart">最初からやり直す</button>
@@ -194,11 +227,22 @@ const AI = [
     how:['スマホかパソコンで ChatGPT を開きます(無料のままで大丈夫です)。','新しいチャットに、上の指示文を貼って送ります。','「わかりました」と返ってきたら、続けて材料(届いた文やメモ)を貼ります。','次の回も、新しいチャットを開いて同じ指示文から始めます。'] },
   { id:'free', label:'無料版で、質問するだけ', sub:'調べもの・相談に使っている',
     how:['新しいチャットに、上の指示文を貼って送ります。','続けて材料(届いた文やメモ)を貼ります。','この仕事をするときは、毎回この指示文から始めます。指示文はスマホのメモに置いておくと楽です。'] },
+  { id:'failed', label:'使ってみたけど、使えなかった', sub:'思った答えが返ってこなかった',
+    how:['新しいチャットに、上の指示文を貼って送ります。','続けて材料(届いた文やメモ)を貼ります。','返ってきた下書きで直したところを、指示文の一番下に1行足します。次の回はその指示文から始めます。'] },
   { id:'paid', label:'有料版(ChatGPT Plus など)を使っている', sub:'',
     how:['ChatGPTで「プロジェクト」を1つ作り、名前をこの仕事の名前にします。','プロジェクトの「指示」の欄に、上の指示文を貼ります。','以後、この仕事はそのプロジェクトの中のチャットで頼みます。毎回貼る必要はありません。'] },
   { id:'other', label:'Claude・Gemini を使っている', sub:'',
     how:['Claude なら「プロジェクト」を作り、指示の欄に貼ります。Gemini なら「Gem」を作り、カスタム指示に貼ります。','以後、この仕事はそのプロジェクト(Gem)の中で頼みます。','無料版で作れない場合は、新しいチャットの最初に指示文を貼ってから材料を貼ります。'] }
 ];
+
+// 今のやり方と比べた一言(Q3の答えごと)
+const CMP = {
+  none:  {h:'今は自分で書いている方へ', p:'AIを使わなければ、この仕事は毎回あなたが一から書くままです。この指示文を使うと、仕事が「一から書く」から「返ってきた下書きを直す」に変わります。'},
+  free:  {h:'質問するだけの使い方との違い', p:'質問するだけだと、毎回AIに一から説明し直すことになります。この指示文は、仕事のやり方と「直したところ」をためておく置き場です。使うほど、説明しなくても近いものが返ってきます。'},
+  failed:{h:'前に使えなかった方へ', p:'思った答えが返ってこなかったのは、AIが前のやり取りを覚えていないのに、毎回ゼロから頼んでいたからかもしれません。この指示文は、直したところを1行ずつ足していく形です。1回目で完璧を求めず、1週間で近づけます。'},
+  paid:  {h:'有料版をお持ちの方へ', p:'道具はもう揃っています。足りないのは「この仕事はこうやる」という決まりの置き場だけです。プロジェクトの指示に入れれば、毎回貼る手間もなくなります。'},
+  other: {h:'Claude・Geminiをお使いの方へ', p:'道具はもう揃っています。足りないのは「この仕事はこうやる」という決まりの置き場だけです。プロジェクト(Gem)の指示に入れれば、毎回貼る手間もなくなります。'}
+};
 
 const ORDER = ['mail','memo','notice','sns','file','quote','web'];
 const state = { have:new Set(), risky:new Set(), ai:null };
@@ -229,6 +273,9 @@ AI.forEach(a => q3.append(optEl('radio','q3',a,null,inp => { state.ai = inp.valu
 function show(n){
   document.querySelectorAll('.step').forEach(s => s.classList.remove('on'));
   document.getElementById('s'+n).classList.add('on');
+  document.getElementById('pbar').style.width = ((Number(n)-1)/3*100) + '%';
+  document.querySelector('.promise').hidden = Number(n) > 1;
+  document.querySelector('.lead').hidden = Number(n) > 1;
   window.scrollTo({top:0,behavior:'smooth'});
 }
 document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => show(b.dataset.go)));
@@ -282,6 +329,8 @@ function render(){
   document.getElementById('r-why').textContent = allRisky
     ? '選んだ仕事が全部「間違えると困るもの」だったので、最初は自分しか読まないメモの整理から始めます。AIの癖が分かってから、本命に移るほうが止まりません。'
     : t.why;
+  document.getElementById('r-cmp-h').textContent = CMP[state.ai].h;
+  document.getElementById('r-cmp').textContent = CMP[state.ai].p;
   document.getElementById('r-prompt').textContent = buildPrompt(t, biz);
   const how = document.getElementById('r-how'); how.innerHTML = '';
   ai.how.forEach(s => { const li = document.createElement('li'); li.textContent = s; how.append(li); });
@@ -307,6 +356,11 @@ document.getElementById('copy').addEventListener('click', async e => {
   track('saisho_copy', {task: choose().pick});
 });
 document.getElementById('line').addEventListener('click', () => track('saisho_line', {task: choose().pick}));
+document.querySelectorAll('#src .chip').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#src .chip').forEach(x => x.classList.remove('on'));
+  b.classList.add('on'); document.getElementById('src-thanks').hidden = false;
+  track('saisho_source', {source: b.dataset.src, task: choose().pick});
+}));
 document.getElementById('restart').addEventListener('click', () => location.reload());
 </script>
 </body>
