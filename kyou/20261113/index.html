@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/13｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/13(金)</div>
+<h1>AIが「新しいニュース」の日付を確かめて、古い話を落としました</h1>
+<p>うちでは毎朝6時に、AIがAIのニュースを集めて記事を1本書いています。今朝は11本の話をのせました。</p><p>候補には、もう1本ありました。「海外のAI会社が、ある国からの利用を止めた」という話です。11月11日付けの記事で見つけたもので、見出しだけ読むと昨日今日のニュースに見えます。</p><p>AIは書く前に、その記事の中の日付を読み直しました。すると、発表は10月8日で、11月12日はその決まりが始まる日でした。新しく決まった話ではありません。しかも、この話を載せていたのは1つの媒体だけで、会社自身の発表へのリンクもありませんでした。AIはこの話を記事から落として、「裏が取れたら拾う」と記録にだけ残しています。</p><p>同じ朝、AIは別の話でも書き分けをしています。ある会社の社長が辞めた件で、新聞は「解任の準備をしている」と書き、会社の発表は「辞任」でした。記事では、会社が発表したことと、報道で言われていることを分けて書いています。</p><p>小さな会社でも、AIに「最近の補助金」「新しい法律の変更」「取引先の業界の動き」を調べさせることがあると思います。AIは見つけた記事の日付をそのまま「新しい」と受け取りやすく、半年前に決まった話を今週の話としてまとめてしまうことがあります。</p><p>なので、調べものを頼むときは「それぞれ、いつ決まった話か」と「どこが出した情報か」を書かせるのがおすすめです。日付が古いものや出どころが1つしかないものは、まとめに入れずに別に並べてもらうと、読む側で判断できます。</p>
+<h2>そのまま貼れる指示文(日付と出どころの見張り)</h2>
+<pre id="p">これから調べてほしいことを書きます。調べた結果をまとめてもらいます。
+まとめに入れる話は1つずつ、次の3つを書いてください。
+- いつ決まった話か(発表した日・始まる日・記事が出た日を分けて)
+- どこが出した情報か(会社や役所の発表か、報道か)
+- いくつの媒体に載っていたか
+次のどれかに当たる話は、まとめに入れずに最後に「保留」として別に並べてください。
+- 決まったのが、今日から1か月より前
+- 載っていたのが1つの媒体だけで、元の発表が見つからない
+- 「〜と報じられた」「〜の準備をしている」など、まだ決まっていない話
+足りないところを想像で埋めないでください。分からないところは「不明」と書いてください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: 今朝6時のAIニュース自動作成の実行記録(claude.ai ルーティン「AI News Daily」11/13分)<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
