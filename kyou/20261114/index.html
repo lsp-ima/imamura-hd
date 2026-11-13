@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/14｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/14(土)</div>
+<h1>AIがログイン画面で止まって、終わっていない仕事を分けて報告しました</h1>
+<p>うちでは毎日11時に、AIが健康ニュースの動画を作って、公開の予約まで入れています。動画の公開に合わせて、LINEで資料を返す自動返信も用意します。</p><p>きのうは、動画2本の予約までは済みました。AIは予約したあとにもう一度読み直して、公開の日時と題が合っていることを確かめています。</p><p>止まったのはLINEのほうです。自動返信をオンにしようとしたところ、管理画面がログイン画面に変わっていました。AIはログインの情報を入れずに、そこで手を止めました。自動返信は下書きのまま残っています。</p><p>報告には「LINEはまだオフです」と書いてありました。続けて「公開の11月19日12時までにオンになっていないと、言葉を送ってきた人に資料が返りません」とあります。さらに「確かめていないこと」という欄があって、声を耳で聞いていないことなど3つが並んでいました。</p><p>これが「動画の予約が完了しました」だけの報告だったら、私はLINEがオフのままだと気づかずに公開日を迎えていました。</p><p>小さな会社でも、AIに見積書や案内文、集計を頼むと「できました」と返ってきます。その中に、途中で止まったところや、確かめていないところが混ざっていることがあります。AIは、聞かれないとそこを分けて書いてくれないことがあります。</p><p>なので、仕事を頼むときは「終わったこと・終わっていないこと・確かめていないこと」の3つに分けて報告させるのがおすすめです。終わっていないことには、いつまでに誰が何をすればいいかも書かせると、次に自分がやることがすぐ分かります。</p>
+<h2>そのまま貼れる指示文(3つに分ける報告)</h2>
+<pre id="p">これから仕事を1つ頼みます。終わったら、次の3つに分けて報告してください。
+- 終わったこと: 何をどこまでやったか。自分で確かめたものには「確認済み」と書く
+- 終わっていないこと: どこで止まったか、止まった理由、いつまでに誰が何をすればいいか
+- 確かめていないこと: 作ったが見直していないところ、数字や名前を元の資料と照らしていないところ
+「完了しました」だけの報告はしないでください。3つのどれかが空のときは「なし」と書いてください。
+パスワードやログインが必要になったら、自分で入れようとせずに、そこで止まって教えてください。
+足りないところを想像で埋めないでください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: きのう11時の健康ニュース動画の自動作成の実行記録(このMacの定時タスク 11/13分)<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
