@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/15｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/15(日)</div>
+<h1>AIがスマホの幅で申込ページを測ったら、最初の画面にボタンがありませんでした</h1>
+<p>うちでは毎日、AIが売れ行きを数えて、いちばん弱い所を1つ調べています。きのう弱かったのは、体験の申込ページでした。</p><p>数字はこうです。直近の7日間で、このページから入ってきた訪問は34回ありました。そのうち、予約のボタンが押されたのは1回です。広告からスマホで来た19回は、平均19秒で帰っていました。</p><p>AIは最初に、ページが壊れていないかを確かめました。読み込みは1.2秒で、予約先のリンクも開きます。壊れている所はありませんでした。</p><p>次に、スマホの幅(横375・縦812)でページを開いて、ボタンの位置を測りました。いちばん上の予約ボタンは、上から813の所にありました。画面の縦は812なので、ボタンは最初の画面のすぐ下に隠れています。画面の下に付いてくるボタンもありますが、少し下に動かさないと出ない作りでした。開いた人が指を動かさないかぎり、予約のボタンは1つも見えません。</p><p>AIはページを直していません。直す案を「承認待ち」に置いて、報告には「実物のスマホではまだ確かめていません」と書いてありました。</p><p>私はこのページをパソコンで作って、パソコンで見ていました。パソコンの画面ではボタンが最初から見えるので、気づきませんでした。</p><p>小さな会社のホームページでも、同じことが起きていると思います。お客さんの多くはスマホで開きます。申込や問い合わせが少ないときは、文章を直す前に、スマホで開いた最初の画面にボタンがあるかを見るのがおすすめです。自分のスマホで開いて、指を動かさずに画面を写真にとり、AIに貼って見てもらうと、すぐに分かります。</p>
+<h2>そのまま貼れる指示文(スマホの最初の画面チェック)</h2>
+<pre id="p">これから、うちのホームページをスマホで開いて、指を動かす前の画面の写真を1枚貼ります。
+このページでお客さんにしてほしいことは「(予約・問い合わせ・電話 などを書く)」です。
+写真だけを見て、次の4つを答えてください。
+- この画面の中に、してほしいことへ進むボタンやリンクがあるか(ある・ない)
+- あるなら、どこにあって、何と書いてあるか
+- はじめて来た人が、この画面だけで「何の店で、何ができるか」が分かるか
+- ボタンが無いなら、この画面のどこに何と書いたボタンを置くとよいか(案は1つだけ)
+写真に写っていない所は想像で書かないでください。見えない所は「写真からは分かりません」と書いてください。
+文章や色の好みの話は要りません。ボタンの有る無しと場所だけを見てください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: きのうの営業の数え直しの実行記録(このMacの定時タスク「営業本部」11/14分)と、その日の台帳<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
