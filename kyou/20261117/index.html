@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/17｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/17(火)</div>
+<h1>お客さんが聞きそうな質問をAIに毎週聞いて、うちの店が出るかを数えています</h1>
+<p>私は銀座で脚やせのジムをやっています。お店を探すときにChatGPTなどのAIに聞く人が増えています。そこで毎週月曜に、AIが同じ質問10本を、ChatGPT、Googleの検索に出るAIの答え、Perplexityの3つに聞いて、うちの店の名前が出るかを表に書いています。</p><p>きのうの結果です。「脚やせ 専門 パーソナルジム 銀座」「東銀座 下半身痩せ ジム」のように、場所と専門をはっきり書いた質問では、ChatGPTで2本とも1番目に出ました。Googleでは3本で名前が出ています。</p><p>一方で「銀座 パーソナルトレーニング 体験」のような広い質問では、ChatGPTの答えに出てきませんでした。「脚だけ痩せないのはなぜ」のような悩みの質問では、ジムの名前はどこも出ず、引用されていたのはクリニックや医療のサイトでした。</p><p>もう1つ大事だったのは、Perplexityの10本のうち8本が、ログインを求める画面で答えが読めなかったことです。AIはこれを「出なかった」とは書かず、「不明」と書いて分けていました。0と混ぜると、来週の数字が良くなったのか悪くなったのか分からなくなります。</p><p>これで分かったのは、うちは「専門」で探す人には見つけてもらえているけれど、「体験」や「おすすめ」で探す人や、悩みから調べ始める人には届いていない、ということです。直す所が見えてきました。</p><p>小さな会社でも、お客さんが聞きそうな質問を5本くらい決めて、毎週同じ言葉でAIに聞いてみるのがおすすめです。出たか出ないかに加えて、代わりに出てきた店やサイトの名前も書いておくと、どの質問で負けているかが分かります。</p>
+<h2>そのまま貼れる指示文(AIに聞かれたときの出方チェック)</h2>
+<pre id="p">これから、うちのお客さんがAIに聞きそうな質問を5本書きます。うちの店の名前は「(店の名前)」です。
+質問を1本ずつ、書いたとおりの言葉で検索して答えてください。そのあと、質問ごとに次の4つを表にしてください。
+- うちの店の名前が出たか(出た・出ない・答えが読めなかった)
+- 出たなら何番目で、どう紹介されていたか(1行)
+- 代わりに出てきた店やサイトの名前(上から3つまで)
+- 答えの要点(1行)
+答えが読めなかったときは「出ない」と書かずに「読めなかった」と書いてください。
+質問の言葉は変えないでください。来週も同じ言葉で聞いて比べます。
+直し方の案は要りません。出たか出ないかだけを見てください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: きのう10時のAI検索の週次確認の実行記録(このMacの定時タスク 11/16分)と、その記録表<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
