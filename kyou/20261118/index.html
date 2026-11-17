@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/18｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/18(水)</div>
+<h1>AIが書いた記事を、別のAIが1文ずつ出典と突き合わせて、8件の間違いを見つけました</h1>
+<p>うちでは毎朝、AIがその日のAIニュースの記事を1本書いています。きのうの記事は、書いたあとに別のAI2つが事実確認をしました。前半と後半に分けて、それぞれが出典のページを開き、記事の文を1文ずつ突き合わせる仕事です。</p><p>結果は、間違いが8件、言い回しを直したほうがいい所が40件あまりでした。</p><p>間違いの例は2つです。1つ目は、鍵括弧で人の発言のように書いていたのに、出典には直接の引用が1つもなく、全部ほかの人が言い換えた文だった所です。2つ目は、元の文で「それほど心配していない」と控えめに書いてあったのを、記事では言い切りに変えていた所でした。題名も直されています。安くなったのは新しいモデルの片方だけで、もう片方は据え置きだったのに、まとめて安くなったように読める題でした。</p><p>書いたAIは、この指摘を全部反映して書き直しました。16,000字を超える記事で、作り直しはゼロでした。</p><p>書いた本人に「間違いがないか見て」と頼むと、読み返すだけで終わりがちです。別のAIに「出典を開いて、1文ずつ照らして」と頼むと、鍵括弧や言い切りのような細かい所まで拾えます。</p><p>小さな会社でも、お客さんに出すお知らせやホームページの文章は、AIに書かせたあと、別の会話で確認させるのがおすすめです。元の資料を貼って「この文章の中で、資料と違う所、資料に書いていない数字、言い切りすぎの所を、文ごとに挙げて」と頼みます。</p>
+<h2>そのまま貼れる指示文(文章と資料の突き合わせ)</h2>
+<pre id="p">これから、資料と、その資料をもとに書いた文章を貼ります。
+文章を1文ずつ読んで、資料と照らしてください。次の3つに分けて、該当する文を引用して挙げてください。
+- 資料と違う所(正しい内容も添える)
+- 資料に書いていない数字や名前
+- 資料では控えめな言い方なのに、言い切りになっている所
+問題がない文は挙げないでください。直した文章は書かず、指摘だけを返してください。資料を読めなかった所は「確認できず」と書いてください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: きのう朝の「AI News Daily」の実行記録(claude.ai のルーティン 11/17分)<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
