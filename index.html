@@ -280,7 +280,7 @@
           <a class="btn btn-main" href="https://coconala.com/services/4424245" target="_blank" rel="noopener">まず1,000円で試す(ココナラ)</a>
           <a class="btn btn-ghost" href="https://forms.gle/AvNCqskTvCsv6XvM9" target="_blank" rel="noopener">申し込む(総額 95,000円)</a>
         </div>
-        <p class="micro">1,000円の体験では、任せる1つ目を一緒に決めて、貼るだけで使える指示文を渡します(7日)。<br>申込フォームは6問・3分。入金は内容確認のあとです。</p>
+        <p class="micro">1,000円の体験では、任せる1つ目を一緒に決めて、貼るだけで使える指示文を渡します(7日)。<br>申込フォームは6問・3分。入金は内容確認のあとです。<br>先に試したい方は、<a href="https://lin.ee/wKWGcO3" target="_blank" rel="noopener">LINE</a>に仕事の名前(メール・お知らせ・投稿など)をひと言送ってください。AIに貼るだけの指示文がすぐ返ってきます。</p>
       </div>
       <figure class="portrait">
         <img src="/assets/profile.jpg" alt="今村雅史">
@@ -517,7 +517,7 @@
         <a class="btn btn-main" href="https://coconala.com/services/4424245" target="_blank" rel="noopener">まず1,000円で試す(ココナラ)</a>
         <a class="btn btn-ghost" href="https://forms.gle/AvNCqskTvCsv6XvM9" target="_blank" rel="noopener">申し込む(総額 95,000円)</a>
       </div>
-      <p class="micro">迷うところは、フォームの備考に。返信で答えます。<a href="/docs.html">提案書・図解(資料室)</a>もあります。</p>
+      <p class="micro">迷うところは、<a href="https://lin.ee/wKWGcO3" target="_blank" rel="noopener">LINE</a>で聞けます。仕事の名前をひと言送ると、AIに貼るだけの指示文も返ってきます。<a href="/docs.html">提案書・図解(資料室)</a>もあります。</p>
     </div>
   </section>
 
@@ -562,6 +562,10 @@
     }else if(h.indexOf('coconala.com/services/4424245')>=0){
       a.addEventListener('click',function(){
         if(typeof gtag==='function')gtag('event','trial_click',{utm_source:got.utm_source||''});
+      });
+    }else if(h.indexOf('lin.ee/wKWGcO3')>=0){
+      a.addEventListener('click',function(){
+        if(typeof gtag==='function')gtag('event','line_click',{utm_source:got.utm_source||''});
       });
     }else if(qs&&/aisodatekata\.com\/(ai-guide|ai-sodatekata)\/?$/.test(h)){a.href=h+qs;}
   });
