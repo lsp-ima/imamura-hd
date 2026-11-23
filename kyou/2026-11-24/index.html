@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIファクトチェックのやり方｜送る前に確かめるプロンプト｜小さな会社のAI導入</title>
+<meta name="description" content="AIにメールを作らせて送るまで任せたら、確認の前に送ってしまい、あとで20件以上の間違いが見つかった実例です。ChatGPTの間違いをなくすために、送る前に数字の出どころを一覧にさせるプロンプトを載せています。">
+<link rel="canonical" href="https://aisodatekata.com/kyou/2026-11-24/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE;--line-green:#06C755}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 6px}
+.lead{color:var(--sub);font-size:14px;margin:0 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+.gate{border:1px solid var(--line);border-radius:12px;padding:0 0 18px;overflow:hidden}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;margin:0;padding:16px 16px 4px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+.fade{height:44px;background:linear-gradient(#0f1724,#0f172400);margin-bottom:4px}
+.rest{font-weight:700;margin:6px 16px 4px}
+ol{margin:0 16px 0 36px;padding:0}
+.note{color:var(--sub);font-size:13.5px;margin:6px 16px 14px}
+.btn{display:block;margin:0 16px;text-align:center;text-decoration:none;border-radius:999px;padding:13px;background:var(--line-green);color:#fff;font-weight:700}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/24(火)</div>
+<h1>AIファクトチェックのやり方｜送る前に確かめるプロンプト</h1>
+<p class="lead">AIが確認の前にメールを送ってしまい、あとの確認で20件以上の間違いが見つかりました</p>
+<p>うちでは毎朝、AIがAIニュースの記事を1本書いて、できあがったらメールで知らせてくれます。手順は決めてあって、書いたあとに別のAIが出典を開いて事実を確かめ、それからメールを送る順番です。</p><p>けさは、この順番が逆になりました。AIは起動したときに、手順を書いたメモを読まずに作業を始めました。記事を書き終えると、確かめる前に1通目のメールを送ってしまいました。</p><p>送ったあとでメモを読み、確かめる手順を飛ばしたことに気づきました。そこから別のAI2つに確かめさせたところ、間違いが20件以上見つかりました。いちばん重かったのは、ある会社の資金調達の金額です。出典に載っている金額ではなく、AIが自分で掛け算して出した数字を書いていました。</p><p>AIは記事を全部書き直し、1通目への返信の形で訂正のメールを送りました。そのメールには「先に送ったメールのタイトルと数字は使わないでください」と書いてありました。1通目から訂正まで、約16分でした。</p><p>今回は送り先が私だけだったので、訂正で済みました。これがお客さんあての見積もりやお知らせだったら、間違った数字が先に届いてしまいます。</p><p>小さな会社でも、AIにメールや書類を作らせて送るところまで任せるときは、「確かめる」と「送る」を同じ頼み方の中に並べて書かないのがおすすめです。送る前に、確かめた結果を一覧で出させて、それを見てから送るようにします。</p>
+<h2>そのまま貼れる指示文(送る前の確認一覧)</h2>
+<div class="gate">
+<pre>これから、お客さんに送る文章を作ってもらいます。
+文章を書いたら、送る前に次の一覧を作ってください。</pre>
+<div class="fade" aria-hidden="true"></div>
+<p class="rest">続き(全7行)は、LINEで受け取れます。</p>
+<ol>
+<li>下のボタンで友だちに追加する</li>
+<li>トークで「今日の1本」と送る</li>
+</ol>
+<p class="note">全文のページがすぐ届きます。次の朝からも、同じ言葉で新しい1本が読めます。</p>
+<a class="btn" href="https://lin.ee/wKWGcO3" onclick="gtag('event','kyou_line_click',{kyou_date:'2026-11-24'})">LINEで友だちに追加する</a>
+</div>
+<p class="src">出典: けさの「AI News Daily」の実行記録(claude.ai のルーティン 11/24分)の最後の報告<br>書いているのは、合同会社LSPの今村(パーソナルトレーナー歴20年以上)のところで毎日動いているAIの記録です。</p>
+</div></body></html>
