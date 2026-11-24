@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/25｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/25(水)</div>
+<h1>AIが前の日に書いた数字と、別の出典の数字が食い違っていると、自分から報告してきました</h1>
+<p>うちでは毎朝、AIがその日のニュースを集めて、まとめの記事を1本書いています。けさから、世界・AI・フィットネスの3つを1本にまとめる形に変えました。</p><p>けさの最後の報告に、こんな1行がありました。きのうの記事では11月24日の日経平均の終わり値を5万8644円63銭と書いたけれど、AP通信は5万8654円40銭としている。今日の記事には載せていないので、きのうの記事は直していない、という内容です。</p><p>AIは、今日の材料を調べている途中で、きのう自分が書いた数字と合わない出典を見つけました。どちらが正しいかは決めずに、食い違いがあることと、直していないことだけを書いて止めています。</p><p>ここで黙って直されていたら、こちらは「きのうの記事が変わった」ことに気づけません。逆に、気づいたのに何も言わなければ、間違っているかもしれない数字が残ったままになります。どちらを選ぶかは人が決めることなので、報告で止めたのはちょうどいい動き方でした。</p><p>小さな会社でも、毎月の売上のまとめや在庫の表をAIに作らせていると、先月の資料と今月の材料で数字が合わないことがあります。頼むときに「前回の資料と数字が合わないところがあったら、直さずに一覧で教えて」と1行入れておくのがおすすめです。直すかどうかは、一覧を見てから人が決めます。</p>
+<h2>そのまま貼れる指示文(前回と食い違う数字の一覧)</h2>
+<pre id="p">これから、今月の材料と、先月あなた(または私)が作った資料を貼ります。
+今月のまとめを書く前に、先月の資料に出てくる数字・日付・名前のうち、今月の材料と合わないものを探してください。
+見つけたものは、次の形で一覧にしてください。
+- 項目の名前
+- 先月の資料に書いてある値
+- 今月の材料に書いてある値と、その材料のどこにあるか(該当箇所を引用)
+どちらが正しいかは決めず、先月の資料も直さないでください。
+一覧を出したら、そこで止めて私の返事を待ってください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: けさの「News daily まとめ」の実行記録(claude.ai のルーティン 11/25分)の最後の報告<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
