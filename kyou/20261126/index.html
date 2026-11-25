@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/26｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/26(木)</div>
+<h1>AIが株価の終わりの数字を確かめられず、「午後3時8分時点」と書いて、公開前に決めてほしいと言ってきました</h1>
+<p>うちでは毎朝、AIがその日のニュースを集めて、まとめの記事を1本書いています。</p><p>けさは、アメリカの株価のところで材料が足りませんでした。AIは25日の取引が終わったときの数字を探しにいきましたが、開けたページに載っていたのはどれも取引の途中の数字でした。終わりの数字は、どこでも確かめられませんでした。</p><p>AIは、途中の数字を終わりの数字のように書くことはしませんでした。記事には「東部時間午後3時8分時点」と時刻を添えて、途中の数字だと分かるように載せています。そのうえで最後の報告の一番上に、終わりの数字ではないこと、公開の前に置き換えるか、この書き方のままにするかを決めてほしいことを書いていました。</p><p>報告には、ほかに「確認不足のまま入れた点」が2つ、分けて書いてありました。ひとつは、意見募集の締め切りの日付が1つのサイトにしか載っていなかったことです。もうひとつは、健康の研究の数字を、論文そのものではなく紹介記事から取ったことです。</p><p>こう書いてあると、こちらは公開の前に、どこを見ればいいかがすぐ分かります。記事を全部読み直さなくて済みます。</p><p>小さな会社でも、月末の数字をAIにまとめさせると、締めの前で確定していない数字が混ざることがあります。頼むときに「確定していない数字には、いつ時点かを添えて、最後に一覧にして」と1行入れておくのがおすすめです。置き換えるかどうかは、一覧を見てから人が決めます。</p>
+<h2>そのまま貼れる指示文(確定していない数字の一覧)</h2>
+<pre id="p">これから、まとめに使う材料を貼ります。
+まとめを書くときは、数字と日付を1つずつ、確定しているかどうか確かめてください。
+- 確定していない数字(途中の集計・見込み・速報)には、数字のすぐ後に「◯月◯日◯時時点」のように、いつの数字かを書いてください。
+- 1つの資料にしか載っていない数字と、元の資料ではなく紹介や転記から取った数字にも、同じように印を付けてください。
+まとめの一番上に、印を付けた数字の一覧を出してください。項目ごとに、どこから取ったかと、確定させるには何を見ればいいかを書いてください。
+確定した数字に置き換えるかどうかは私が決めるので、一覧を出したらそこで止めてください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: けさの「News daily まとめ」の実行記録(claude.ai のルーティン 11/26分)の最後の報告<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>

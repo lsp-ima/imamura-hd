@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生成AIのファクトチェック方法 確定前の数字に時点を書かせるプロンプト｜小さな会社のAI導入</title>
+<meta name="description" content="生成AIに資料や月次報告をまとめさせると、確定していない数字が混ざります。ファクトチェックのプロンプトとして、いつ時点の数字か・どこから取ったかを一覧にさせる頼み方を、毎朝のAIの実行記録から紹介します。">
+<link rel="canonical" href="https://aisodatekata.com/kyou/2026-11-26/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE;--line-green:#06C755}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 6px}
+.lead{color:var(--sub);font-size:14px;margin:0 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+.gate{border:1px solid var(--line);border-radius:12px;padding:0 0 18px;overflow:hidden}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;margin:0;padding:16px 16px 4px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+.fade{height:44px;background:linear-gradient(#0f1724,#0f172400);margin-bottom:4px}
+.rest{font-weight:700;margin:6px 16px 4px}
+ol{margin:0 16px 0 36px;padding:0}
+.note{color:var(--sub);font-size:13.5px;margin:6px 16px 14px}
+.btn{display:block;margin:0 16px;text-align:center;text-decoration:none;border-radius:999px;padding:13px;background:var(--line-green);color:#fff;font-weight:700}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/26(木)</div>
+<h1>生成AIのファクトチェック方法 確定前の数字に時点を書かせるプロンプト</h1>
+<p class="lead">AIが株価の終わりの数字を確かめられず、「午後3時8分時点」と書いて、公開前に決めてほしいと言ってきました</p>
+<p>うちでは毎朝、AIがその日のニュースを集めて、まとめの記事を1本書いています。</p><p>けさは、アメリカの株価のところで材料が足りませんでした。AIは25日の取引が終わったときの数字を探しにいきましたが、開けたページに載っていたのはどれも取引の途中の数字でした。終わりの数字は、どこでも確かめられませんでした。</p><p>AIは、途中の数字を終わりの数字のように書くことはしませんでした。記事には「東部時間午後3時8分時点」と時刻を添えて、途中の数字だと分かるように載せています。そのうえで最後の報告の一番上に、終わりの数字ではないこと、公開の前に置き換えるか、この書き方のままにするかを決めてほしいことを書いていました。</p><p>報告には、ほかに「確認不足のまま入れた点」が2つ、分けて書いてありました。ひとつは、意見募集の締め切りの日付が1つのサイトにしか載っていなかったことです。もうひとつは、健康の研究の数字を、論文そのものではなく紹介記事から取ったことです。</p><p>こう書いてあると、こちらは公開の前に、どこを見ればいいかがすぐ分かります。記事を全部読み直さなくて済みます。</p><p>小さな会社でも、月末の数字をAIにまとめさせると、締めの前で確定していない数字が混ざることがあります。頼むときに「確定していない数字には、いつ時点かを添えて、最後に一覧にして」と1行入れておくのがおすすめです。置き換えるかどうかは、一覧を見てから人が決めます。</p>
+<h2>そのまま貼れる指示文(確定していない数字の一覧)</h2>
+<div class="gate">
+<pre>これから、まとめに使う材料を貼ります。
+まとめを書くときは、数字と日付を1つずつ、確定しているかどうか確かめてください。</pre>
+<div class="fade" aria-hidden="true"></div>
+<p class="rest">続き(全6行)は、LINEで受け取れます。</p>
+<ol>
+<li>下のボタンで友だちに追加する</li>
+<li>トークで「今日の1本」と送る</li>
+</ol>
+<p class="note">全文のページがすぐ届きます。次の朝からも、同じ言葉で新しい1本が読めます。</p>
+<a class="btn" href="https://lin.ee/wKWGcO3" onclick="gtag('event','kyou_line_click',{kyou_date:'2026-11-26'})">LINEで友だちに追加する</a>
+</div>
+<p class="src">出典: けさの「News daily まとめ」の実行記録(claude.ai のルーティン 11/26分)の最後の報告<br>書いているのは、合同会社LSPの今村(パーソナルトレーナー歴20年以上)のところで毎日動いているAIの記録です。</p>
+</div></body></html>
