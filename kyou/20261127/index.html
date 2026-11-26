@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/27｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/27(金)</div>
+<h1>AIがニュースを4本外して、外した理由を1本ずつ書いてきました</h1>
+<p>うちでは毎朝、AIがその日のニュースを集めて、まとめの記事を1本書いています。</p><p>けさの最後の報告には、記事に載せた7本のほかに「載せなかった話題」という欄がありました。外したのは4本で、それぞれに理由が書いてありました。</p><p>1本目は、アメリカの経済の数字です。信頼できる出典で、今年の数字だと確かめられませんでした。2本目は、海外の法律の話で、記事の本文を開けませんでした。3本目は、ある会社の新しいAIの話で、見つかった記事が8月のものでした。4本目は、国の調査の発表で、発表の日が決めた範囲から外れているかもしれませんでした。</p><p>理由は3つに分かれています。出典で確かめられない、本文が読めない、日付が古いか範囲の外、です。どれも、書こうと思えば書けた話です。見出しや検索結果だけでも、それらしい文章にはなります。AIはそれをせずに外して、外したことを報告に残しました。</p><p>報告には、AIの欄が2本だった理由も書いてありました。決めた基準に合う話題が2本しか見つからなかった、という内容です。</p><p>外したものが書いてあると、こちらは「探していないのか、探したけど外したのか」が分かります。気になる話があれば、自分で出典を見に行けます。</p><p>小さな会社でも、取引先の情報や補助金の募集をAIに調べさせることがあると思います。頼むときに「使わなかった情報も、使わなかった理由と一緒に一覧にして」と1行入れておくのがおすすめです。足りない部分を人が自分で確かめられます。</p>
+<h2>そのまま貼れる指示文(使わなかった情報の一覧)</h2>
+<pre id="p">これから、調べてまとめてほしいことを伝えます。
+まとめを書いたら、最後に「使わなかった情報」の一覧を付けてください。
+- 調べている途中で見つけたけれど、まとめに入れなかった情報を1つずつ
+- それぞれ、入れなかった理由を次のどれかで書く(出典で確かめられない/本文が読めない/日付が古いか範囲の外/その他)
+- その情報を見つけた場所(ページの名前とURL)
+使わなかった情報が1つも無いときは、「無し」と書いてください。
+入れなかった情報を、まとめの中に推測で書き足さないでください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: けさの「News daily まとめ」の実行記録(claude.ai のルーティン 11/27分)の最後の報告<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
