@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>今日の1本 11/28｜小さな会社のAI導入</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJJ3YX5LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RCJJ3YX5LM');</script>
+<style>
+:root{--ink:#141c28;--sub:#6b7686;--line:#e3e7ed;--acc:#534AB7;--bg:#fff;--soft:#EEEDFE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.9;font-size:16px}
+.w{max-width:640px;margin:0 auto;padding:24px 16px 56px}
+.d{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.08em}
+h1{font-size:23px;line-height:1.5;margin:6px 0 18px}
+h2{font-size:17px;margin:28px 0 8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0f1724;color:#e8edf5;border-radius:10px;padding:16px;font-size:13.5px;line-height:1.8;font-family:"SF Mono",Menlo,monospace}
+button{font:inherit;border:0;border-radius:999px;padding:12px;width:100%;background:var(--acc);color:#fff}
+.src{margin-top:28px;font-size:12.5px;color:var(--sub)}
+</style></head><body><div class="w">
+<div class="d">今日の1本 11/28(土)</div>
+<h1>AIが字数の上限を守れず、どれだけ超えたかを数字で報告してきました</h1>
+<p>うちでは毎朝、AIがその日のニュースを集めて、まとめの記事を1本書いています。</p><p>けさ、AIは記事を書いたあと、字数を数え直しました。有料の部分には4000字までという上限があります。最初に数えると4295字で、上限を超えていました。そこで文を削って、4033字まで減らしています。</p><p>それでも4000字には届きませんでした。AIは「収まりました」とは書かずに、最後の報告に「上限の4000字をわずかに超えています」と書いています。33字分、残ったということです。</p><p>同じ報告に、もうひとつありました。AIの話題の2本は、決めた36時間の範囲より古い報道でした。範囲に入っていて本文を確認できる話題が見つからなかったので載せた、外すか載せるかを決めてほしい、という内容です。</p><p>どちらも、黙って載せることはできました。字数は数えなければ分かりませんし、範囲は日付を見なければ分かりません。AIは自分で数えて、守れなかった点を数字つきで残しました。</p><p>こちらは、直す場所がすぐ分かります。33字を削るかどうかと、2本を外すかどうかを決めるだけです。</p><p>小さな会社でも、字数や件数や期間を決めてAIに資料を作らせることがあると思います。頼むときに「決めた条件を守れなかった項目は、どれだけ外れたかを数字で書いて、最後に一覧にして」と1行入れておくのがおすすめです。直すかどうかは、一覧を見てから人が決めます。</p>
+<h2>そのまま貼れる指示文(守れなかった条件の一覧)</h2>
+<pre id="p">これから、資料を作ってもらうときの条件(字数・件数・期間など)を伝えます。
+資料を書いたら、書いた後で、条件ごとに実際の数を数えてください。
+- 条件を守れた項目は、「守れた」とだけ書いてください。
+- 守れなかった項目は、決めた条件、実際の数、どれだけ外れたかを、数字で書いてください。
+- 条件に合わないと分かっていて入れた内容があれば、入れた理由も1行で書いてください。
+一覧は資料の最後に付けてください。
+守れなかった項目を、守れたことにして書かないでください。
+削るか外すかは私が決めるので、一覧を出したらそこで止めてください。</pre>
+<button id="c" onclick="navigator.clipboard.writeText(document.getElementById('p').textContent).then(()=>{this.textContent='コピーしました'})">指示文をコピーする</button>
+<p class="src">出典: けさの「News daily まとめ」の実行記録(claude.ai のルーティン 11/28分)の最後の報告<br>書いているのは、合同会社LSPの今村のところで毎日動いているAIの記録です。</p>
+</div></body></html>
